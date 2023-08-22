@@ -1,11 +1,24 @@
 import kFse from '@kikiutils/fs-extra';
 import fsp from 'fs/promises';
-import fse, { EnsureDirOptions } from 'fs-extra';
+import fse from 'fs-extra';
 
 import { BasePath, PathLike } from '../base';
 import { ReadFileOptions, WriteFileData, WriteFileOptions } from './types';
 
 export class PromisePathFsOperation extends BasePath {
+	mkdirp: typeof this.ensureDir;
+	mkdirs: typeof this.ensureDir;
+	readJSON: typeof this.readJson;
+	writeJSON: typeof this.writeJson;
+
+	constructor(...paths: PathLike[]) {
+		super(...paths);
+		this.mkdirp = this.ensureDir;
+		this.mkdirs = this.ensureDir;
+		this.readJSON = this.readJson;
+		this.writeJSON = this.writeJson;
+	}
+
 	/**
 	 * @see {@link fsp.appendFile}
 	 */
@@ -32,13 +45,6 @@ export class PromisePathFsOperation extends BasePath {
 	 */
 	async exists() {
 		return await fse.pathExists(this.raw);
-	}
-
-	/**
-	 * @see {@link fse.mkdirs}
-	 */
-	async mkdirs(options?: EnsureDirOptions | number) {
-		return await kFse.mkdirs(this.raw, options);
 	}
 
 	/**

@@ -1,12 +1,25 @@
 import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
-import fse, { EnsureDirOptions } from 'fs-extra';
+import fse from 'fs-extra';
 
 import { PathLike } from '../base';
 import PromisePathFsOperation from './promise';
 import { ReadFileSyncOptions } from './types';
 
 export class SyncPathFsOperation extends PromisePathFsOperation {
+	mkdirpSync: typeof this.ensureDirSync;
+	mkdirsSync: typeof this.ensureDirSync;
+	readJSONSync: typeof this.readJsonSync;
+	writeJSONSync: typeof this.writeJsonSync;
+
+	constructor(...paths: PathLike[]) {
+		super(...paths);
+		this.mkdirpSync = this.ensureDirSync;
+		this.mkdirsSync = this.ensureDirSync;
+		this.readJSONSync = this.readJsonSync;
+		this.writeJSONSync = this.writeJsonSync;
+	}
+
 	/**
 	 * @see {@link fs.appendFileSync}
 	 */
@@ -33,13 +46,6 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	 */
 	existsSync() {
 		return fse.pathExistsSync(this.raw);
-	}
-
-	/**
-	 * @see {@link fse.mkdirsSync}
-	 */
-	mkdirsSync(options?: EnsureDirOptions | number) {
-		return kFse.mkdirsSync(this.raw, options);
 	}
 
 	/**
