@@ -21,6 +21,13 @@ export class PromisePathFsOperation extends BasePath {
 	}
 
 	/**
+	 * @see {@link fse.ensureDir}
+	 */
+	async ensureDir(options?: fse.EnsureDirOptions | number) {
+		return await kFse.ensureDir(this.raw, options);
+	}
+
+	/**
 	 * @see {@link fse.pathExists}
 	 */
 	async exists() {

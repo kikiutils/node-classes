@@ -22,6 +22,13 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	}
 
 	/**
+	 * @see {@link fse.ensureDirSync}
+	 */
+	ensureDirSync(options?: fse.EnsureDirOptions | number) {
+		return kFse.ensureDirSync(this.raw, options);
+	}
+
+	/**
 	 * @see {@link fse.pathExistsSync}
 	 */
 	existsSync() {
