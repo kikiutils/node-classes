@@ -2,7 +2,7 @@ import kFse from '@kikiutils/fs-extra';
 import fsp from 'fs/promises';
 import fse, { EnsureDirOptions } from 'fs-extra';
 
-import { BasePath } from '../base';
+import { BasePath, PathLike } from '../base';
 import { ReadFileOptions, WriteFileData, WriteFileOptions } from './types';
 
 export class PromisePathFsOperation extends BasePath {
@@ -53,6 +53,13 @@ export class PromisePathFsOperation extends BasePath {
 	 */
 	async isFile() {
 		return (await kFse.stat(this.raw))?.isFile() || false;
+	}
+
+	/**
+	 * @see {@link fse.move}
+	 */
+	async move(dest: PathLike, options?: fse.MoveOptions) {
+		return await kFse.move(this.raw, dest.toString(), options);
 	}
 
 	/**

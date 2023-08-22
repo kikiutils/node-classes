@@ -2,6 +2,7 @@ import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
 import fse, { EnsureDirOptions } from 'fs-extra';
 
+import { PathLike } from '../base';
 import PromisePathFsOperation from './promise';
 import { ReadFileSyncOptions } from './types';
 
@@ -53,6 +54,13 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	 */
 	isFileSync() {
 		return kFse.statSync(this.raw)?.isFile() || false;
+	}
+
+	/**
+	 * @see {@link fse.moveSync}
+	 */
+	moveSync(dest: PathLike, options?: fse.MoveOptions) {
+		return kFse.moveSync(this.raw, dest.toString(), options);
 	}
 
 	/**
