@@ -1,0 +1,38 @@
+{
+  "name": "@kikiutils/classes",
+  "version": "0.0.1",
+  "description": "Utils classes for nodejs.",
+  "license": "MIT",
+  "author": {
+    "name": "kiki-kanri"
+  },
+  "homepage": "https://github.com/kiki-kanri/kikiutils-node-classes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiki-kanri/kikiutils-node-classes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiki-kanri/kikiutils-node-classes/issues"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && pkgroll --target=node16",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.5.1",
+    "pkgroll": "^1.11.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [
+    "classes",
+    "path",
+    "utils"
+  ],
+  "dependencies": {
+    "@kikiutils/fs-extra": "^1.2.6"
+  }
+}
