@@ -20,6 +20,13 @@ export class PromisePathFsOperation extends BasePath {
 	}
 
 	/**
+	 * @see {@link fse.pathExists}
+	 */
+	async exists() {
+		return await fse.pathExists(this.raw);
+	}
+
+	/**
 	 * @see {@link fse.mkdirs}
 	 */
 	async mkdirs(options?: EnsureDirOptions | number) {
@@ -27,10 +34,17 @@ export class PromisePathFsOperation extends BasePath {
 	}
 
 	/**
-	 * Check path is dir.
+	 * Check path is directory.
 	 */
 	async isDir() {
 		return (await kFse.stat(this.raw))?.isDirectory() || false;
+	}
+
+	/**
+	 * Check path is directory.
+	 */
+	async isDirectory() {
+		return await this.isDir();
 	}
 
 	/**

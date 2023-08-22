@@ -20,6 +20,13 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	}
 
 	/**
+	 * @see {@link fse.pathExistsSync}
+	 */
+	existsSync() {
+		return fse.pathExistsSync(this.raw);
+	}
+
+	/**
 	 * @see {@link fse.mkdirsSync}
 	 */
 	mkdirsSync(options?: EnsureDirOptions | number) {
@@ -27,10 +34,17 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	}
 
 	/**
-	 * Check path is dir.
+	 * Check path is directory.
 	 */
 	isDirSync() {
 		return kFse.statSync(this.raw)?.isDirectory() || false;
+	}
+
+	/**
+	 * Check path is directory.
+	 */
+	isDirectorySync() {
+		return this.isDir();
 	}
 
 	/**
