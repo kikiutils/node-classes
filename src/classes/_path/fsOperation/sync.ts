@@ -72,6 +72,13 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	}
 
 	/**
+	 * @see {@link fse.readJsonSync}
+	 */
+	readJsonSync(options?: fse.JsonReadOptions) {
+		return kFse.readJsonSync(this.raw, options);
+	}
+
+	/**
 	 * @see {@link fse.removeSync}
 	 */
 	removeSync() {
@@ -90,5 +97,12 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	 */
 	writeFileSync(data: string | NodeJS.ArrayBufferView, options?: fs.WriteFileOptions) {
 		return kFse.writeFileSync(this.raw, data, options);
+	}
+
+	/**
+	 * @see {@link fse.writeJsonSync}
+	 */
+	writeJsonSync(data: any, options?: fse.JsonWriteOptions) {
+		return kFse.writeJsonSync(this.raw, data, options);
 	}
 }

@@ -72,6 +72,13 @@ export class PromisePathFsOperation extends BasePath {
 	}
 
 	/**
+	 * @see {@link fse.readJson}
+	 */
+	async readJson(options?: fse.JsonReadOptions) {
+		return await kFse.readJson(this.raw, options);
+	}
+
+	/**
 	 * @see {@link fse.remove}
 	 */
 	async remove() {
@@ -90,6 +97,13 @@ export class PromisePathFsOperation extends BasePath {
 	 */
 	async writeFile(data: WriteFileData, options?: WriteFileOptions) {
 		return await kFse.writeFile(this.raw, data, options);
+	}
+
+	/**
+	 * @see {@link fse.writeJson}
+	 */
+	async writeJson(data: any, options?: fse.JsonWriteOptions) {
+		return await kFse.writeJson(this.raw, data, options);
 	}
 }
 
