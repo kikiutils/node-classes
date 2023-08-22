@@ -45,11 +45,12 @@ export class BasePath {
 	 * @see {@link _path.normalize}
 	 */
 	normalize() {
-		this.raw = _path.normalize(this.raw);
+		this.raw = this.normalizeToString();
 		return this;
 	}
 
 	/**
+	 * This method does not change the path of the instance.
 	 * @see {@link _path.normalize}
 	 */
 	normalizeToString() {
@@ -60,15 +61,16 @@ export class BasePath {
 	 * @see {@link _path.join}
 	 */
 	join(...paths: PathLike[]) {
-		this.raw = _path.join(this.raw, ...this.toRaws(paths));
+		this.raw = this.joinToString(...paths);
 		return this;
 	}
 
 	/**
+	 * This method does not change the path of the instance.
 	 * @see {@link _path.join}
 	 */
 	joinToString(...paths: PathLike[]) {
-		return this.raw = _path.join(this.raw, ...this.toRaws(paths));
+		return _path.join(this.raw, ...this.toRaws(paths));
 	}
 
 	/**
@@ -82,11 +84,12 @@ export class BasePath {
 	 * @see {@link _path.relative}
 	 */
 	relative(to: string) {
-		this.raw = _path.relative(this.raw, to);
+		this.raw = this.relativeToString(to);
 		return this;
 	}
 
 	/**
+	 * This method does not change the path of the instance.
 	 * @see {@link _path.relative}
 	 */
 	relativeToString(to: string) {
