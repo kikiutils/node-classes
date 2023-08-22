@@ -1,12 +1,14 @@
-import events from 'events';
-import fs from 'fs';
-import stream from 'stream';
+import { Abortable } from 'events';
+import { Mode, ObjectEncodingOptions, OpenMode } from 'fs';
+import { Stream } from 'stream';
 
-export type WriteFileData = string | NodeJS.ArrayBufferView | Iterable<string | NodeJS.ArrayBufferView> | AsyncIterable<string | NodeJS.ArrayBufferView> | stream.Stream;
+export type ReadFileOptions = BufferEncoding | (ObjectEncodingOptions & Abortable & { flag?: OpenMode; }) | null;
+export type ReadFileSyncOptions = BufferEncoding | (ObjectEncodingOptions & { flag?: string; }) | null;
+export type WriteFileData = string | NodeJS.ArrayBufferView | Iterable<string | NodeJS.ArrayBufferView> | AsyncIterable<string | NodeJS.ArrayBufferView> | Stream;
 export type WriteFileOptions =
 	BufferEncoding
-	| (fs.ObjectEncodingOptions & {
-		flag?: fs.OpenMode | undefined;
-		mode?: fs.Mode | undefined;
-	} & events.Abortable)
+	| (ObjectEncodingOptions & {
+		flag?: OpenMode;
+		mode?: Mode;
+	} & Abortable)
 	| null;

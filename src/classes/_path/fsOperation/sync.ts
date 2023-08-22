@@ -3,6 +3,7 @@ import fs from 'fs';
 import fse, { EnsureDirOptions } from 'fs-extra';
 
 import PromisePathFsOperation from './promise';
+import { ReadFileSyncOptions } from './types';
 
 export class SyncPathFsOperation extends PromisePathFsOperation {
 	/**
@@ -52,6 +53,22 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	 */
 	isFileSync() {
 		return kFse.statSync(this.raw)?.isFile() || false;
+	}
+
+	/**
+	 * @see {@link fs.readFileSync}
+	 */
+	readFileSync(options?: ReadFileSyncOptions) {
+		return kFse.readFileSync(this.raw, options);
+	}
+
+	/**
+	 * Read file and get blob object.
+	 * @see {@link fs.readFileSync}
+	 */
+	readFileToBlobSync(options?: ReadFileSyncOptions) {
+		const file = this.readFileSync(options);
+		if (file) return new Blob([file]);
 	}
 
 	/**

@@ -3,7 +3,7 @@ import fsp from 'fs/promises';
 import fse, { EnsureDirOptions } from 'fs-extra';
 
 import { BasePath } from '../base';
-import { WriteFileData, WriteFileOptions } from './types';
+import { ReadFileOptions, WriteFileData, WriteFileOptions } from './types';
 
 export class PromisePathFsOperation extends BasePath {
 	/**
@@ -53,6 +53,22 @@ export class PromisePathFsOperation extends BasePath {
 	 */
 	async isFile() {
 		return (await kFse.stat(this.raw))?.isFile() || false;
+	}
+
+	/**
+	 * @see {@link fsp.readFile}
+	 */
+	async readFile(options?: ReadFileOptions) {
+		return await kFse.readFile(this.raw, options);
+	}
+
+	/**
+	 * Read file and get blob object.
+	 * @see {@link fsp.readFile}
+	 */
+	async readFileToBlob(options?: ReadFileOptions) {
+		const file = await this.readFile(options);
+		if (file) return new Blob([file]);
 	}
 
 	/**
