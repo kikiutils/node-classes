@@ -16,11 +16,18 @@
   },
   "type": "commonjs",
   "main": "./dist/index.js",
+  "files": [
+    "./dist/**/*"
+  ],
   "scripts": {
     "build": "rm -rf ./dist && pkgroll --target=node16",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@kikiutils/fs-extra": "^1.2.6",
+    "fs-extra": "^11.1.1"
+  },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.5.1",
@@ -31,9 +38,5 @@
     "classes",
     "path",
     "utils"
-  ],
-  "dependencies": {
-    "@kikiutils/fs-extra": "^1.2.6",
-    "fs-extra": "^11.1.1"
-  }
+  ]
 }
