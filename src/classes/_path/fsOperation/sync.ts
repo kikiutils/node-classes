@@ -67,4 +67,11 @@ export class SyncPathFsOperation extends PromisePathFsOperation {
 	truncateSync(length?: number) {
 		return kFse.truncateSync(this.raw, length);
 	}
+
+	/**
+	 * @see {@link fs.writeFileSync}
+	 */
+	writeFileSync(data: string | NodeJS.ArrayBufferView, options?: fs.WriteFileOptions) {
+		return kFse.writeFileSync(this.raw, data, options);
+	}
 }

@@ -3,6 +3,7 @@ import fsp from 'fs/promises';
 import fse, { EnsureDirOptions } from 'fs-extra';
 
 import { BasePath } from '../base';
+import { WriteFileData, WriteFileOptions } from './types';
 
 export class PromisePathFsOperation extends BasePath {
 	/**
@@ -66,6 +67,13 @@ export class PromisePathFsOperation extends BasePath {
 	 */
 	async truncate(length?: number) {
 		return await kFse.truncate(this.raw, length);
+	}
+
+	/**
+	 * @see {@link fsp.writeFile}
+	 */
+	async writeFile(data: WriteFileData, options?: WriteFileOptions) {
+		return await kFse.writeFile(this.raw, data, options);
 	}
 }
 
