@@ -33,6 +33,7 @@
     "utils"
   ],
   "dependencies": {
-    "@kikiutils/fs-extra": "^1.2.6"
+    "@kikiutils/fs-extra": "^1.2.6",
+    "fs-extra": "^11.1.1"
   }
 }
