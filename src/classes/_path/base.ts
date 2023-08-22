@@ -1,8 +1,9 @@
+import { PathLike as FsPathLike } from 'fs';
 import _path from 'path';
 
 import Path from './index';
 
-export type PathLike = BasePath | string;
+export type PathLike = BasePath | FsPathLike;
 
 export class BasePath {
 	protected raw: string;
@@ -99,3 +100,5 @@ export class BasePath {
 		return this.raw;
 	}
 }
+
+export default BasePath;
