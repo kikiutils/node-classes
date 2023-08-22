@@ -1,15 +1,24 @@
 import _path from 'path';
 
+import Path from './index';
+
 export type PathLike = BasePath | string;
 
 export class BasePath {
 	protected raw: string;
 
+	/**
+	 * Constructor path object.
+	 *
+	 * The paths passed in will not be resolved as an absolute path.
+	 *
+	 * @param paths path object or string
+	 */
 	constructor(...paths: PathLike[]) {
-		this.raw = _path.resolve(...this.toRaws(paths));
+		this.raw = _path.join(...this.toStrings(paths));
 	}
 
-	protected toRaws(paths: PathLike[]) {
+	private toStrings(paths: PathLike[]) {
 		return paths.map((path) => path.toString());
 	}
 
@@ -24,7 +33,7 @@ export class BasePath {
 	 * @see {@link _path.dirname}
 	 */
 	dirname() {
-		return _path.dirname(this.raw);
+		return new Path(_path.dirname(this.raw));
 	}
 
 	/**
@@ -45,32 +54,14 @@ export class BasePath {
 	 * @see {@link _path.normalize}
 	 */
 	normalize() {
-		this.raw = this.normalizeToString();
-		return this;
-	}
-
-	/**
-	 * This method does not change the path of the instance.
-	 * @see {@link _path.normalize}
-	 */
-	normalizeToString() {
-		return _path.normalize(this.raw);
+		return new Path(_path.normalize(this.raw));
 	}
 
 	/**
 	 * @see {@link _path.join}
 	 */
 	join(...paths: PathLike[]) {
-		this.raw = this.joinToString(...paths);
-		return this;
-	}
-
-	/**
-	 * This method does not change the path of the instance.
-	 * @see {@link _path.join}
-	 */
-	joinToString(...paths: PathLike[]) {
-		return _path.join(this.raw, ...this.toRaws(paths));
+		return new Path(this.raw, ...this.toStrings(paths));
 	}
 
 	/**
@@ -84,16 +75,14 @@ export class BasePath {
 	 * @see {@link _path.relative}
 	 */
 	relative(to: string) {
-		this.raw = this.relativeToString(to);
-		return this;
+		return new Path(_path.relative(this.raw, to));
 	}
 
 	/**
-	 * This method does not change the path of the instance.
-	 * @see {@link _path.relative}
+	 * @see {@link _path.resolve}
 	 */
-	relativeToString(to: string) {
-		return _path.relative(this.raw, to);
+	resolve() {
+		return new Path(_path.resolve(this.raw));
 	}
 
 	/**
