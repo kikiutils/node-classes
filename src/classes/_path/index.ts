@@ -13,8 +13,18 @@ export class Path extends PathFsaOperation {
 		super(...paths);
 	}
 
+	/**
+	 * @see {@link _path.format}
+	 */
 	public static format(pathObject: _path.FormatInputPathObject) {
 		return new Path(_path.format(pathObject));
+	}
+
+	/**
+	 * @see {@link _path.resolve}
+	 */
+	public static resolve(...paths: PathLike[]) {
+		return new this(...paths).resolve();
 	}
 }
 
