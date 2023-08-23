@@ -70,6 +70,13 @@ export class PromisePathFseOperation extends PathFsOperation {
 	}
 
 	/**
+	 * @see {@link fse.pathExists}
+	 */
+	async pathExists() {
+		return await fse.pathExists(this.raw);
+	}
+
+	/**
 	 * @see {@link fse.outputFile}
 	 */
 	async outputFile(data: NodeJS.ArrayBufferView | string, options?: fs.WriteFileOptions) {
@@ -98,6 +105,10 @@ export class PromisePathFseOperation extends PathFsOperation {
 	}
 
 	// Get data
+
+	/**
+	 * @see {@link fse.readJson}
+	 */
 	async readJson(options?: fse.JsonReadOptions) {
 		return await kFse.readJson(this.raw, options);
 	}
