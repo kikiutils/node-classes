@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@kikiutils/fs-extra':
-    specifier: ^1.2.6
-    version: 1.2.6
+    specifier: ^1.2.8
+    version: 1.2.8
   fs-extra:
     specifier: ^11.1.1
     version: 11.1.1
@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^11.0.1
     version: 11.0.1
   '@types/node':
-    specifier: ^20.5.2
-    version: 20.5.2
+    specifier: ^20.5.3
+    version: 20.5.3
   rollup:
     specifier: ^3.28.1
     version: 3.28.1
@@ -44,16 +44,16 @@ packages:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
 
-  /@kikiutils/fs-extra@1.2.6:
-    resolution: {integrity: sha512-+PBYiJTC9dZVgYVQz2bvWbnhDZaoD2HO76nQPd2ToVrgUW5AFkcY52ifEMBGQrDChqSbplssSCafWf4XBW7iNQ==}
+  /@kikiutils/fs-extra@1.2.8:
+    resolution: {integrity: sha512-IzHWB+n4xuH1itqhNj5khnEgngOYfdSJlleMVOwMr0ZclBbWu8gfT7jDXdkkS7QFj1syndeCOTqX6rFj3O80Mw==}
     engines: {node: '>= 16.0.0'}
     dependencies:
-      '@kikiutils/wrappers': 1.0.5
+      '@kikiutils/wrappers': 1.0.6
       fs-extra: 11.1.1
     dev: false
 
-  /@kikiutils/wrappers@1.0.5:
-    resolution: {integrity: sha512-nFkecRBUw12VXZZ1sQeFDzHta0zSvQraB6Cho3JA5Cxx+va5wrgLKUXZZ99TQPWJTrZ8IWLecboSMqPGxc7I+Q==}
+  /@kikiutils/wrappers@1.0.6:
+    resolution: {integrity: sha512-V50z61Jl6OcTvKI3I2w+UyqVaBqHjPmrj1bQmp1kH9Sim66DofoKqN0N7ciWK28qTgiIcF06+Of7M3DKpZbdBg==}
     engines: {node: '>= 16.0.0'}
     dev: false
 
@@ -105,20 +105,20 @@ packages:
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
     dependencies:
       '@types/jsonfile': 6.1.1
-      '@types/node': 20.5.2
+      '@types/node': 20.5.3
     dev: true
 
   /@types/glob@7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.5.2
+      '@types/node': 20.5.3
     dev: true
 
   /@types/jsonfile@6.1.1:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
-      '@types/node': 20.5.2
+      '@types/node': 20.5.3
     dev: true
 
   /@types/minimatch@5.1.2:
@@ -129,8 +129,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node@20.5.2:
-    resolution: {integrity: sha512-5j/lXt7unfPOUlrKC34HIaedONleyLtwkKggiD/0uuMfT8gg2EOpg0dz4lCD15Ga7muC+1WzJZAjIB9simWd6Q==}
+  /@types/node@20.5.3:
+    resolution: {integrity: sha512-ITI7rbWczR8a/S6qjAW7DMqxqFMjjTo61qZVWJ1ubPvbIQsL5D/TvwjYEalM8Kthpe3hTzOGrF2TGbAu2uyqeA==}
     dev: true
 
   /@types/object-path@0.11.1:
