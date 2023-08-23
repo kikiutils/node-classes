@@ -39,8 +39,8 @@ export class PromisePathFsOperation extends BasePath {
 	/**
 	 * @see {@link fsp.copyFile}
 	 */
-	async copyFile(dest: fs.PathLike, mode?: number) {
-		return await kFse.copyFile(this.raw, dest, mode);
+	async copyFile(dest: PathLike, mode?: number) {
+		return await kFse.copyFile(this.raw, dest.toString(), mode);
 	}
 
 	/**
@@ -49,8 +49,8 @@ export class PromisePathFsOperation extends BasePath {
 	 * If you are using a version prior to 16.7.0, please refrain from using this function.
 	 * @see {@link fsp.cp}
 	 */
-	async cp(destination: string | URL, opts?: fs.CopyOptions) {
-		return await kFse.cp(this.raw, destination, opts);
+	async cp(destination: PathLike, opts?: fs.CopyOptions) {
+		return await kFse.cp(this.raw, destination.toString(), opts);
 	}
 
 	/**

@@ -23,8 +23,8 @@ export class PromisePathFseOperation extends PathFsOperation {
 	/**
 	 * @see {@link fse.copy}
 	 */
-	async copy(dest: string, options?: fse.CopyOptions) {
-		return await kFse.copy(this.raw, dest, options);
+	async copy(dest: PathLike, options?: fse.CopyOptions) {
+		return await kFse.copy(this.raw, dest.toString(), options);
 	}
 
 	/**
@@ -51,22 +51,22 @@ export class PromisePathFseOperation extends PathFsOperation {
 	/**
 	 * @see {@link fse.ensureLink}
 	 */
-	async ensureLink(dest: string) {
-		return await kFse.ensureLink(this.raw, dest);
+	async ensureLink(dest: PathLike) {
+		return await kFse.ensureLink(this.raw, dest.toString());
 	}
 
 	/**
 	 * @see {@link fse.ensureSymlink}
 	 */
-	async ensureSymlink(dest: string, type?: fs.symlink.Type) {
-		return await kFse.ensureSymlink(this.raw, dest, type);
+	async ensureSymlink(dest: PathLike, type?: fs.symlink.Type) {
+		return await kFse.ensureSymlink(this.raw, dest.toString(), type);
 	}
 
 	/**
 	 * @see {@link fse.move}
 	 */
-	async move(dest: string, options?: fse.MoveOptions) {
-		return await kFse.move(this.raw, dest, options);
+	async move(dest: PathLike, options?: fse.MoveOptions) {
+		return await kFse.move(this.raw, dest.toString(), options);
 	}
 
 	/**

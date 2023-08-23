@@ -23,8 +23,8 @@ export class SyncPathFseOperation extends PromisePathFseOperation {
 	/**
 	 * @see {@link fse.copySync}
 	 */
-	copySync(dest: string, options?: fse.CopyOptionsSync) {
-		return kFse.copySync(this.raw, dest, options);
+	copySync(dest: PathLike, options?: fse.CopyOptionsSync) {
+		return kFse.copySync(this.raw, dest.toString(), options);
 	}
 
 	/**
@@ -51,22 +51,22 @@ export class SyncPathFseOperation extends PromisePathFseOperation {
 	/**
 	 * @see {@link fse.ensureLinkSync}
 	 */
-	ensureLinkSync(dest: string) {
-		return kFse.ensureLinkSync(this.raw, dest);
+	ensureLinkSync(dest: PathLike) {
+		return kFse.ensureLinkSync(this.raw, dest.toString());
 	}
 
 	/**
 	 * @see {@link fse.ensureSymlinkSync}
 	 */
-	ensureSymlinkSync(dest: string, type?: fs.symlink.Type) {
-		return kFse.ensureSymlinkSync(this.raw, dest, type);
+	ensureSymlinkSync(dest: PathLike, type?: fs.symlink.Type) {
+		return kFse.ensureSymlinkSync(this.raw, dest.toString(), type);
 	}
 
 	/**
 	 * @see {@link fse.moveSync}
 	 */
-	moveSync(dest: string, options?: fse.MoveOptions) {
-		return kFse.moveSync(this.raw, dest, options);
+	moveSync(dest: PathLike, options?: fse.MoveOptions) {
+		return kFse.moveSync(this.raw, dest.toString(), options);
 	}
 
 	/**
