@@ -84,17 +84,17 @@ export class PromisePathFseOperation extends PathFsOperation {
 	}
 
 	/**
-	 * @see {@link fse.remove}
-	 */
-	async remove() {
-		return await kFse.remove(this.raw);
-	}
-
-	/**
 	 * @see {@link fse.pathExists}
 	 */
 	async pathExists() {
 		return await fse.pathExists(this.raw);
+	}
+
+	/**
+	 * @see {@link fse.remove}
+	 */
+	async remove() {
+		return await kFse.remove(this.raw);
 	}
 
 	/**
