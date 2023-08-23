@@ -96,6 +96,13 @@ export class PromisePathFsOperation extends BasePath {
 	}
 
 	/**
+	 * @see {@link fsp.symlink}
+	 */
+	async symlink(path: PathLike, type?: null | string) {
+		return await kFse.symlink(this.raw, path.toString(), type);
+	}
+
+	/**
 	 * @see {@link fsp.truncate}
 	 */
 	async truncate(len?: number) {
@@ -127,6 +134,7 @@ export class PromisePathFsOperation extends BasePath {
 
 	/**
 	 * @see {@link fsp.open}
+	 * @todo Get file fd operation class. Breaking changes in future releases.
 	 */
 	async open(flags?: number | string, mode?: fs.Mode) {
 		return await kFse.open(this.raw, flags, mode);
@@ -151,7 +159,7 @@ export class PromisePathFsOperation extends BasePath {
 	/**
 	 * @see {@link fsp.mkdir}
 	 */
-	async mkdir(options?: fs.Mode | fs.MakeDirectoryOptions | null) {
+	async mkdir(options?: fs.MakeDirectoryOptions | fs.Mode | null) {
 		return await kFse.mkdir(this.raw, options);
 	}
 
@@ -172,7 +180,7 @@ export class PromisePathFsOperation extends BasePath {
 	/**
 	 * @see {@link fsp.readlink}
 	 */
-	async readlink(options?: string | fs.ObjectEncodingOptions | null) {
+	async readlink(options?: fs.ObjectEncodingOptions | null | string) {
 		return await kFse.readlink(this.raw, options);
 	}
 
