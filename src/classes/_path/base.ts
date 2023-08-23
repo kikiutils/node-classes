@@ -6,13 +6,6 @@ export type PathLike = BasePath | FsPathLike;
 export class BasePath {
 	protected raw: string;
 
-	/**
-	 * Constructor path object.
-	 *
-	 * The paths passed in will not be resolved as an absolute path.
-	 *
-	 * @param paths path object or string
-	 */
 	constructor(...paths: PathLike[]) {
 		this.raw = _path.join(...this.toStrings(paths));
 	}
