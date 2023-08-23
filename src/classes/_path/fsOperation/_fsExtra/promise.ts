@@ -70,13 +70,6 @@ export class PromisePathFseOperation extends PathFsOperation {
 	}
 
 	/**
-	 * @see {@link fse.pathExists}
-	 */
-	async pathExists() {
-		return await fse.pathExists(this.raw);
-	}
-
-	/**
 	 * @see {@link fse.outputFile}
 	 */
 	async outputFile(data: NodeJS.ArrayBufferView | string, options?: fs.WriteFileOptions) {
@@ -95,6 +88,13 @@ export class PromisePathFseOperation extends PathFsOperation {
 	 */
 	async remove() {
 		return await kFse.remove(this.raw);
+	}
+
+	/**
+	 * @see {@link fse.pathExists}
+	 */
+	async pathExists() {
+		return await fse.pathExists(this.raw);
 	}
 
 	/**
