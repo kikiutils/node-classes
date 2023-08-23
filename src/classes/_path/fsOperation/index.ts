@@ -1,5 +1,8 @@
-import { SyncPathFsOperation } from './sync';
+import PathFseOperation from './_fsExtra';
 
-export const PathFsOperation = SyncPathFsOperation;
+/**
+ * All fs operations of native fs, fs/promises and fs-extra methods.
+ */
+export const PathFsaOperation = PathFseOperation;
 
-export default PathFsOperation;
+export default PathFsaOperation;

@@ -1,8 +1,8 @@
 import _path from 'path';
 
-import PathFsOperation from './fsOperation';
+import PathFsaOperation from './fsOperation';
 
-export class Path extends PathFsOperation {
+export class Path extends PathFsaOperation {
 	public static format(pathObject: _path.FormatInputPathObject) {
 		return new Path(_path.format(pathObject));
 	}
