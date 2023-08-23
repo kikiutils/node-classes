@@ -134,7 +134,6 @@ export class PromisePathFsOperation extends BasePath {
 
 	/**
 	 * @see {@link fsp.open}
-	 * @todo Get file fd operation class. Breaking changes in future releases.
 	 */
 	async open(flags?: number | string, mode?: fs.Mode) {
 		return await kFse.open(this.raw, flags, mode);
