@@ -11,9 +11,6 @@ dependencies:
   fs-extra:
     specifier: ^11.1.1
     version: 11.1.1
-  tslib:
-    specifier: ^2.6.2
-    version: 2.6.2
 
 devDependencies:
   '@types/fs-extra':
@@ -618,6 +615,7 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
 
   /typescript@5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
