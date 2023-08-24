@@ -18,6 +18,8 @@
 
 Utils classes for nodejs.
 
+**Detailed documentation will be added in future releases.**
+
 ## Prerequisites
 
 This package requires Node v16 or above.
