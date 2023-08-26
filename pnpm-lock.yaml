@@ -13,6 +13,9 @@ dependencies:
     version: 11.1.1
 
 devDependencies:
+  '@kikiutils/tsconfigs':
+    specifier: ^0.1.1
+    version: 0.1.1
   '@types/fs-extra':
     specifier: ^11.0.1
     version: 11.0.1
@@ -48,6 +51,10 @@ packages:
       '@kikiutils/wrappers': 1.0.6
       fs-extra: 11.1.1
     dev: false
+
+  /@kikiutils/tsconfigs@0.1.1:
+    resolution: {integrity: sha512-sgl0+le4Owzma7ltzU/aEdIBPP8g7XGwHS/7B1ajt04xbKH6FD0j0BDXInv+jM3dmLyxFDzwbUGa/+1JgxTePw==}
+    dev: true
 
   /@kikiutils/wrappers@1.0.6:
     resolution: {integrity: sha512-V50z61Jl6OcTvKI3I2w+UyqVaBqHjPmrj1bQmp1kH9Sim66DofoKqN0N7ciWK28qTgiIcF06+Of7M3DKpZbdBg==}
