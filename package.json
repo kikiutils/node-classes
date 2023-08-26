@@ -35,6 +35,8 @@
   },
   "keywords": [
     "classes",
+    "fs",
+    "fs-extra",
     "path",
     "utils"
   ]
