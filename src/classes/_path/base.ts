@@ -7,14 +7,14 @@ export class BasePath {
 	protected raw: string;
 
 	constructor(...paths: PathLike[]) {
-		this.raw = _path.join(...this.toStrings(paths));
+		this.raw = _path.join(...this.#toStrings(paths));
 	}
 
-	private newInstance(...paths: PathLike[]) {
+	#newInstance(...paths: PathLike[]) {
 		return new (this.constructor as new (...paths: PathLike[]) => this)(...paths);
 	}
 
-	private toStrings(paths: PathLike[]) {
+	#toStrings(paths: PathLike[]) {
 		return paths.map((path) => path.toString());
 	}
 
@@ -36,7 +36,7 @@ export class BasePath {
 	 * @see {@link _path.dirname}
 	 */
 	dirname() {
-		return this.newInstance(_path.dirname(this.raw));
+		return this.#newInstance(_path.dirname(this.raw));
 	}
 
 	/**
@@ -57,14 +57,14 @@ export class BasePath {
 	 * @see {@link _path.normalize}
 	 */
 	normalize() {
-		return this.newInstance(_path.normalize(this.raw));
+		return this.#newInstance(_path.normalize(this.raw));
 	}
 
 	/**
 	 * @see {@link _path.join}
 	 */
 	join(...paths: PathLike[]) {
-		return this.newInstance(this.raw, ...this.toStrings(paths));
+		return this.#newInstance(this.raw, ...this.#toStrings(paths));
 	}
 
 	/**
@@ -78,14 +78,14 @@ export class BasePath {
 	 * @see {@link _path.relative}
 	 */
 	relative(to: string) {
-		return this.newInstance(_path.relative(this.raw, to));
+		return this.#newInstance(_path.relative(this.raw, to));
 	}
 
 	/**
 	 * @see {@link _path.resolve}
 	 */
 	resolve() {
-		return this.newInstance(_path.resolve(this.raw));
+		return this.#newInstance(_path.resolve(this.raw));
 	}
 
 	/**
