@@ -19,6 +19,13 @@ export class BasePath {
 	}
 
 	/**
+	 * @see {@link _path.dirname}
+	 */
+	get parent() {
+		return this.dirname();
+	}
+
+	/**
 	 * @see {@link _path.basename}
 	 */
 	basename(suffix?: string) {
