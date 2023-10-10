@@ -1,3 +1,4 @@
+import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
 
 import { PathLike } from '../base';
@@ -15,6 +16,22 @@ export class PathFsaOperation extends PathFseOperation {
 		super(...paths);
 		this.isDir = this.isDirectory;
 		this.isDirSync = this.isDirectorySync;
+	}
+
+	// @ts-ignore
+	async getFileSize(options: fs.StatOptions & { bigint: true }): Promise<bigint | undefined>;
+	async getFileSize(options: fs.StatOptions & { bigint: false }): Promise<number | undefined>;
+	async getFileSize(options?: fs.StatOptions): Promise<number | undefined>;
+	async getFileSize(options?: fs.StatOptions) {
+		return await kFse.getFileSize(this.raw, options);
+	}
+
+	// @ts-ignore
+	getFileSizeSync(options: fs.StatOptions & { bigint: true }): bigint | undefined;
+	getFileSizeSync(options: fs.StatOptions & { bigint: false }): number | undefined;
+	getFileSizeSync(options?: fs.StatOptions): number | undefined;
+	getFileSizeSync(options?: fs.StatOptions) {
+		return kFse.getFileSizeSync(this.raw, options);
 	}
 
 	async isDirectory() {
