@@ -3,6 +3,8 @@ import _path from 'path';
 import type { PathLike } from './base';
 import PathFsaOperation from './fsOperation';
 
+export type { PathLike } from './base';
+
 export class Path extends PathFsaOperation {
 	/**
 	 * Constructor path object.
