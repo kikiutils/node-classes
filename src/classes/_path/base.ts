@@ -1,4 +1,4 @@
-import { PathLike as FsPathLike } from 'fs';
+import type { PathLike as FsPathLike } from 'fs';
 import _path from 'path';
 
 export type PathLike = BasePath | FsPathLike;

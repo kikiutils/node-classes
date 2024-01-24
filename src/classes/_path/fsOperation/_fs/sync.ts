@@ -1,7 +1,7 @@
 import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
 
-import { PathLike } from '@/classes/_path/base';
+import type { PathLike } from '@/classes/_path/base';
 import PromisePathFsOperation from './promise';
 
 export class SyncPathFsOperation extends PromisePathFsOperation {

@@ -1,9 +1,10 @@
 import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
-import fsp from 'fs/promises';
+import type fsp from 'fs/promises';
 
-import BasePath, { PathLike } from '@/classes/_path/base';
-import { KFseParameters } from '../types';
+import BasePath from '@/classes/_path/base';
+import type { PathLike } from '@/classes/_path/base';
+import type { KFseParameters } from '../types';
 
 export class PromisePathFsOperation extends BasePath {
 	// Get boolean

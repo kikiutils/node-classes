@@ -1,9 +1,9 @@
 import kFse from '@kikiutils/fs-extra';
 import fs from 'fs';
 
-import { PathLike } from '../base';
+import type { PathLike } from '../base';
 import PathFseOperation from './_fsExtra';
-import { KFseParameters } from './types';
+import type { KFseParameters } from './types';
 
 /**
  * All fs operations of custom operation, native fs, fs/promises and fs-extra methods.

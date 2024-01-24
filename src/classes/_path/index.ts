@@ -1,6 +1,6 @@
 import _path from 'path';
 
-import { PathLike } from './base';
+import type { PathLike } from './base';
 import PathFsaOperation from './fsOperation';
 
 export class Path extends PathFsaOperation {
