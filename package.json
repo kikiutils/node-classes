@@ -3,9 +3,7 @@
   "version": "1.2.1",
   "description": "Utils classes for nodejs.",
   "license": "MIT",
-  "author": {
-    "name": "kiki-kanri"
-  },
+  "author": "kiki-kanri",
   "homepage": "https://github.com/kiki-kanri/kikiutils-node-classes#readme",
   "repository": {
     "type": "git",
