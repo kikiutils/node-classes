@@ -37,5 +37,13 @@
   "engines": {
     "node": ">=18"
   },
+  "exports": {
+    "./*": {
+      "default": "./*.mjs",
+      "import": "./*.mjs",
+      "require": "./*.cjs",
+      "types": "./*.d.ts"
+    }
+  },
   "prettier": "@kikiutils/prettierrc"
 }
