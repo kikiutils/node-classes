@@ -1,7 +1,6 @@
 {
   "name": "@kikiutils/classes",
   "version": "1.3.0",
-  "description": "Utils classes.",
   "license": "MIT",
   "author": "kiki-kanri",
   "repository": {
@@ -45,6 +44,12 @@
       "import": "./*.mjs",
       "require": "./*.cjs",
       "types": "./*.d.ts"
+    },
+    "./path": {
+      "default": "./path/index.mjs",
+      "import": "./path/index.mjs",
+      "require": "./path/index.cjs",
+      "types": "./path/index.d.ts"
     }
   },
   "prettier": "@kikiutils/prettierrc"
