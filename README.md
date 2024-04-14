@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/%40kikiutils%2Fclasses)](https://www.npmjs.com/package/@kikiutils/classes)
 [![license](https://img.shields.io/npm/l/%40kikiutils%2Fclasses)](https://www.npmjs.com/package/@kikiutils/classes)
 
+**Documentation to be updated.**
+
 ## Table of contents
 
 - [@kikiutils/classes](#kikiutilsclasses)
