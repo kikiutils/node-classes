@@ -1,0 +1,6 @@
+{
+  "targets": [
+    { "extname": ".cjs" },
+    { "extname": ".mjs" }
+  ]
+}
