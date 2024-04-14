@@ -22,7 +22,7 @@ Utils classes for nodejs.
 
 ## Prerequisites
 
-This package requires Node v16 or above.
+This package requires Node v18 or above.
 
 To check your installed version, run the following command.
 

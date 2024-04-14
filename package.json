@@ -40,5 +40,8 @@
     "path",
     "utils"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "prettier": "@kikiutils/prettierrc"
 }
