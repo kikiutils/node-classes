@@ -1,2 +1,2 @@
-export * from './_path';
+export * from './path';
 export * from './precision-number';

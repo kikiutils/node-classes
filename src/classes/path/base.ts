@@ -1,5 +1,5 @@
 import type { PathLike as FsPathLike } from 'fs';
-import _path from 'path';
+import nodePath from 'node:path';
 
 export type PathLike = BasePath | FsPathLike;
 
@@ -7,7 +7,7 @@ export class BasePath {
 	protected raw: string;
 
 	constructor(...paths: PathLike[]) {
-		this.raw = _path.join(...this.#toStrings(paths));
+		this.raw = nodePath.join(...this.#toStrings(paths));
 	}
 
 	#newInstance(...paths: PathLike[]) {
@@ -19,80 +19,80 @@ export class BasePath {
 	}
 
 	/**
-	 * @see {@link _path.dirname}
+	 * @see {@link nodePath.dirname}
 	 */
 	get parent() {
 		return this.dirname();
 	}
 
 	/**
-	 * @see {@link _path.basename}
+	 * @see {@link nodePath.basename}
 	 */
 	basename(suffix?: string) {
-		return _path.basename(this.raw, suffix);
+		return nodePath.basename(this.raw, suffix);
 	}
 
 	/**
-	 * @see {@link _path.dirname}
+	 * @see {@link nodePath.dirname}
 	 */
 	dirname() {
-		return this.#newInstance(_path.dirname(this.raw));
+		return this.#newInstance(nodePath.dirname(this.raw));
 	}
 
 	/**
-	 * @see {@link _path.extname}
+	 * @see {@link nodePath.extname}
 	 */
 	extname() {
-		return _path.extname(this.raw);
+		return nodePath.extname(this.raw);
 	}
 
 	/**
-	 * @see {@link _path.isAbsolute}
+	 * @see {@link nodePath.isAbsolute}
 	 */
 	isAbsolute() {
-		return _path.isAbsolute(this.raw);
+		return nodePath.isAbsolute(this.raw);
 	}
 
 	/**
-	 * @see {@link _path.normalize}
+	 * @see {@link nodePath.normalize}
 	 */
 	normalize() {
-		return this.#newInstance(_path.normalize(this.raw));
+		return this.#newInstance(nodePath.normalize(this.raw));
 	}
 
 	/**
-	 * @see {@link _path.join}
+	 * @see {@link nodePath.join}
 	 */
 	join(...paths: PathLike[]) {
 		return this.#newInstance(this.raw, ...this.#toStrings(paths));
 	}
 
 	/**
-	 * @see {@link _path.parse}
+	 * @see {@link nodePath.parse}
 	 */
 	parse() {
-		return _path.parse(this.raw);
+		return nodePath.parse(this.raw);
 	}
 
 	/**
-	 * @see {@link _path.relative}
+	 * @see {@link nodePath.relative}
 	 */
 	relative(to: string) {
-		return this.#newInstance(_path.relative(this.raw, to));
+		return this.#newInstance(nodePath.relative(this.raw, to));
 	}
 
 	/**
-	 * @see {@link _path.resolve}
+	 * @see {@link nodePath.resolve}
 	 */
 	resolve() {
-		return this.#newInstance(_path.resolve(this.raw));
+		return this.#newInstance(nodePath.resolve(this.raw));
 	}
 
 	/**
-	 * @see {@link _path.toNamespacedPath}
+	 * @see {@link nodePath.toNamespacedPath}
 	 */
 	toNamespacedPath() {
-		return _path.toNamespacedPath(this.raw);
+		return nodePath.toNamespacedPath(this.raw);
 	}
 
 	/**

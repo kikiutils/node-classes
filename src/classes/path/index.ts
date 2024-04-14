@@ -1,4 +1,4 @@
-import _path from 'path';
+import nodePath from 'node:path';
 
 import type { PathLike } from './base';
 import PathFsaOperation from './fsOperation';
@@ -16,14 +16,14 @@ export class Path extends PathFsaOperation {
 	}
 
 	/**
-	 * @see {@link _path.format}
+	 * @see {@link nodePath.format}
 	 */
-	public static format(pathObject: _path.FormatInputPathObject) {
-		return new Path(_path.format(pathObject));
+	public static format(pathObject: nodePath.FormatInputPathObject) {
+		return new Path(nodePath.format(pathObject));
 	}
 
 	/**
-	 * @see {@link _path.resolve}
+	 * @see {@link nodePath.resolve}
 	 */
 	public static resolve(...paths: PathLike[]) {
 		return new this(...paths).resolve();
