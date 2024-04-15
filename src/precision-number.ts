@@ -40,6 +40,11 @@ export class PrecisionNumber {
 	}
 
 	// Public methods
+	dividedBy(value: PrecisionNumberValue) {
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.dividedBy(value.toString()));
+		return this;
+	}
+
 	equals(value: PrecisionNumberValue) {
 		return this.#decimal.equals(value.toString());
 	}
@@ -102,6 +107,10 @@ export class PrecisionNumber {
 	times(value: PrecisionNumberValue) {
 		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.times(value.toString()));
 		return this;
+	}
+
+	toDividedBy(value: PrecisionNumberValue) {
+		return new PrecisionNumber(this.#decimal.dividedBy(value.toString()), this.#fractionDigits, this.#rounding);
 	}
 
 	toJSON() {
