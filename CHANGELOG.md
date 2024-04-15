@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.0.0-alpha.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-alpha.0...v2.0.0-alpha.1)
+
+### 🚀 Enhancements
+
+- Add dividedBy and toDividedBy methods to PrecisionNumber class ([0cb6d55](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0cb6d55))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0-alpha.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.3.0...v2.0.0-alpha.0)
