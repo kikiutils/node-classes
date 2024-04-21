@@ -1,6 +1,6 @@
 import kFse from '@kikiutils/fs-extra';
-import fs from 'fs';
-import type fsp from 'fs/promises';
+import type fs from 'node:fs';
+import type fsp from 'node:fs/promises';
 
 import BasePath from '../../base';
 import type { PathLike } from '../../base';
