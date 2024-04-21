@@ -3,7 +3,7 @@ import type fs from 'node:fs';
 import fse from 'fs-extra';
 
 import type { PathLike } from '../../base';
-import PathFsOperation from '../_fs';
+import PathFsOperation from '../fs';
 
 export class PromisePathFseOperation extends PathFsOperation {
 	mkdirp: typeof this.ensureDir;

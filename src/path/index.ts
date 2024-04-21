@@ -1,7 +1,7 @@
 import nodePath from 'node:path';
 
 import type { PathLike } from './base';
-import PathFsaOperation from './fsOperation';
+import PathFsaOperation from './fs-operation';
 
 export type { PathLike } from './base';
 

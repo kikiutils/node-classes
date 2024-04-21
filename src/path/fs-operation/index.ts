@@ -2,7 +2,7 @@ import kFse from '@kikiutils/fs-extra';
 import type fs from 'node:fs';
 
 import type { PathLike } from '../base';
-import PathFseOperation from './_fsExtra';
+import PathFseOperation from './fs-extra';
 import type { KFseParameters } from './types';
 
 /**
