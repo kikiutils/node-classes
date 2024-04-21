@@ -1,5 +1,29 @@
 # Changelog
 
+## v2.0.0-alpha.2
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-alpha.1...v2.0.0-alpha.2)
+
+### 💅 Refactors
+
+- Change fs import to node:fs ([def9e2a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/def9e2a))
+- Rename `fractionDigits` to `decimalPlaces` in `PrecisionNumber` ([045d96a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/045d96a))
+- Switch package to ESM and set 'type' to 'module' in package.json ([88c5668](https://github.com/kiki-kanri/kikiutils-node-classes/commit/88c5668))
+
+### 🏡 Chore
+
+- Rename script file ([5257cc5](https://github.com/kiki-kanri/kikiutils-node-classes/commit/5257cc5))
+- Rename dirs and files ([5ff3ffc](https://github.com/kiki-kanri/kikiutils-node-classes/commit/5ff3ffc))
+- Upgrade dependencies ([9c724fb](https://github.com/kiki-kanri/kikiutils-node-classes/commit/9c724fb))
+
+### 🎨 Styles
+
+- Format codes ([38eb89e](https://github.com/kiki-kanri/kikiutils-node-classes/commit/38eb89e))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0-alpha.1
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-alpha.0...v2.0.0-alpha.1)
