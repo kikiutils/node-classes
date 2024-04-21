@@ -5,18 +5,18 @@ export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString(
 export class PrecisionNumber {
 	// Private properties
 	#decimal: Decimal;
-	#fractionDigits: number;
+	#decimalPlaces: number;
 	#rounding: Decimal.Rounding;
 
-	constructor(value: PrecisionNumberValue = '0', fractionDigits: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
-		this.#fractionDigits = fractionDigits;
+	constructor(value: PrecisionNumberValue = '0', decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
+		this.#decimalPlaces = decimalPlaces;
 		this.#rounding = rounding;
 		this.#decimal = this.#decimalToFixedDecimal(new Decimal(value.toString()));
 	}
 
 	// Private methods
 	#decimalToFixedDecimal(decimal: Decimal) {
-		return decimal.toDecimalPlaces(this.#fractionDigits, this.#rounding);
+		return decimal.toDecimalPlaces(this.#decimalPlaces, this.#rounding);
 	}
 
 	// Symbols
@@ -31,12 +31,12 @@ export class PrecisionNumber {
 
 	// Public getters
 	get value() {
-		return this.#decimal.toFixed(this.#fractionDigits, this.#rounding);
+		return this.#decimal.toFixed(this.#decimalPlaces, this.#rounding);
 	}
 
 	// Static methods
-	static toFixed(value: PrecisionNumberValue, fractionDigits: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
-		return new Decimal(value.toString()).toFixed(fractionDigits, rounding);
+	static toFixed(value: PrecisionNumberValue, decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
+		return new Decimal(value.toString()).toFixed(decimalPlaces, rounding);
 	}
 
 	// Public methods
@@ -110,7 +110,7 @@ export class PrecisionNumber {
 	}
 
 	toDividedBy(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.dividedBy(value.toString()), this.#fractionDigits, this.#rounding);
+		return new PrecisionNumber(this.#decimal.dividedBy(value.toString()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toJSON() {
@@ -118,27 +118,27 @@ export class PrecisionNumber {
 	}
 
 	toMinus(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.minus(value.toString()), this.#fractionDigits, this.#rounding);
+		return new PrecisionNumber(this.#decimal.minus(value.toString()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toNegated() {
-		return new PrecisionNumber(this.#decimal.negated(), this.#fractionDigits, this.#rounding);
+		return new PrecisionNumber(this.#decimal.negated(), this.#decimalPlaces, this.#rounding);
 	}
 
 	toPlus(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.plus(value.toString()), this.#fractionDigits, this.#rounding);
+		return new PrecisionNumber(this.#decimal.plus(value.toString()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toString() {
 		return this.value;
 	}
 
-	toFixed(fractionDigits: number = this.#fractionDigits, rounding: Decimal.Rounding = this.#rounding) {
-		return this.#decimal.toFixed(fractionDigits, rounding);
+	toFixed(decimalPlaces: number = this.#decimalPlaces, rounding: Decimal.Rounding = this.#rounding) {
+		return this.#decimal.toFixed(decimalPlaces, rounding);
 	}
 
 	toTimes(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.times(value.toString()), this.#fractionDigits, this.#rounding);
+		return new PrecisionNumber(this.#decimal.times(value.toString()), this.#decimalPlaces, this.#rounding);
 	}
 }
 
