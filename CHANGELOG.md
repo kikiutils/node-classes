@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.0.0-rc.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.0...v2.0.0-rc.1)
+
+### 💅 Refactors
+
+- Modify build and packaging process ([993c98e](https://github.com/kiki-kanri/kikiutils-node-classes/commit/993c98e))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0-rc.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-alpha.2...v2.0.0-rc.0)
