@@ -1,5 +1,21 @@
 # Changelog
 
+## v2.0.0-rc.2
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.1...v2.0.0-rc.2)
+
+### 🩹 Fixes
+
+- Add trim processing to all methods in PrecisionNumber class to prevent errors ([d33272b](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d33272b))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([d2facd3](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d2facd3))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0-rc.1
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.0...v2.0.0-rc.1)
