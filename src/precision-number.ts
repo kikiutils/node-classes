@@ -11,7 +11,7 @@ export class PrecisionNumber {
 	constructor(value: PrecisionNumberValue = '0', decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
 		this.#decimalPlaces = decimalPlaces;
 		this.#rounding = rounding;
-		this.#decimal = this.#decimalToFixedDecimal(new Decimal(value.toString()));
+		this.#decimal = this.#decimalToFixedDecimal(new Decimal(value.toString().trim()));
 	}
 
 	// Private methods
@@ -36,25 +36,25 @@ export class PrecisionNumber {
 
 	// Static methods
 	static toFixed(value: PrecisionNumberValue, decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
-		return new Decimal(value.toString()).toFixed(decimalPlaces, rounding);
+		return new Decimal(value.toString().trim()).toFixed(decimalPlaces, rounding);
 	}
 
 	// Public methods
 	dividedBy(value: PrecisionNumberValue) {
-		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.dividedBy(value.toString()));
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.dividedBy(value.toString().trim()));
 		return this;
 	}
 
 	equals(value: PrecisionNumberValue) {
-		return this.#decimal.equals(value.toString());
+		return this.#decimal.equals(value.toString().trim());
 	}
 
 	gt(value: PrecisionNumberValue) {
-		return this.#decimal.gt(value.toString());
+		return this.#decimal.gt(value.toString().trim());
 	}
 
 	gte(value: PrecisionNumberValue) {
-		return this.#decimal.gte(value.toString());
+		return this.#decimal.gte(value.toString().trim());
 	}
 
 	isFinite() {
@@ -82,15 +82,15 @@ export class PrecisionNumber {
 	}
 
 	lt(value: PrecisionNumberValue) {
-		return this.#decimal.lt(value.toString());
+		return this.#decimal.lt(value.toString().trim());
 	}
 
 	lte(value: PrecisionNumberValue) {
-		return this.#decimal.lte(value.toString());
+		return this.#decimal.lte(value.toString().trim());
 	}
 
 	minus(value: PrecisionNumberValue) {
-		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.minus(value.toString()));
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.minus(value.toString().trim()));
 		return this;
 	}
 
@@ -100,17 +100,17 @@ export class PrecisionNumber {
 	}
 
 	plus(value: PrecisionNumberValue) {
-		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.plus(value.toString()));
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.plus(value.toString().trim()));
 		return this;
 	}
 
 	times(value: PrecisionNumberValue) {
-		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.times(value.toString()));
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.times(value.toString().trim()));
 		return this;
 	}
 
 	toDividedBy(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.dividedBy(value.toString()), this.#decimalPlaces, this.#rounding);
+		return new PrecisionNumber(this.#decimal.dividedBy(value.toString().trim()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toJSON() {
@@ -118,7 +118,7 @@ export class PrecisionNumber {
 	}
 
 	toMinus(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.minus(value.toString()), this.#decimalPlaces, this.#rounding);
+		return new PrecisionNumber(this.#decimal.minus(value.toString().trim()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toNegated() {
@@ -126,7 +126,7 @@ export class PrecisionNumber {
 	}
 
 	toPlus(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.plus(value.toString()), this.#decimalPlaces, this.#rounding);
+		return new PrecisionNumber(this.#decimal.plus(value.toString().trim()), this.#decimalPlaces, this.#rounding);
 	}
 
 	toString() {
@@ -138,7 +138,7 @@ export class PrecisionNumber {
 	}
 
 	toTimes(value: PrecisionNumberValue) {
-		return new PrecisionNumber(this.#decimal.times(value.toString()), this.#decimalPlaces, this.#rounding);
+		return new PrecisionNumber(this.#decimal.times(value.toString().trim()), this.#decimalPlaces, this.#rounding);
 	}
 }
 
