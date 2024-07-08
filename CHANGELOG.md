@@ -1,5 +1,27 @@
 # Changelog
 
+## v2.0.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.2...v2.0.0)
+
+### 🚀 Enhancements
+
+- Modify Path class ([980eba0](https://github.com/kiki-kanri/kikiutils-node-classes/commit/980eba0))
+- Add entry point export file ([1154610](https://github.com/kiki-kanri/kikiutils-node-classes/commit/1154610))
+
+### 📖 Documentation
+
+- Add documentation comments for classes ([849c170](https://github.com/kiki-kanri/kikiutils-node-classes/commit/849c170))
+- Update README ([1f8995b](https://github.com/kiki-kanri/kikiutils-node-classes/commit/1f8995b))
+
+### 🏡 Chore
+
+- Update and remove some dependencies ([a406718](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a406718))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0-rc.2
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.1...v2.0.0-rc.2)
