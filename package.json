@@ -1,6 +1,7 @@
 {
   "name": "@kikiutils/classes",
   "version": "2.0.0-rc.2",
+  "description": "Useful classes.",
   "license": "MIT",
   "author": "kiki-kanri",
   "repository": {
@@ -37,6 +38,10 @@
     "node": ">=18"
   },
   "exports": {
+    ".": {
+      "default": "./index.mjs",
+      "types": "./index.d.ts"
+    },
     "./*": {
       "default": "./*.mjs",
       "types": "./*.d.ts"
