@@ -2,6 +2,50 @@ import Decimal from 'decimal.js';
 
 export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString(): string };
 
+/**
+ * Class representing a precision number with configurable decimal places and rounding.
+ *
+ * This class leverages the Decimal.js library to ensure accurate arithmetic operations
+ * with floating point numbers. It provides methods for various arithmetic operations
+ * (addition, subtraction, multiplication, division) as well as comparison and utility
+ * methods to check the state of the number (e.g., if it is finite, an integer, zero, etc.).
+ *
+ * The class also includes custom symbol methods to support node.js inspection and primitive
+ * type conversion.
+ *
+ * The class supports in-place modification methods that alter the current instance's value,
+ * such as `plus`, `minus`, `times`, `dividedBy`, and others. Additionally, methods prefixed
+ * with `to` (e.g., `toPlus`, `toMinus`) return a new instance of `PrecisionNumber` with the
+ * modified value, leaving the original instance unchanged.
+ *
+ * Example usage:
+ *
+ * ```typescript
+ * import PrecisionNumber from '@kikiutils/classes/precision-number';
+ *
+ * const num1 = new PrecisionNumber(10.5678, 2, Decimal.ROUND_DOWN);
+ * console.log(num1.value); // Output: "10.56"
+ *
+ * const num2 = new PrecisionNumber(5.4321, 2, Decimal.ROUND_DOWN);
+ * console.log(num2.value); // Output: "5.43"
+ *
+ * // In-place modification
+ * num1.plus(num2);
+ * console.log(num1.value); // Output: "15.99"
+ *
+ * // Using 'to' methods for non-mutative operations
+ * const newNum = num1.toPlus(num2);
+ * console.log(newNum.value); // Output: "21.42"
+ * console.log(num1.value); // Output: "15.99"
+ *
+ * const product = num1.times(3);
+ * console.log(product.value); // Output: "47.97"
+ *
+ * const newProduct = num1.toTimes(3);
+ * console.log(newProduct.value); // Output: "143.91"
+ * console.log(num1.value); // Output: "47.97"
+ * ```
+ */
 export class PrecisionNumber {
 	// Private properties
 	#decimal: Decimal;
