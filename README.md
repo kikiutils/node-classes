@@ -1,68 +1,51 @@
 # @kikiutils/classes
 
-[![npm version](https://img.shields.io/npm/v/%40kikiutils%2Fclasses)](https://www.npmjs.com/package/@kikiutils/classes)
-[![license](https://img.shields.io/npm/l/%40kikiutils%2Fclasses)](https://www.npmjs.com/package/@kikiutils/classes)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
 
-**Documentation to be updated.**
+Useful classes.
 
-## Table of contents
-
-- [@kikiutils/classes](#kikiutilsclasses)
-	- [Table of contents](#table-of-contents)
-	- [Description](#description)
-	- [Prerequisites](#prerequisites)
-	- [Installation](#installation)
-	- [Versioning](#versioning)
-	- [Authors](#authors)
-	- [License](#license)
-
-## Description
-
-Utils classes for nodejs.
-
-**Detailed documentation will be added in future releases.**
-
-## Prerequisites
-
-This package requires Node v18 or above.
-
-To check your installed version, run the following command.
-
-```bash
-$ node -v
-v20.5.1
-```
+- [✨ Release Notes](./CHANGELOG.md)
 
 ## Installation
 
-**Before installing,** please read the [prerequisites](#prerequisites).
-
-To install and use this package, run:
-
 ```bash
-$ npm i @kikiutils/classes     # Npm
-$ pnpm add @kikiutils/classes  # Pnpm
-$ yarn add @kikiutils/classes  # Yarn
+# Using pnpm
+pnpm add @kikiutils/classes
+
+# Using yarn
+yarn add @kikiutils/classes
+
+# Using npm
+npm i @kikiutils/classes
+
+# Using bun
+bun add @kikiutils/classes
 ```
 
-For full type hinting and checking in a development environment, install the @types/fs-extra package:
+## Environmental Requirements
 
-```bash
-$ npm i -D @types/fs-extra    # Npm
-$ pnpm add -D @types/fs-extra # Pnpm
-$ yarn add -D @types/fs-extra # Yarn
-```
+- ESM only
+- Node.js 18 or higher
 
-## Versioning
+## Classes
 
-We adhere to [Semantic Versioning](http://semver.org) for this project.
+Annotation of relevant descriptions and examples in the corresponding class.
 
-For the versions available, see the [versions on npm](https://www.npmjs.com/package/@kikiutils/classes?activeTab=versions).
-
-## Authors
-
-- **kiki-kanri** - [kiki-kanri](https://github.com/kiki-kanri)
+- [Path](./src/path.ts)
+- [PrecisionNumber](./src/precision-number.ts)
 
 ## License
 
-[MIT License](LICENSE) © kiki-kanri
+[MIT License](./LICENSE)
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/@kikiutils/classes/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@kikiutils/classes
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@kikiutils/classes
+
+[license-src]: https://img.shields.io/npm/l/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://github.com/kiki-kanri/kikiutils-node-classes/blob/main/LICENSE
