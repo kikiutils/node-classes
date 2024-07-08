@@ -40,10 +40,6 @@
     "./*": {
       "default": "./*.mjs",
       "types": "./*.d.ts"
-    },
-    "./path": {
-      "default": "./path/index.mjs",
-      "types": "./path/index.d.ts"
     }
   },
   "prettier": "@kikiutils/prettierrc"
