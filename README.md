@@ -10,8 +10,8 @@ A utility library providing various classes for advanced operations and manipula
 
 ## Features
 
-- 📁 **Path Class**: Convenient manipulation and querying of file system paths with immutable methods.
-- 🔢 **PrecisionNumber Class**: Accurate arithmetic operations with configurable decimal places and rounding using `Decimal.js`.
+- 📁 Path Class: Convenient manipulation and querying of file system paths with immutable methods.
+- 🔢 PrecisionNumber Class: Accurate arithmetic operations with configurable decimal places and rounding using `Decimal.js`.
 
 ## Environment Requirements
 
