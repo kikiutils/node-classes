@@ -56,6 +56,11 @@
       "import": "./*.mjs",
       "require": "./*.cjs",
       "types": "./*.d.ts"
+    },
+    "./_index": {
+      "import": null,
+      "require": null,
+      "types": null
     }
   },
   "prettier": "@kikiutils/prettierrc"
