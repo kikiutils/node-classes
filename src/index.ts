@@ -1,2 +1,2 @@
-export * from './path';
-export * from './precision-number';
+export * as default from './_index';
+export * from './_index';
