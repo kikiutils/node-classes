@@ -11,19 +11,21 @@ type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...a
 /**
  * Class representing a file system path with various utility methods for path operations.
  *
- * This class provides a convenient wrapper around Node.js's `path` and `fs` modules, as well as
- * the `fs-extra` library, allowing for easy manipulation and querying of file system paths.
+ * This class provides a convenient wrapper around Node.js's `path` and `fs` modules,
+ * as well as the `fs-extra` library, allowing for easy manipulation and querying of file system paths.
  *
- * All file-related functions come from `@kikiutils/fs-extra`, and if they are executed incorrectly,
- * they will only give boolean or undefined, please refer to the [description](https://github.com/kiki-kanri/kikiutils-node-fs-extra/blob/main/README.md) for details.
+ * All file-related functions are derived from `@kikiutils/fs-extra`. In cases of incorrect execution,
+ * these functions will return either a boolean or undefined. For more details, please refer to the
+ * [link](https://github.com/kiki-kanri/kikiutils-node-fs-extra/blob/main/README.md).
  *
- * All methods in the `Path` class are immutable and return new instances with modified values,
- * leaving the original instance unchanged.
+ * All methods in the `Path` class are immutable, returning new instances with modified values
+ * and leaving the original instance unchanged.
  *
  * Example usage:
  *
  * ```typescript
- * import Path from '@kikiutils/classes/path';
+ * import Path from '@kikiutils/classes/path'; // ESM
+ * const { Path } = require('@kikiutils/classes/path'); // CJS
  *
  * const path1 = new Path('/user/local', 'bin');
  * console.log(path1.value); // Output: "/user/local/bin"

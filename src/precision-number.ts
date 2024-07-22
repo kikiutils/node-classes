@@ -10,7 +10,7 @@ export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString(
  * (addition, subtraction, multiplication, division) as well as comparison and utility
  * methods to check the state of the number (e.g., if it is finite, an integer, zero, etc.).
  *
- * The class also includes custom symbol methods to support node.js inspection and primitive
+ * The class also includes custom symbol methods to support Node.js inspection and primitive
  * type conversion.
  *
  * The class supports in-place modification methods that alter the current instance's value,
@@ -21,7 +21,8 @@ export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString(
  * Example usage:
  *
  * ```typescript
- * import PrecisionNumber from '@kikiutils/classes/precision-number';
+ * import PrecisionNumber from '@kikiutils/classes/precision-number'; // ESM
+ * const { PrecisionNumber } = require('@kikiutils/classes/precision-number'); // CJS
  *
  * const num1 = new PrecisionNumber(10.5678, 2, Decimal.ROUND_DOWN);
  * console.log(num1.value); // Output: "10.56"
