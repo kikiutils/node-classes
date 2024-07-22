@@ -4,37 +4,45 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-Useful classes.
+A utility library providing various classes for advanced operations and manipulations.
 
 - [✨ Release Notes](./CHANGELOG.md)
 
+## Features
+
+- 📁 **Path Class**: Convenient manipulation and querying of file system paths with immutable methods.
+- 🔢 **PrecisionNumber Class**: Accurate arithmetic operations with configurable decimal places and rounding using `Decimal.js`.
+
+## Environment Requirements
+
+- Node.js version 18 or higher
+
 ## Installation
 
+Add dependency (example using pnpm).
+
 ```bash
-# Using pnpm
 pnpm add @kikiutils/classes
-
-# Using yarn
-yarn add @kikiutils/classes
-
-# Using npm
-npm i @kikiutils/classes
-
-# Using bun
-bun add @kikiutils/classes
 ```
 
-## Environmental Requirements
+You can also use yarn, npm, or bun to add the dependency.
 
-- ESM only
-- Node.js 18 or higher
+That's it! You're ready to use this package in your project. Check out the instructions for [classes](#classes) below ✨.
 
 ## Classes
 
-Annotation of relevant descriptions and examples in the corresponding class.
+Detailed descriptions and examples can be found in the annotations within each class.
 
 - [Path](./src/path.ts)
+  - Provides a comprehensive wrapper around Node.js `path` and `fs` modules, and `fs-extra` library.
+  - Immutable methods that return new instances with modified values.
+  - Integration with `@kikiutils/fs-extra` for enhanced file system operations.
+
 - [PrecisionNumber](./src/precision-number.ts)
+  - Ensures accurate arithmetic operations with floating point numbers using the `Decimal.js` library.
+  - Supports addition, subtraction, multiplication, and division with high precision.
+  - Includes methods for comparing numbers and checking states (e.g., finite, integer, zero).
+  - In-place modification methods and immutable methods for flexible value manipulation.
 
 ## License
 
