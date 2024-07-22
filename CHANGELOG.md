@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.1.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.1.0...v2.1.1)
+
+### 🩹 Fixes
+
+- Add default export to entry point ([256e50a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/256e50a))
+
+### 📖 Documentation
+
+- Update README ([5d5c39e](https://github.com/kiki-kanri/kikiutils-node-classes/commit/5d5c39e))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([df743ac](https://github.com/kiki-kanri/kikiutils-node-classes/commit/df743ac))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.1.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0...v2.1.0)
