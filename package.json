@@ -16,7 +16,7 @@
   },
   "types": "./index.d.ts",
   "dependencies": {
-    "@kikiutils/fs-extra": "^2.3.2",
+    "@kikiutils/fs-extra": "^2.3.3",
     "decimal.js": "^10.4.3"
   },
   "devDependencies": {
