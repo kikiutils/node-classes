@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.1.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0...v2.1.0)
+
+### 💅 Refactors
+
+- Update dependencies and modify build script ([f7bd5a6](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f7bd5a6))
+
+### 📖 Documentation
+
+- Update class comments ([ca369c8](https://github.com/kiki-kanri/kikiutils-node-classes/commit/ca369c8))
+- Update README and package.json ([6c3f720](https://github.com/kiki-kanri/kikiutils-node-classes/commit/6c3f720))
+
+### 📦 Build
+
+- Switch to Rollup and update entry point ([fc16f44](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fc16f44))
+
+### 🏡 Chore
+
+- Update .gitignore ([b40eb4a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b40eb4a))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.0.0-rc.2...v2.0.0)
