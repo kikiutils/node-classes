@@ -27,7 +27,7 @@ pnpm add @kikiutils/classes
 
 You can also use yarn, npm, or bun to add the dependency.
 
-That's it! You're ready to use this package in your project. Check out the instructions for [classes](#classes) below ✨.
+That's it! You're ready to use this package in your project. Check out the [instructions for classes](#classes) below ✨.
 
 ## Classes
 
