@@ -199,3 +199,303 @@ Limit NodeJS version to 18 or above.
 ### ❤️ Contributors
 
 - kiki-kanri
+
+## v1.3.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.2.1...v1.3.0)
+
+### 🚀 Enhancements
+
+- Export PathLike type ([017d458](https://github.com/kiki-kanri/kikiutils-node-classes/commit/017d458))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([0185f99](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0185f99))
+- Modify author field in package.json ([f83b60b](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f83b60b))
+- Change tsconfig.json extends config to module es2022 and target es2021 ([7e9f23c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/7e9f23c))
+
+### 🎨 Styles
+
+- Use import type statements for types ([e9f0061](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e9f0061))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.2.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.2.0...v1.2.1)
+
+### 🏡 Chore
+
+- Upgrade dependencies ([da2811e](https://github.com/kiki-kanri/kikiutils-node-classes/commit/da2811e))
+- Add prettier ([275b940](https://github.com/kiki-kanri/kikiutils-node-classes/commit/275b940))
+
+### 🎨 Styles
+
+- Format codes ([36a85de](https://github.com/kiki-kanri/kikiutils-node-classes/commit/36a85de))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.2.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- **path:** Add getFileSize and getFileSizeSync methods ([692becb](https://github.com/kiki-kanri/kikiutils-node-classes/commit/692becb))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([665235d](https://github.com/kiki-kanri/kikiutils-node-classes/commit/665235d))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.1.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.0.3...v1.1.0)
+
+### 🚀 Enhancements
+
+- **path:** Add parent getattr ([d873bf3](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d873bf3))
+
+### 💅 Refactors
+
+- Replace private keyword with # for class members ([bd15098](https://github.com/kiki-kanri/kikiutils-node-classes/commit/bd15098))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([8e46c04](https://github.com/kiki-kanri/kikiutils-node-classes/commit/8e46c04))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.0.3
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.0.2...v1.0.3)
+
+### 🩹 Fixes
+
+- Upgrade build tool to fix output files cjs error ([3bb293a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/3bb293a))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.0.2
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.0.1...v1.0.2)
+
+### 🏡 Chore
+
+- Upgrade dependencies ([f9466de](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f9466de))
+- Change tsconfig extends target ([6fd63bc](https://github.com/kiki-kanri/kikiutils-node-classes/commit/6fd63bc))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.0.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v1.0.0...v1.0.1)
+
+### 💅 Refactors
+
+- Tsconfig use package to extends ([81c669d](https://github.com/kiki-kanri/kikiutils-node-classes/commit/81c669d))
+
+### 📦 Build
+
+- Change method and tool ([b48fa69](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b48fa69))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([dca0a01](https://github.com/kiki-kanri/kikiutils-node-classes/commit/dca0a01))
+- Add keywords to package.json ([fc24950](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fc24950))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v1.0.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.7.0...v1.0.0)
+
+### 🏡 Chore
+
+- Upgrade dependencies ([84d693c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/84d693c))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.7.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.6.0...v0.7.0)
+
+### 🚀 Enhancements
+
+- Path class add readFileToBlob method ([9383bd1](https://github.com/kiki-kanri/kikiutils-node-classes/commit/9383bd1))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.6.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.5.0...v0.6.0)
+
+### 🚀 Enhancements
+
+- Add isDir and isFile methods ([6f496a4](https://github.com/kiki-kanri/kikiutils-node-classes/commit/6f496a4))
+- Path class add static resolve method ([150e7bd](https://github.com/kiki-kanri/kikiutils-node-classes/commit/150e7bd))
+
+### 🏡 Chore
+
+- Move BasePath constructor comment to Path ([6393bca](https://github.com/kiki-kanri/kikiutils-node-classes/commit/6393bca))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.5.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.4.0...v0.5.0)
+
+### 🚀 Enhancements
+
+- Add methods alias ([58fc310](https://github.com/kiki-kanri/kikiutils-node-classes/commit/58fc310))
+- Add kFse paramters type ([761b5fd](https://github.com/kiki-kanri/kikiutils-node-classes/commit/761b5fd))
+- Add PromisePathFsOperation class ([2c0f4b2](https://github.com/kiki-kanri/kikiutils-node-classes/commit/2c0f4b2))
+- Add symlink method and todo comment ([b7dadc4](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b7dadc4))
+- Add SyncPathFsOperation class ([266ea1a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/266ea1a))
+- Add PromisePathFseOperation class ([19245b1](https://github.com/kiki-kanri/kikiutils-node-classes/commit/19245b1))
+- Add fse class pathExists method and readJson comment ([b20610c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b20610c))
+- Add SyncPathFseOperation class ([e33c464](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e33c464))
+- Add PathFsaOperation and path classes ([cf13ee5](https://github.com/kiki-kanri/kikiutils-node-classes/commit/cf13ee5))
+- Change path string type param to PathLike ([7b4d3c8](https://github.com/kiki-kanri/kikiutils-node-classes/commit/7b4d3c8))
+
+### 🩹 Fixes
+
+- 修改PathLike類型與設定base path預設export ([a2ea9ce](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a2ea9ce))
+- Fixed base path and path classes circular import ([d852232](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d852232))
+- Modify pathExists method sorting position ([3428353](https://github.com/kiki-kanri/kikiutils-node-classes/commit/3428353))
+- Modify pathExists method sorting position ([a99aab3](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a99aab3))
+
+### 📦 Build
+
+- Change build tool to tsc and edit tsconfig ([d016297](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d016297))
+- Add tslib dependencies and enable importHelpers ([cb3b602](https://github.com/kiki-kanri/kikiutils-node-classes/commit/cb3b602))
+- Add tsc-alias to resolve tsconfig paths ([bbfed80](https://github.com/kiki-kanri/kikiutils-node-classes/commit/bbfed80))
+- Change method and add/edit configs ([441a2c1](https://github.com/kiki-kanri/kikiutils-node-classes/commit/441a2c1))
+- Set externalLiveBindings to false ([b093263](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b093263))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([fbefcb8](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fbefcb8))
+- Remove fs/promise open method todo ([17c9581](https://github.com/kiki-kanri/kikiutils-node-classes/commit/17c9581))
+- Remove old classes files ([d9ae8fb](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d9ae8fb))
+- Remove tslib dependencies ([761d812](https://github.com/kiki-kanri/kikiutils-node-classes/commit/761d812))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.4.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.3.0...v0.4.0)
+
+### 🚀 Enhancements
+
+- Add ensure dir methods ([fab0790](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fab0790))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.3.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.2.0...v0.3.0)
+
+### 🚀 Enhancements
+
+- Add move methods ([26a4b11](https://github.com/kiki-kanri/kikiutils-node-classes/commit/26a4b11))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([d7b943a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d7b943a))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.2.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.1.0...v0.2.0)
+
+### 🚀 Enhancements
+
+- Add write file method. ([2c45647](https://github.com/kiki-kanri/kikiutils-node-classes/commit/2c45647))
+- Add read file method and edit types ([f99ce65](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f99ce65))
+- Add json methods ([0b18056](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0b18056))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.1.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.0.2...v0.1.0)
+
+### 🚀 Enhancements
+
+- Add and edit base path class methods ([486a967](https://github.com/kiki-kanri/kikiutils-node-classes/commit/486a967))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.0.2
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v0.0.1...v0.0.2)
+
+### 🩹 Fixes
+
+- Fixed publish not pack dist dir error ([b10c3d6](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b10c3d6))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
+## v0.0.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/start...v0.0.1)
+
+### 🚀 Enhancements
+
+- Add base path class ([2e99f9c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/2e99f9c))
+- Add path fs operation classes ([97a31a8](https://github.com/kiki-kanri/kikiutils-node-classes/commit/97a31a8))
+- Add main path class and exports ([b9ba3b0](https://github.com/kiki-kanri/kikiutils-node-classes/commit/b9ba3b0))
+- Add isDirectory alias and exists method ([81e7dba](https://github.com/kiki-kanri/kikiutils-node-classes/commit/81e7dba))
+- Edit some base path class methods ([1c6e5c4](https://github.com/kiki-kanri/kikiutils-node-classes/commit/1c6e5c4))
+
+### 🩹 Fixes
+
+- Add the fs-extra package to fix the build error ([fb81d94](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fb81d94))
+
+### 📖 Documentation
+
+- Edit readme ([eb8968c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/eb8968c))
+- Edit readme ([c025858](https://github.com/kiki-kanri/kikiutils-node-classes/commit/c025858))
+
+### 🏡 Chore
+
+- Add base files ([36bc166](https://github.com/kiki-kanri/kikiutils-node-classes/commit/36bc166))
+
+### ❤️ Contributors
+
+- kiki-kanri
