@@ -85,6 +85,11 @@ export class PrecisionNumber {
 	}
 
 	// Public methods
+	absoluteValue() {
+		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.absoluteValue());
+		return this;
+	}
+
 	dividedBy(value: PrecisionNumberValue) {
 		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.dividedBy(value.toString().trim()));
 		return this;
@@ -152,6 +157,10 @@ export class PrecisionNumber {
 	times(value: PrecisionNumberValue) {
 		this.#decimal = this.#decimalToFixedDecimal(this.#decimal.times(value.toString().trim()));
 		return this;
+	}
+
+	toAbsoluteValue() {
+		return new PrecisionNumber(this.#decimal.absoluteValue(), this.#decimalPlaces, this.#rounding);
 	}
 
 	toDividedBy(value: PrecisionNumberValue) {
