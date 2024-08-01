@@ -1,5 +1,28 @@
 # Changelog
 
+## v2.2.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.1.1...v2.2.0)
+
+### 🚀 Enhancements
+
+- Add `absoluteValue` method to `PrecisionNumber` class ([f988325](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f988325))
+
+### 📖 Documentation
+
+- Update README ([d9056bd](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d9056bd))
+- Update CHANGELOG ([e666a48](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e666a48))
+
+### 🏡 Chore
+
+- Restrict importing _index file ([eac6060](https://github.com/kiki-kanri/kikiutils-node-classes/commit/eac6060))
+- Remove rollup files and dependencies and switch to builder build ([fd7aad7](https://github.com/kiki-kanri/kikiutils-node-classes/commit/fd7aad7))
+- Upgrade dependencies ([0340a69](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0340a69))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.1.1
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.1.0...v2.1.1)
