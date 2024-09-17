@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.3.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.2.0...v2.3.0)
+
+### 🚀 Enhancements
+
+- Add ssh-related and consola logger dependencies ([af94d2f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/af94d2f))
+- Add `SSHClient` class ([497b6ff](https://github.com/kiki-kanri/kikiutils-node-classes/commit/497b6ff))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([a1e4486](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a1e4486))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.2.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.1.1...v2.2.0)
