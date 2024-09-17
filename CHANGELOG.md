@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.3.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.3.0...v2.3.1)
+
+### 🩹 Fixes
+
+- Export `SSHClient` class ([c2558f5](https://github.com/kiki-kanri/kikiutils-node-classes/commit/c2558f5))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.3.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.2.0...v2.3.0)
