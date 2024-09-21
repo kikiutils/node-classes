@@ -1,5 +1,32 @@
 # Changelog
 
+## v3.0.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.3.1...v3.0.0)
+
+### Major Changes
+
+- Direct import of `@kikiutils/classes` is no longer available. Please use the corresponding import path for the specific class, such as `@kikiutils/classes/path`.
+- Due to certain reasons, the dependencies required for SSH have been moved to manual installation. If you are using the `SSHClient` class, you will need to install `@types/ssh2` and `node-ssh` manually.
+
+### 💅 Refactors
+
+- ⚠️ Remove entry point file and update build process ([a51cea7](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a51cea7))
+
+### 🏡 Chore
+
+- ⚠️ Move node-ssh dependency to `devDependencies` ([e0e8719](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e0e8719))
+- Update exports configuration in package.json ([acb540c](https://github.com/kiki-kanri/kikiutils-node-classes/commit/acb540c))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Remove entry point file and update build process ([a51cea7](https://github.com/kiki-kanri/kikiutils-node-classes/commit/a51cea7))
+- ⚠️ Move node-ssh dependency to `devDependencies` ([e0e8719](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e0e8719))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.3.1
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.3.0...v2.3.1)
