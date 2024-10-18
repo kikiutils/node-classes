@@ -1,9 +1,9 @@
 import kFse from '@kikiutils/fs-extra';
 import type { Abortable } from 'events';
 import type fse from 'fs-extra';
-import type fs from 'node:fs';
-import type fsp from 'node:fs/promises';
-import nodePath from 'node:path';
+import type fs from 'fs';
+import type fsp from 'fs/promises';
+import nodePath from 'path';
 
 export type PathLike = fs.PathLike | Path;
 type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...args: any[]) => any ? Parameters<(typeof kFse)[K]> : never };
