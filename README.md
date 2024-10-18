@@ -29,6 +29,11 @@ You can also use yarn, npm, or bun to add the dependency.
 
 That's it! You're ready to use this package in your project. Check out the [instructions for classes](#classes) below ✨.
 
+> [!NOTE]
+> When installing this package, not all required dependencies will be installed. If a function uses specific functionalities, you will need to install the corresponding dependencies manually.
+>
+> For example, if there is a file that uses `precision-number.ts`, you will need to manually install `decimal.js`.
+
 ## Classes
 
 Detailed descriptions and examples can be found in the annotations within each class.
