@@ -8,13 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/kiki-kanri/kikiutils-node-classes.git"
   },
-  "main": "./index.cjs",
-  "module": "./index.mjs",
   "scripts": {
     "build": "ts-project-builder ./src/**/*.ts --clean",
     "bumplog": "changelogen --bump"
   },
-  "types": "./index.d.ts",
   "dependencies": {
     "@kikiutils/fs-extra": "^2.3.6",
     "consola": "^3.2.3",
