@@ -1,5 +1,37 @@
 # Changelog
 
+## v4.0.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v3.0.0...v4.0.0)
+
+### 🚀 Enhancements
+
+- Add release script to package.json ([d51dcf2](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d51dcf2))
+
+### 💅 Refactors
+
+- Remove node: prefix when importing fs and path module ([70566aa](https://github.com/kiki-kanri/kikiutils-node-classes/commit/70566aa))
+
+### 📖 Documentation
+
+- Update README ([ce4cb9f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/ce4cb9f))
+
+### 🏡 Chore
+
+- Modify file permissions and update script ([f32d9e7](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f32d9e7))
+- Upgrade dependencies ([ec7800d](https://github.com/kiki-kanri/kikiutils-node-classes/commit/ec7800d))
+- Switch changelog generation package and remove tslib ([36905a4](https://github.com/kiki-kanri/kikiutils-node-classes/commit/36905a4))
+- Remove main, module, and types fields from package.json ([bea79b8](https://github.com/kiki-kanri/kikiutils-node-classes/commit/bea79b8))
+- ⚠️ Change all dependencies to devDependencies ([22d49db](https://github.com/kiki-kanri/kikiutils-node-classes/commit/22d49db))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Change all dependencies to devDependencies ([22d49db](https://github.com/kiki-kanri/kikiutils-node-classes/commit/22d49db))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v3.0.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v2.3.1...v3.0.0)
