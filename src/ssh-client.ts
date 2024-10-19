@@ -76,9 +76,7 @@ export class SSHClient {
 		});
 	}
 
-	async getDir(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
-		return await this.getDirectory(localDirectory, remoteDirectory, options);
-	}
+	getDir = this.getDirectory;
 
 	async getDirectory(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
 		try {
@@ -113,9 +111,7 @@ export class SSHClient {
 		}
 	}
 
-	async putDir(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
-		return await this.putDirectory(localDirectory, remoteDirectory, options);
-	}
+	putDir = this.putDirectory;
 
 	async putDirectory(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
 		try {
