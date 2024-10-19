@@ -49,9 +49,10 @@ export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString(
  */
 export class PrecisionNumber {
 	// Private properties
+	readonly #decimalPlaces: number;
+	readonly #rounding: Decimal.Rounding;
+
 	#decimal: Decimal;
-	#decimalPlaces: number;
-	#rounding: Decimal.Rounding;
 
 	constructor(value: PrecisionNumberValue = '0', decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
 		this.#decimalPlaces = decimalPlaces;

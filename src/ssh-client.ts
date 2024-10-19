@@ -19,8 +19,9 @@ const loggerLevelStringToConsolaLogLevelMap = {
 } as const;
 
 export class SSHClient {
-	#connectConfig: Config;
-	#logger: ConsolaInstance;
+	readonly #connectConfig: Config;
+	readonly #logger: ConsolaInstance;
+
 	#nodeSSH: NodeSSH;
 
 	constructor(host: string, username: string, password: string, port: number = 22, connectConfig?: Config) {

@@ -43,7 +43,7 @@ type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...a
  * ```
  */
 export class Path {
-	#value: string;
+	readonly #value: string;
 
 	constructor(...paths: PathLike[]) {
 		this.#value = nodePath.join(...this.#toStrings(paths));
