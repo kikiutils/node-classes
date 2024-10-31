@@ -54,11 +54,11 @@ Detailed descriptions and examples can be found in the annotations within each c
 [MIT License](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@kikiutils/classes/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/@kikiutils/classes
+[npm-version-src]: https://img.shields.io/npm/v/@kikiutils/classes/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/@kikiutils/classes
+[npm-downloads-src]: https://img.shields.io/npm/dm/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
 
-[license-src]: https://img.shields.io/npm/l/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://github.com/kiki-kanri/kikiutils-node-classes/blob/main/LICENSE
+[license-src]: https://img.shields.io/npm/l/@kikiutils/classes.svg?style=flat&colorA=18181B&colorB=28CF8D
