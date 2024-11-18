@@ -477,6 +477,8 @@ export class Path {
 
 	/**
 	 * @see {@link fs.lchmodSync}
+	 *
+	 * @deprecated
 	 */
 	lchmodSync(mode: fs.Mode) {
 		return kFse.lchmodSync(this.#value, mode);
