@@ -1,5 +1,39 @@
 # Changelog
 
+## v4.0.1
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.0...v4.0.1)
+
+### 🩹 Fixes
+
+- Resolve issue with build command file path not enclosed in quotes ([c1eeb88](https://github.com/kiki-kanri/kikiutils-node-classes/commit/c1eeb88))
+
+### 💅 Refactors
+
+- Change certain class properties to readonly ([e455370](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e455370))
+- **ssh-client:** Redefine getDir and putDir methods as direct function assignments ([46b5e16](https://github.com/kiki-kanri/kikiutils-node-classes/commit/46b5e16))
+- Replace `@ts-ignore` with `@ts-expect-error` ([1b4b3bf](https://github.com/kiki-kanri/kikiutils-node-classes/commit/1b4b3bf))
+
+### 🏡 Chore
+
+- Modify tsconfig.json ([91cc5f7](https://github.com/kiki-kanri/kikiutils-node-classes/commit/91cc5f7))
+- Remove .npmrc and update devDependencies list ([4c9e25d](https://github.com/kiki-kanri/kikiutils-node-classes/commit/4c9e25d))
+- Upgrade dependencies and modify release script ([9fa5ed9](https://github.com/kiki-kanri/kikiutils-node-classes/commit/9fa5ed9))
+- Update minimum Node.js version ([10d30ba](https://github.com/kiki-kanri/kikiutils-node-classes/commit/10d30ba))
+- Upgrade dependencies ([483c8ee](https://github.com/kiki-kanri/kikiutils-node-classes/commit/483c8ee))
+- Replace Prettier with ESLint, add related files, and update VSCode settings ([e20c6bc](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e20c6bc))
+- Modify scripts in package.json ([74df0fd](https://github.com/kiki-kanri/kikiutils-node-classes/commit/74df0fd))
+- Mark `lchmodSync` as deprecated ([8590aaa](https://github.com/kiki-kanri/kikiutils-node-classes/commit/8590aaa))
+
+### 🎨 Styles
+
+- Reorder badge URLs in README ([f3eb36e](https://github.com/kiki-kanri/kikiutils-node-classes/commit/f3eb36e))
+- Format and lint all files ([81d11b9](https://github.com/kiki-kanri/kikiutils-node-classes/commit/81d11b9))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v4.0.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v3.0.0...v4.0.0)
