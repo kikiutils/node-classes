@@ -2,6 +2,7 @@ import { createConsola } from 'consola';
 import type { ConsolaInstance } from 'consola';
 import { NodeSSH } from 'node-ssh';
 import type { Config, SSHExecCommandOptions, SSHGetPutDirectoryOptions, SSHPutFilesOptions } from 'node-ssh';
+import { env, stderr, stdout } from 'node:process';
 import type { SFTPWrapper, TransferOptions } from 'ssh2';
 
 import type { PathLike } from './path';
@@ -15,7 +16,7 @@ const loggerLevelStringToConsolaLogLevelMap = {
 	silent: -999,
 	trace: 5,
 	verbose: 999,
-	warn: 1
+	warn: 1,
 } as const;
 
 export class SSHClient {
@@ -30,12 +31,12 @@ export class SSHClient {
 			host,
 			password,
 			port,
-			username
+			username,
 		};
 
 		this.#logger = createConsola();
 		this.#nodeSSH = new NodeSSH();
-		if (process.env.NODE_ENV === 'production') this.setLoggerLevel('error');
+		if (env.NODE_ENV === 'production') this.setLoggerLevel('error');
 	}
 
 	get nodeSSH() {
@@ -65,14 +66,14 @@ export class SSHClient {
 	async execCommand(command: string, options?: SSHExecCommandOptions) {
 		try {
 			return await this.#nodeSSH.execCommand(command, options);
-		} catch (error) {}
+		} catch {}
 	}
 
 	async execCommandWithIO(command: string, options?: SSHExecCommandOptions) {
 		return await this.execCommand(command, {
 			...options,
-			onStderr: (data) => process.stderr.write(data.toString()),
-			onStdout: (data) => process.stdout.write(data.toString())
+			onStderr: (data) => stderr.write(data.toString()),
+			onStdout: (data) => stdout.write(data.toString()),
 		});
 	}
 

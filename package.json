@@ -2,30 +2,11 @@
   "name": "@kikiutils/classes",
   "version": "4.0.0",
   "description": "A utility library providing various classes for advanced operations and manipulations.",
-  "license": "MIT",
   "author": "kiki-kanri",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiki-kanri/kikiutils-node-classes.git"
-  },
-  "scripts": {
-    "build": "ts-project-builder './src/**/*.ts' --clean",
-    "bumplog": "changelogen --bump",
-    "release": "pnpm run build && changelogen --push --release && sh ./build-and-publish.sh"
-  },
-  "devDependencies": {
-    "@kikiutils/changelogen": "^0.7.0",
-    "@kikiutils/eslint-config": "^0.3.0",
-    "@kikiutils/fs-extra": "^2.3.7",
-    "@kikiutils/tsconfigs": "^3.0.2",
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.9.0",
-    "@types/ssh2": "^1.15.1",
-    "consola": "^3.2.3",
-    "decimal.js": "^10.4.3",
-    "node-ssh": "^13.2.0",
-    "ts-project-builder": "^3.3.2",
-    "tslib": "^2.8.1"
   },
   "keywords": [
     "arithmetic",
@@ -40,14 +21,33 @@
     "utility",
     "utils"
   ],
+  "exports": {
+    "./*": {
+      "types": "./*.d.ts",
+      "import": "./*.mjs",
+      "require": "./*.cjs"
+    }
+  },
   "engines": {
     "node": ">=18.12.1"
   },
-  "exports": {
-    "./*": {
-      "import": "./*.mjs",
-      "require": "./*.cjs",
-      "types": "./*.d.ts"
-    }
+  "scripts": {
+    "build": "ts-project-builder './src/**/*.ts' --clean",
+    "bumplog": "changelogen --bump",
+    "release": "pnpm run build && changelogen --push --release && sh ./build-and-publish.sh"
+  },
+  "devDependencies": {
+    "@kikiutils/changelogen": "^0.7.0",
+    "@kikiutils/eslint-config": "^0.3.0",
+    "@kikiutils/fs-extra": "^2.3.8",
+    "@kikiutils/tsconfigs": "^3.0.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.9.0",
+    "@types/ssh2": "^1.15.1",
+    "consola": "^3.2.3",
+    "decimal.js": "^10.4.3",
+    "node-ssh": "^13.2.0",
+    "ts-project-builder": "^3.3.2",
+    "tslib": "^2.8.1"
   }
 }

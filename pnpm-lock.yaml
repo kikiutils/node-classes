@@ -15,8 +15,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(@typescript-eslint/utils@8.14.0(eslint@9.15.0(jiti@2.4.0))(typescript@5.6.3))(@vue/compiler-sfc@3.5.13)(jiti@2.4.0)(typescript@5.6.3)
       '@kikiutils/fs-extra':
-        specifier: ^2.3.7
-        version: 2.3.7
+        specifier: ^2.3.8
+        version: 2.3.8
       '@kikiutils/tsconfigs':
         specifier: ^3.0.2
         version: 3.0.2
@@ -368,8 +368,8 @@ packages:
     resolution: {integrity: sha512-ZG96RsUhKYjiNnPJzKAR3soyZn/C44E+glvsm324RLpP7jgYSaG4s+63p94i5TNAYUiucOKXA1Y75zsFavU2aA==}
     engines: {node: '>=18.12.1'}
 
-  '@kikiutils/fs-extra@2.3.7':
-    resolution: {integrity: sha512-/oWd47TsbK1yUniimnmFx6xM4/G5+E460sMKsHE1qa2hQr7PD8wEppoIyF61KxVyPXZ2ud/jiG+rIJIp7eZ2NQ==}
+  '@kikiutils/fs-extra@2.3.8':
+    resolution: {integrity: sha512-8xHjC7x2EUNsQcK4DU/fGqUX8zM+bNLkYw+hYmqb6XjqrwITGLATyg2+a46RKAnoMxObmAdhBJtp9J+unR53Ww==}
     engines: {node: '>=18.12.1'}
 
   '@kikiutils/tsconfigs@3.0.2':
@@ -2463,7 +2463,7 @@ snapshots:
       - typescript
       - vitest
 
-  '@kikiutils/fs-extra@2.3.7':
+  '@kikiutils/fs-extra@2.3.8':
     dependencies:
       '@types/fs-extra': 11.0.4
       '@types/jsonfile': 6.1.4
