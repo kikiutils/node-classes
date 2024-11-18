@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@kikiutils/changelogen": "^0.7.0",
+    "@kikiutils/eslint-config": "^0.3.0",
     "@kikiutils/fs-extra": "^2.3.7",
-    "@kikiutils/prettierrc": "^1.3.2",
     "@kikiutils/tsconfigs": "^3.0.2",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.9.0",
@@ -49,6 +49,5 @@
       "require": "./*.cjs",
       "types": "./*.d.ts"
     }
-  },
-  "prettier": "@kikiutils/prettierrc"
+  }
 }
