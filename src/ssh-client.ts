@@ -1,8 +1,8 @@
 import { createConsola } from 'consola';
 import type { ConsolaInstance } from 'consola';
+import { env, stderr, stdout } from 'node:process';
 import { NodeSSH } from 'node-ssh';
 import type { Config, SSHExecCommandOptions, SSHGetPutDirectoryOptions, SSHPutFilesOptions } from 'node-ssh';
-import { env, stderr, stdout } from 'node:process';
 import type { SFTPWrapper, TransferOptions } from 'ssh2';
 
 import type { PathLike } from './path';
