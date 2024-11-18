@@ -34,7 +34,9 @@
   "scripts": {
     "build": "ts-project-builder './src/**/*.ts' --clean",
     "bumplog": "changelogen --bump",
-    "release": "pnpm run build && changelogen --push --release && sh ./build-and-publish.sh"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "release": "pnpm run lint && pnpm run build && changelogen --push --release && sh ./build-and-publish.sh"
   },
   "devDependencies": {
     "@kikiutils/changelogen": "^0.7.0",
