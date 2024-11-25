@@ -69,8 +69,8 @@ export class SSHClient {
         } catch {}
     }
 
-    async execCommandWithIO(command: string, options?: SSHExecCommandOptions) {
-        return await this.execCommand(command, {
+    execCommandWithIO(command: string, options?: SSHExecCommandOptions) {
+        return this.execCommand(command, {
             ...options,
             onStderr: (data) => stderr.write(data.toString()),
             onStdout: (data) => stdout.write(data.toString()),

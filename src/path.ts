@@ -191,230 +191,230 @@ export class Path {
     /**
      * @see {@link fsp.access}
      */
-    async access(mode?: number) {
-        return await kFse.access(this.#value, mode);
+    access(mode?: number) {
+        return kFse.access(this.#value, mode);
     }
 
     /**
      * @see {@link fsp.copyFile}
      */
-    async copyFile(dest: PathLike, mode?: number) {
-        return await kFse.copyFile(this.#value, dest.toString(), mode);
+    copyFile(dest: PathLike, mode?: number) {
+        return kFse.copyFile(this.#value, dest.toString(), mode);
     }
 
     /**
      * @see {@link fsp.open}
      */
-    async open(flags?: number | string, mode?: fs.Mode) {
-        return await kFse.open(this.value, flags, mode);
+    open(flags?: number | string, mode?: fs.Mode) {
+        return kFse.open(this.value, flags, mode);
     }
 
     /**
      * @see {@link fsp.rename}
      */
-    async rename(newPath: PathLike) {
-        return await kFse.rename(this.#value, newPath.toString());
+    rename(newPath: PathLike) {
+        return kFse.rename(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fsp.truncate}
      */
-    async truncate(len?: number) {
-        return await kFse.truncate(this.#value, len);
+    truncate(len?: number) {
+        return kFse.truncate(this.#value, len);
     }
 
     /**
      * @see {@link fsp.rmdir}
      */
-    async rmdir(options?: fs.RmDirOptions) {
-        return await kFse.rmdir(this.#value, options);
+    rmdir(options?: fs.RmDirOptions) {
+        return kFse.rmdir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.rm}
      */
-    async rm(options?: fs.RmOptions) {
-        return await kFse.rm(this.#value, options);
+    rm(options?: fs.RmOptions) {
+        return kFse.rm(this.#value, options);
     }
 
     /**
      * @see {@link fsp.symlink}
      */
-    async symlink(path: PathLike, type?: null | string) {
-        return await kFse.symlink(this.#value, path.toString(), type);
+    symlink(path: PathLike, type?: null | string) {
+        return kFse.symlink(this.#value, path.toString(), type);
     }
 
     /**
      * @see {@link fsp.link}
      */
-    async link(newPath: PathLike) {
-        return await kFse.link(this.#value, newPath.toString());
+    link(newPath: PathLike) {
+        return kFse.link(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fsp.unlink}
      */
-    async unlink() {
-        return await kFse.unlink(this.#value);
+    unlink() {
+        return kFse.unlink(this.#value);
     }
 
     /**
      * @see {@link fsp.chmod}
      */
-    async chmod(mode: fs.Mode) {
-        return await kFse.chmod(this.#value, mode);
+    chmod(mode: fs.Mode) {
+        return kFse.chmod(this.#value, mode);
     }
 
     /**
      * @see {@link fsp.lchmod}
      */
-    async lchmod(mode: fs.Mode) {
-        return await kFse.lchmod(this.#value, mode);
+    lchmod(mode: fs.Mode) {
+        return kFse.lchmod(this.#value, mode);
     }
 
     /**
      * @see {@link fsp.lchown}
      */
-    async lchown(uid: number, gid: number) {
-        return await kFse.lchown(this.#value, uid, gid);
+    lchown(uid: number, gid: number) {
+        return kFse.lchown(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fsp.lutimes}
      */
-    async lutimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return await kFse.lutimes(this.#value, atime, mtime);
+    lutimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
+        return kFse.lutimes(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fsp.chown}
      */
-    async chown(uid: number, gid: number) {
-        return await kFse.chown(this.#value, uid, gid);
+    chown(uid: number, gid: number) {
+        return kFse.chown(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fsp.utimes}
      */
-    async utimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return await kFse.utimes(this.#value, atime, mtime);
+    utimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
+        return kFse.utimes(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fsp.writeFile}
      */
-    async writeFile(data: KFseParameters['writeFile'][1], options?: KFseParameters['writeFile'][2]) {
-        return await kFse.writeFile(this.#value, data, options);
+    writeFile(data: KFseParameters['writeFile'][1], options?: KFseParameters['writeFile'][2]) {
+        return kFse.writeFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fsp.appendFile}
      */
-    async appendFile(data: KFseParameters['appendFile'][1], options?: KFseParameters['appendFile'][2]) {
-        return await kFse.appendFile(this.#value, data, options);
+    appendFile(data: KFseParameters['appendFile'][1], options?: KFseParameters['appendFile'][2]) {
+        return kFse.appendFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fsp.opendir}
      */
-    async opendir(options?: fs.OpenDirOptions) {
-        return await kFse.opendir(this.#value, options);
+    opendir(options?: fs.OpenDirOptions) {
+        return kFse.opendir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.cp}
      */
-    async cp(destination: PathLike, opts?: fs.CopyOptions) {
-        return await kFse.cp(this.#value, destination.toString(), opts);
+    cp(destination: PathLike, opts?: fs.CopyOptions) {
+        return kFse.cp(this.#value, destination.toString(), opts);
     }
 
     /**
      * @see {@link fsp.mkdir}
      */
-    async mkdir(options: { recursive: true } & fs.MakeDirectoryOptions): Promise<string | undefined>;
+    mkdir(options: { recursive: true } & fs.MakeDirectoryOptions): Promise<string | undefined>;
     // @ts-expect-error Ignore this error.
-    async mkdir(options?: ({ recursive?: false } & fs.MakeDirectoryOptions) | fs.Mode | null): Promise<boolean>;
-    async mkdir(options?: fs.MakeDirectoryOptions | fs.Mode | null): Promise<string | undefined>;
-    async mkdir(options?: any) {
-        return await kFse.mkdir(this.#value, options);
+    mkdir(options?: ({ recursive?: false } & fs.MakeDirectoryOptions) | fs.Mode | null): Promise<boolean>;
+    mkdir(options?: fs.MakeDirectoryOptions | fs.Mode | null): Promise<string | undefined>;
+    mkdir(options?: any) {
+        return kFse.mkdir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.readdir}
      */
-    async readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<string[] | undefined>;
+    readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<string[] | undefined>;
     // @ts-expect-error Ignore this error.
-    async readdir(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Promise<Buffer[] | undefined>;
-    async readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer[] | string[] | undefined>;
-    async readdir(options: { recursive?: boolean; withFileTypes: true } & fs.ObjectEncodingOptions): Promise<fs.Dirent[] | undefined>;
-    async readdir(options?: any) {
-        return await kFse.readdir(this.#value, options);
+    readdir(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Promise<Buffer[] | undefined>;
+    readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer[] | string[] | undefined>;
+    readdir(options: { recursive?: boolean; withFileTypes: true } & fs.ObjectEncodingOptions): Promise<fs.Dirent[] | undefined>;
+    readdir(options?: any) {
+        return kFse.readdir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.readlink}
      */
-    async readlink(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<string | undefined>;
+    readlink(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<string | undefined>;
     // @ts-expect-error Ignore this error.
-    async readlink(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
-    async readlink(options?: fs.ObjectEncodingOptions | null | string): Promise<Buffer | string | undefined>;
-    async readlink(options?: any) {
-        return await kFse.readlink(this.#value, options);
+    readlink(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
+    readlink(options?: fs.ObjectEncodingOptions | null | string): Promise<Buffer | string | undefined>;
+    readlink(options?: any) {
+        return kFse.readlink(this.#value, options);
     }
 
     /**
      * @see {@link fsp.lstat}
      */
-    async lstat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
+    lstat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
     // @ts-expect-error Ignore this error.
-    async lstat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
-    async lstat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
-    async lstat(opts?: any) {
-        return await kFse.lstat(this.#value, opts);
+    lstat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
+    lstat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
+    lstat(opts?: any) {
+        return kFse.lstat(this.#value, opts);
     }
 
     /**
      * @see {@link fsp.stat}
      */
-    async stat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
+    stat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
     // @ts-expect-error Ignore this error.
-    async stat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
-    async stat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
-    async stat(opts?: any) {
-        return await kFse.stat(this.#value, opts);
+    stat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
+    stat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
+    stat(opts?: any) {
+        return kFse.stat(this.#value, opts);
     }
 
     /**
      * @see {@link fsp.statfs}
      */
-    async statfs(opts?: { bigint?: false } & fs.StatFsOptions): Promise<fs.StatsFs | undefined>;
+    statfs(opts?: { bigint?: false } & fs.StatFsOptions): Promise<fs.StatsFs | undefined>;
     // @ts-expect-error Ignore this error.
-    async statfs(opts: { bigint: true } & fs.StatFsOptions): Promise<fs.BigIntStatsFs | undefined>;
-    async statfs(opts?: fs.StatFsOptions): Promise<fs.BigIntStatsFs | fs.StatsFs | undefined>;
-    async statfs(opts?: any) {
-        return await kFse.statfs(this.#value, opts);
+    statfs(opts: { bigint: true } & fs.StatFsOptions): Promise<fs.BigIntStatsFs | undefined>;
+    statfs(opts?: fs.StatFsOptions): Promise<fs.BigIntStatsFs | fs.StatsFs | undefined>;
+    statfs(opts?: any) {
+        return kFse.statfs(this.#value, opts);
     }
 
     /**
      * @see {@link fsp.realpath}
      */
-    async realpath(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<string | undefined>;
+    realpath(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<string | undefined>;
     // @ts-expect-error Ignore this error.
-    async realpath(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
-    async realpath(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<Buffer | string | undefined>;
-    async realpath(options?: any) {
-        return await kFse.realpath(this.#value, options);
+    realpath(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
+    realpath(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<Buffer | string | undefined>;
+    realpath(options?: any) {
+        return kFse.realpath(this.#value, options);
     }
 
     /**
      * @see {@link fsp.readFile}
      */
-    async readFile(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Buffer | undefined>;
+    readFile(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Buffer | undefined>;
     // @ts-expect-error Ignore this error.
-    async readFile(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<string | undefined>;
-    async readFile(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer | string | undefined>;
-    async readFile(options?: any) {
-        return await kFse.readFile(this.#value, options);
+    readFile(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<string | undefined>;
+    readFile(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer | string | undefined>;
+    readFile(options?: any) {
+        return kFse.readFile(this.#value, options);
     }
 
     // node:fs sync methods
@@ -662,155 +662,155 @@ export class Path {
     /**
      * @see {@link fse.pathExists}
      */
-    async pathExists() {
-        return await kFse.pathExists(this.#value);
+    pathExists() {
+        return kFse.pathExists(this.#value);
     }
 
     /**
      * @see {@link fse.copy}
      */
-    async copy(dest: PathLike, options?: fse.CopyOptions) {
-        return await kFse.copy(this.#value, dest.toString(), options);
+    copy(dest: PathLike, options?: fse.CopyOptions) {
+        return kFse.copy(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.move}
      */
-    async move(dest: PathLike, options?: fse.MoveOptions) {
-        return await kFse.move(this.#value, dest.toString(), options);
+    move(dest: PathLike, options?: fse.MoveOptions) {
+        return kFse.move(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.ensureFile}
      */
-    async ensureFile() {
-        return await kFse.ensureFile(this.#value);
+    ensureFile() {
+        return kFse.ensureFile(this.#value);
     }
 
     /**
      * @see {@link fse.ensureFile}
      */
-    async createFile() {
-        return await kFse.createFile(this.#value);
+    createFile() {
+        return kFse.createFile(this.#value);
     }
 
     /**
      * @see {@link fse.ensureLink}
      */
-    async ensureLink(dest: PathLike) {
-        return await kFse.ensureLink(this.#value, dest.toString());
+    ensureLink(dest: PathLike) {
+        return kFse.ensureLink(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureLink}
      */
-    async createLink(dest: PathLike) {
-        return await kFse.createLink(this.#value, dest.toString());
+    createLink(dest: PathLike) {
+        return kFse.createLink(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureSymlink}
      */
-    async ensureSymlink(dest: PathLike, type?: fs.symlink.Type) {
-        return await kFse.ensureSymlink(this.#value, dest.toString(), type);
+    ensureSymlink(dest: PathLike, type?: fs.symlink.Type) {
+        return kFse.ensureSymlink(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureSymlink}
      */
-    async createSymlink(dest: PathLike, type?: fs.symlink.Type) {
-        return await kFse.createSymlink(this.#value, dest.toString(), type);
+    createSymlink(dest: PathLike, type?: fs.symlink.Type) {
+        return kFse.createSymlink(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
-    async ensureDir(options?: fse.EnsureDirOptions | number) {
-        return await kFse.ensureDir(this.#value, options);
+    ensureDir(options?: fse.EnsureDirOptions | number) {
+        return kFse.ensureDir(this.#value, options);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
-    async mkdirp(options?: fse.EnsureDirOptions | number) {
-        return await kFse.mkdirp(this.#value, options);
+    mkdirp(options?: fse.EnsureDirOptions | number) {
+        return kFse.mkdirp(this.#value, options);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
-    async mkdirs(options?: fse.EnsureDirOptions | number) {
-        return await kFse.mkdirs(this.#value, options);
+    mkdirs(options?: fse.EnsureDirOptions | number) {
+        return kFse.mkdirs(this.#value, options);
     }
 
     /**
      * @see {@link fse.outputFile}
      */
-    async outputFile(data: NodeJS.ArrayBufferView | string, options?: fse.WriteFileOptions) {
-        return await kFse.outputFile(this.#value, data, options);
+    outputFile(data: NodeJS.ArrayBufferView | string, options?: fse.WriteFileOptions) {
+        return kFse.outputFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.readJson}
      */
-    async readJson<T = any>(options?: fse.JsonReadOptions) {
-        return await kFse.readJson<T>(this.#value, options);
+    readJson<T = any>(options?: fse.JsonReadOptions) {
+        return kFse.readJson<T>(this.#value, options);
     }
 
     /**
      * @see {@link fse.readJson}
      */
-    async readJSON<T = any>(options?: fse.JsonReadOptions) {
-        return await kFse.readJSON<T>(this.#value, options);
+    readJSON<T = any>(options?: fse.JsonReadOptions) {
+        return kFse.readJSON<T>(this.#value, options);
     }
 
     /**
      * @see {@link fse.writeJson}
      */
-    async writeJson(obj: any, options?: fse.JsonWriteOptions) {
-        return await kFse.writeJson(this.#value, obj, options);
+    writeJson(obj: any, options?: fse.JsonWriteOptions) {
+        return kFse.writeJson(this.#value, obj, options);
     }
 
     /**
      * @see {@link fse.writeJson}
      */
-    async writeJSON(obj: any, options?: fse.JsonWriteOptions) {
-        return await kFse.writeJSON(this.#value, obj, options);
+    writeJSON(obj: any, options?: fse.JsonWriteOptions) {
+        return kFse.writeJSON(this.#value, obj, options);
     }
 
     /**
      * @see {@link fse.outputJson}
      */
-    async outputJson(data: any, options?: fse.JsonOutputOptions) {
-        return await kFse.outputJson(this.#value, data, options);
+    outputJson(data: any, options?: fse.JsonOutputOptions) {
+        return kFse.outputJson(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.outputJson}
      */
-    async outputJSON(data: any, options?: fse.JsonOutputOptions) {
-        return await kFse.outputJSON(this.#value, data, options);
+    outputJSON(data: any, options?: fse.JsonOutputOptions) {
+        return kFse.outputJSON(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.remove}
      */
-    async remove() {
-        return await kFse.remove(this.#value);
+    remove() {
+        return kFse.remove(this.#value);
     }
 
     /**
      * @see {@link fse.emptyDir}
      */
-    async emptyDir() {
-        return await kFse.emptyDir(this.#value);
+    emptyDir() {
+        return kFse.emptyDir(this.#value);
     }
 
     /**
      * @see {@link fse.emptyDir}
      */
-    async emptydir() {
-        return await kFse.emptydir(this.#value);
+    emptydir() {
+        return kFse.emptydir(this.#value);
     }
 
     // fs-extra sync methods
@@ -974,78 +974,78 @@ export class Path {
     /**
      * @see {@link kFse.getFileSize}
      */
-    async getFileSize(opts?: { bigint?: false } & fs.StatOptions): Promise<number | undefined>;
+    getFileSize(opts?: { bigint?: false } & fs.StatOptions): Promise<number | undefined>;
     // @ts-expect-error Ignore this error.
-    async getFileSize(opts: { bigint: true } & fs.StatOptions): Promise<bigint | undefined>;
-    async getFileSize(opts?: fs.StatOptions): Promise<bigint | number | undefined>;
-    async getFileSize(opts: any) {
-        return await kFse.getFileSize(this.#value, opts);
+    getFileSize(opts: { bigint: true } & fs.StatOptions): Promise<bigint | undefined>;
+    getFileSize(opts?: fs.StatOptions): Promise<bigint | number | undefined>;
+    getFileSize(opts: any) {
+        return kFse.getFileSize(this.#value, opts);
     }
 
     /**
      * @see {@link kFse.pathIsBlockDevice}
      */
-    async isBlockDevice() {
-        return await kFse.pathIsBlockDevice(this.#value);
+    isBlockDevice() {
+        return kFse.pathIsBlockDevice(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsCharacterDevice}
      */
-    async isCharacterDevice() {
-        return await kFse.pathIsCharacterDevice(this.#value);
+    isCharacterDevice() {
+        return kFse.pathIsCharacterDevice(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsDirectory}
      */
-    async isDirectory() {
-        return await kFse.pathIsDirectory(this.#value);
+    isDirectory() {
+        return kFse.pathIsDirectory(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsDirectory}
      */
-    async isDir() {
-        return await kFse.pathIsDir(this.#value);
+    isDir() {
+        return kFse.pathIsDir(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFIFO}
      */
-    async isFIFO() {
-        return await kFse.pathIsFIFO(this.#value);
+    isFIFO() {
+        return kFse.pathIsFIFO(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFile}
      */
-    async isFile() {
-        return await kFse.pathIsFile(this.#value);
+    isFile() {
+        return kFse.pathIsFile(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSocket}
      */
-    async isSocket() {
-        return await kFse.pathIsSocket(this.#value);
+    isSocket() {
+        return kFse.pathIsSocket(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSymbolicLink}
      */
-    async isSymbolicLink() {
-        return await kFse.pathIsSymbolicLink(this.#value);
+    isSymbolicLink() {
+        return kFse.pathIsSymbolicLink(this.#value);
     }
 
     /**
      * @see {@link kFse.readFileToBlob}
      */
-    async readFileToBlob(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Blob | undefined>;
-    async readFileToBlob(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<Blob | undefined>;
-    async readFileToBlob(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Blob | undefined>;
-    async readFileToBlob(options?: any) {
-        return await kFse.readFileToBlob(this.#value, options);
+    readFileToBlob(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Blob | undefined>;
+    readFileToBlob(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<Blob | undefined>;
+    readFileToBlob(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Blob | undefined>;
+    readFileToBlob(options?: any) {
+        return kFse.readFileToBlob(this.#value, options);
     }
 
     // additional sync methods
