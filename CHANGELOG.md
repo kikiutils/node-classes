@@ -1,5 +1,27 @@
 # Changelog
 
+## v4.0.2
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.1...v4.0.2)
+
+### 💅 Refactors
+
+- Simplify wrapper functions by removing async/await ([12828dc](https://github.com/kiki-kanri/kikiutils-node-classes/commit/12828dc))
+- **Path:** Unify `isDir/isDirSync` as aliases of `isDirectory/isDirectorySync` ([c24a836](https://github.com/kiki-kanri/kikiutils-node-classes/commit/c24a836))
+
+### 🏡 Chore
+
+- Update eslint-config and format codes ([c8c1b05](https://github.com/kiki-kanri/kikiutils-node-classes/commit/c8c1b05))
+- Upgrade dependencies ([0000010](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0000010))
+
+### 🎨 Styles
+
+- Change all indentation to 4 spaces ([891226f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/891226f))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v4.0.1
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.0...v4.0.1)
