@@ -999,15 +999,13 @@ export class Path {
     /**
      * @see {@link kFse.pathIsDirectory}
      */
-    isDirectory() {
-        return kFse.pathIsDirectory(this.#value);
-    }
+    isDir = this.isDirectory;
 
     /**
      * @see {@link kFse.pathIsDirectory}
      */
-    isDir() {
-        return kFse.pathIsDir(this.#value);
+    isDirectory() {
+        return kFse.pathIsDirectory(this.#value);
     }
 
     /**
@@ -1075,15 +1073,13 @@ export class Path {
     /**
      * @see {@link kFse.pathIsDirectorySync}
      */
-    isDirectorySync() {
-        return kFse.pathIsDirectorySync(this.#value);
-    }
+    isDirSync = this.isDirectorySync;
 
     /**
      * @see {@link kFse.pathIsDirectorySync}
      */
-    isDirSync() {
-        return kFse.pathIsDirSync(this.#value);
+    isDirectorySync() {
+        return kFse.pathIsDirectorySync(this.#value);
     }
 
     /**
