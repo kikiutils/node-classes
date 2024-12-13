@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
 
-export type PrecisionNumberValue = { toString: () => string } | Decimal.Value | PrecisionNumber;
+export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString: () => string };
 
 /**
  * Class representing a precision number with configurable decimal places and rounding.

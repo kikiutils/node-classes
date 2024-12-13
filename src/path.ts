@@ -7,7 +7,7 @@ import type fsp from 'node:fs/promises';
 import nodePath from 'node:path';
 
 export type DoNotRemoveOrUseThisType = typeof fsp;
-export type PathLike = Path | fs.PathLike;
+export type PathLike = fs.PathLike | Path;
 type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...args: any[]) => any ? Parameters<(typeof kFse)[K]> : never };
 
 /**
@@ -331,9 +331,9 @@ export class Path {
     /**
      * @see {@link fsp.mkdir}
      */
-    mkdir(options: { recursive: true } & fs.MakeDirectoryOptions): Promise<string | undefined>;
+    mkdir(options: fs.MakeDirectoryOptions & { recursive: true }): Promise<string | undefined>;
     // @ts-expect-error Ignore this error.
-    mkdir(options?: ({ recursive?: false } & fs.MakeDirectoryOptions) | fs.Mode | null): Promise<boolean>;
+    mkdir(options?: (fs.MakeDirectoryOptions & { recursive?: false }) | fs.Mode | null): Promise<boolean>;
     mkdir(options?: fs.MakeDirectoryOptions | fs.Mode | null): Promise<string | undefined>;
     mkdir(options?: any) {
         return kFse.mkdir(this.#value, options);
@@ -342,11 +342,11 @@ export class Path {
     /**
      * @see {@link fsp.readdir}
      */
-    readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<string[] | undefined>;
+    readdir(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Promise<string[] | undefined>;
     // @ts-expect-error Ignore this error.
     readdir(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Promise<Buffer[] | undefined>;
-    readdir(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer[] | string[] | undefined>;
-    readdir(options: { recursive?: boolean; withFileTypes: true } & fs.ObjectEncodingOptions): Promise<fs.Dirent[] | undefined>;
+    readdir(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Promise<Buffer[] | string[] | undefined>;
+    readdir(options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): Promise<fs.Dirent[] | undefined>;
     readdir(options?: any) {
         return kFse.readdir(this.#value, options);
     }
@@ -365,9 +365,9 @@ export class Path {
     /**
      * @see {@link fsp.lstat}
      */
-    lstat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
+    lstat(opts?: fs.StatOptions & { bigint?: false }): Promise<fs.Stats | undefined>;
     // @ts-expect-error Ignore this error.
-    lstat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
+    lstat(opts: fs.StatOptions & { bigint: true }): Promise<fs.BigIntStats | undefined>;
     lstat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
     lstat(opts?: any) {
         return kFse.lstat(this.#value, opts);
@@ -376,9 +376,9 @@ export class Path {
     /**
      * @see {@link fsp.stat}
      */
-    stat(opts?: { bigint?: false } & fs.StatOptions): Promise<fs.Stats | undefined>;
+    stat(opts?: fs.StatOptions & { bigint?: false }): Promise<fs.Stats | undefined>;
     // @ts-expect-error Ignore this error.
-    stat(opts: { bigint: true } & fs.StatOptions): Promise<fs.BigIntStats | undefined>;
+    stat(opts: fs.StatOptions & { bigint: true }): Promise<fs.BigIntStats | undefined>;
     stat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
     stat(opts?: any) {
         return kFse.stat(this.#value, opts);
@@ -387,9 +387,9 @@ export class Path {
     /**
      * @see {@link fsp.statfs}
      */
-    statfs(opts?: { bigint?: false } & fs.StatFsOptions): Promise<fs.StatsFs | undefined>;
+    statfs(opts?: fs.StatFsOptions & { bigint?: false }): Promise<fs.StatsFs | undefined>;
     // @ts-expect-error Ignore this error.
-    statfs(opts: { bigint: true } & fs.StatFsOptions): Promise<fs.BigIntStatsFs | undefined>;
+    statfs(opts: fs.StatFsOptions & { bigint: true }): Promise<fs.BigIntStatsFs | undefined>;
     statfs(opts?: fs.StatFsOptions): Promise<fs.BigIntStatsFs | fs.StatsFs | undefined>;
     statfs(opts?: any) {
         return kFse.statfs(this.#value, opts);
@@ -409,10 +409,10 @@ export class Path {
     /**
      * @see {@link fsp.readFile}
      */
-    readFile(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Buffer | undefined>;
+    readFile(options?: (Abortable & { encoding?: null; flag?: fs.OpenMode }) | null): Promise<Buffer | undefined>;
     // @ts-expect-error Ignore this error.
-    readFile(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<string | undefined>;
-    readFile(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Buffer | string | undefined>;
+    readFile(options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding): Promise<string | undefined>;
+    readFile(options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null): Promise<Buffer | string | undefined>;
     readFile(options?: any) {
         return kFse.readFile(this.#value, options);
     }
@@ -429,7 +429,7 @@ export class Path {
     /**
      * @see {@link fs.appendFileSync}
      */
-    appendFileSync(data: Uint8Array | string, options?: fs.WriteFileOptions | undefined) {
+    appendFileSync(data: string | Uint8Array, options?: fs.WriteFileOptions | undefined) {
         return kFse.appendFileSync(this.#value, data, options);
     }
 
@@ -571,9 +571,9 @@ export class Path {
     /**
      * @see {@link fs.statfsSync}
      */
-    statfsSync(options?: { bigint?: false } & fs.StatFsOptions): fs.StatsFs | undefined;
+    statfsSync(options?: fs.StatFsOptions & { bigint?: false }): fs.StatsFs | undefined;
     // @ts-expect-error Ignore this error.
-    statfsSync(options: { bigint: true } & fs.StatFsOptions): fs.BigIntStatsFs | undefined;
+    statfsSync(options: fs.StatFsOptions & { bigint: true }): fs.BigIntStatsFs | undefined;
     statfsSync(options?: fs.StatFsOptions): fs.BigIntStatsFs | fs.StatsFs | undefined;
     statfsSync(options?: any) {
         return kFse.statfsSync(this.#value, options);
@@ -604,9 +604,9 @@ export class Path {
     /**
      * @see {@link fs.mkdirSync}
      */
-    mkdirSync(options: { recursive: true } & fs.MakeDirectoryOptions): string | undefined;
+    mkdirSync(options: fs.MakeDirectoryOptions & { recursive: true }): string | undefined;
     // @ts-expect-error Ignore this error.
-    mkdirSync(options?: ({ recursive?: false } & fs.MakeDirectoryOptions) | fs.Mode | null): boolean;
+    mkdirSync(options?: (fs.MakeDirectoryOptions & { recursive?: false }) | fs.Mode | null): boolean;
     mkdirSync(options?: fs.MakeDirectoryOptions | fs.Mode | null): string | undefined;
     mkdirSync(options?: any) {
         return kFse.mkdirSync(this.#value, options);
@@ -615,11 +615,11 @@ export class Path {
     /**
      * @see {@link fs.readdirSync}
      */
-    readdirSync(options?: { encoding: BufferEncoding | null; recursive?: boolean; withFileTypes?: false } | BufferEncoding | null): string[] | undefined;
+    readdirSync(options?: BufferEncoding | null | { encoding: BufferEncoding | null; recursive?: boolean; withFileTypes?: false }): string[] | undefined;
     // @ts-expect-error Ignore this error.
     readdirSync(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Buffer[] | undefined;
-    readdirSync(options?: ({ recursive?: boolean; withFileTypes?: false } & fs.ObjectEncodingOptions) | BufferEncoding | null): Buffer[] | string[] | undefined;
-    readdirSync(options: { recursive?: boolean; withFileTypes: true } & fs.ObjectEncodingOptions): fs.Dirent[] | undefined;
+    readdirSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Buffer[] | string[] | undefined;
+    readdirSync(options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): fs.Dirent[] | undefined;
     readdirSync(options?: any) {
         return kFse.readdirSync(this.#value, options);
     }
@@ -627,10 +627,10 @@ export class Path {
     /**
      * @see {@link fs.readFileSync}
      */
-    readFileSync(options?: { encoding?: null; flag?: string } | null): Buffer | undefined;
+    readFileSync(options?: null | { encoding?: null; flag?: string }): Buffer | undefined;
     // @ts-expect-error Ignore this error.
-    readFileSync(options: { encoding: BufferEncoding; flag?: string } | BufferEncoding): string | undefined;
-    readFileSync(options?: ({ flag?: string } & fs.ObjectEncodingOptions) | BufferEncoding | null): Buffer | string | undefined;
+    readFileSync(options: BufferEncoding | { encoding: BufferEncoding; flag?: string }): string | undefined;
+    readFileSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null): Buffer | string | undefined;
     readFileSync(options?: any) {
         return kFse.readFileSync(this.#value, options);
     }
@@ -638,9 +638,9 @@ export class Path {
     /**
      * @see {@link fs.statSync}
      */
-    statSync(options?: { bigint?: false } & fs.StatSyncOptions): fs.Stats | undefined;
+    statSync(options?: fs.StatSyncOptions & { bigint?: false }): fs.Stats | undefined;
     // @ts-expect-error Ignore this error.
-    statSync(options: { bigint: true } & fs.StatSyncOptions): fs.BigIntStats | undefined;
+    statSync(options: fs.StatSyncOptions & { bigint: true }): fs.BigIntStats | undefined;
     statSync(options?: fs.StatSyncOptions): fs.BigIntStats | fs.Stats | undefined;
     statSync(options?: any) {
         return kFse.statSync(this.#value, options);
@@ -649,9 +649,9 @@ export class Path {
     /**
      * @see {@link fs.statSync}
      */
-    lstatSync(options?: { bigint?: false } & fs.StatSyncOptions): fs.Stats | undefined;
+    lstatSync(options?: fs.StatSyncOptions & { bigint?: false }): fs.Stats | undefined;
     // @ts-expect-error Ignore this error.
-    lstatSync(options: { bigint: true } & fs.StatSyncOptions): fs.BigIntStats | undefined;
+    lstatSync(options: fs.StatSyncOptions & { bigint: true }): fs.BigIntStats | undefined;
     lstatSync(options?: fs.StatSyncOptions): fs.BigIntStats | fs.Stats | undefined;
     lstatSync(options?: any) {
         return kFse.lstatSync(this.#value, options);
@@ -974,9 +974,9 @@ export class Path {
     /**
      * @see {@link kFse.getFileSize}
      */
-    getFileSize(opts?: { bigint?: false } & fs.StatOptions): Promise<number | undefined>;
+    getFileSize(opts?: fs.StatOptions & { bigint?: false }): Promise<number | undefined>;
     // @ts-expect-error Ignore this error.
-    getFileSize(opts: { bigint: true } & fs.StatOptions): Promise<bigint | undefined>;
+    getFileSize(opts: fs.StatOptions & { bigint: true }): Promise<bigint | undefined>;
     getFileSize(opts?: fs.StatOptions): Promise<bigint | number | undefined>;
     getFileSize(opts: any) {
         return kFse.getFileSize(this.#value, opts);
@@ -1039,18 +1039,18 @@ export class Path {
     /**
      * @see {@link kFse.readFileToBlob}
      */
-    readFileToBlob(options?: ({ encoding?: null; flag?: fs.OpenMode } & Abortable) | null): Promise<Blob | undefined>;
-    readFileToBlob(options: ({ encoding: BufferEncoding; flag?: fs.OpenMode } & Abortable) | BufferEncoding): Promise<Blob | undefined>;
-    readFileToBlob(options?: ({ flag?: fs.OpenMode } & Abortable & fs.ObjectEncodingOptions) | BufferEncoding | null): Promise<Blob | undefined>;
+    readFileToBlob(options?: (Abortable & { encoding?: null; flag?: fs.OpenMode }) | null): Promise<Blob | undefined>;
+    readFileToBlob(options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding): Promise<Blob | undefined>;
+    readFileToBlob(options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null): Promise<Blob | undefined>;
     readFileToBlob(options?: any) {
         return kFse.readFileToBlob(this.#value, options);
     }
 
     // additional sync methods
 
-    getFileSizeSync(options?: { bigint?: false } & fs.StatSyncOptions): number | undefined;
+    getFileSizeSync(options?: fs.StatSyncOptions & { bigint?: false }): number | undefined;
     // @ts-expect-error Ignore this error.
-    getFileSizeSync(options: { bigint: true } & fs.StatSyncOptions): bigint | undefined;
+    getFileSizeSync(options: fs.StatSyncOptions & { bigint: true }): bigint | undefined;
     getFileSizeSync(options?: fs.StatSyncOptions): bigint | number | undefined;
     getFileSizeSync(options?: any) {
         return kFse.getFileSizeSync(this.#value, options);
@@ -1113,9 +1113,9 @@ export class Path {
     /**
      * @see {@link kFse.readFileToBlobSync}
      */
-    readFileToBlobSync(options?: { encoding?: null; flag?: string } | null): Blob | undefined;
-    readFileToBlobSync(options: { encoding: BufferEncoding; flag?: string } | BufferEncoding): Blob | undefined;
-    readFileToBlobSync(options?: ({ flag?: string } & fs.ObjectEncodingOptions) | BufferEncoding | null): Blob | undefined;
+    readFileToBlobSync(options?: null | { encoding?: null; flag?: string }): Blob | undefined;
+    readFileToBlobSync(options: BufferEncoding | { encoding: BufferEncoding; flag?: string }): Blob | undefined;
+    readFileToBlobSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null): Blob | undefined;
     readFileToBlobSync(options?: any) {
         return kFse.readFileToBlobSync(this.#value, options);
     }

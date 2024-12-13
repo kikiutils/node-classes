@@ -1,9 +1,21 @@
 import { createConsola } from 'consola';
 import type { ConsolaInstance } from 'consola';
-import { env, stderr, stdout } from 'node:process';
 import { NodeSSH } from 'node-ssh';
-import type { Config, SSHExecCommandOptions, SSHGetPutDirectoryOptions, SSHPutFilesOptions } from 'node-ssh';
-import type { SFTPWrapper, TransferOptions } from 'ssh2';
+import type {
+    Config,
+    SSHExecCommandOptions,
+    SSHGetPutDirectoryOptions,
+    SSHPutFilesOptions,
+} from 'node-ssh';
+import {
+    env,
+    stderr,
+    stdout,
+} from 'node:process';
+import type {
+    SFTPWrapper,
+    TransferOptions,
+} from 'ssh2';
 
 import type { PathLike } from './path';
 
@@ -70,11 +82,14 @@ export class SSHClient {
     }
 
     execCommandWithIO(command: string, options?: SSHExecCommandOptions) {
-        return this.execCommand(command, {
-            ...options,
-            onStderr: (data) => stderr.write(data.toString()),
-            onStdout: (data) => stdout.write(data.toString()),
-        });
+        return this.execCommand(
+            command,
+            {
+                ...options,
+                onStderr: (data) => stderr.write(data.toString()),
+                onStdout: (data) => stdout.write(data.toString()),
+            },
+        );
     }
 
     getDir = this.getDirectory;
@@ -88,7 +103,7 @@ export class SSHClient {
         }
     }
 
-    async getFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: SFTPWrapper | null, transferOptions?: TransferOptions | null) {
+    async getFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
         try {
             await this.#nodeSSH.getFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
@@ -123,7 +138,7 @@ export class SSHClient {
         }
     }
 
-    async putFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: SFTPWrapper | null, transferOptions?: TransferOptions | null) {
+    async putFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
         try {
             await this.#nodeSSH.putFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
@@ -135,7 +150,15 @@ export class SSHClient {
 
     async putFiles(files: { local: PathLike; remote: PathLike }[], options?: SSHPutFilesOptions) {
         try {
-            await this.#nodeSSH.putFiles(files.map(({ local, remote }) => ({ local: local.toString(), remote: remote.toString() }), options));
+            const convertedFiles = files.map(({
+                local,
+                remote,
+            }) => ({
+                local: local.toString(),
+                remote: remote.toString(),
+            }));
+
+            await this.#nodeSSH.putFiles(convertedFiles, options);
             return true;
         } catch (error) {
             this.#logger.error(error);
