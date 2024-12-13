@@ -40,16 +40,16 @@
   },
   "devDependencies": {
     "@kikiutils/changelogen": "^0.7.0",
-    "@kikiutils/eslint-config": "^0.5.0",
-    "@kikiutils/fs-extra": "^2.3.9",
+    "@kikiutils/eslint-config": "^0.7.1",
+    "@kikiutils/fs-extra": "^2.3.10",
     "@kikiutils/tsconfigs": "^3.0.2",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.2",
     "@types/ssh2": "^1.15.1",
     "consola": "^3.2.3",
     "decimal.js": "^10.4.3",
     "node-ssh": "^13.2.0",
-    "ts-project-builder": "^3.3.2",
+    "ts-project-builder": "^3.3.3",
     "tslib": "^2.8.1"
   }
 }
