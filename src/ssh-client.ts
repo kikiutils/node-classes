@@ -7,11 +7,6 @@ import type {
     SSHGetPutDirectoryOptions,
     SSHPutFilesOptions,
 } from 'node-ssh';
-import {
-    env,
-    stderr,
-    stdout,
-} from 'node:process';
 import type {
     SFTPWrapper,
     TransferOptions,
@@ -48,7 +43,7 @@ export class SSHClient {
 
         this.#logger = createConsola();
         this.#nodeSSH = new NodeSSH();
-        if (env.NODE_ENV === 'production') this.setLoggerLevel('error');
+        if (process.env.NODE_ENV === 'production') this.setLoggerLevel('error');
     }
 
     get nodeSSH() {
@@ -86,8 +81,8 @@ export class SSHClient {
             command,
             {
                 ...options,
-                onStderr: (data) => stderr.write(data.toString()),
-                onStdout: (data) => stdout.write(data.toString()),
+                onStderr: (data) => process.stderr.write(data.toString()),
+                onStdout: (data) => process.stdout.write(data.toString()),
             },
         );
     }
