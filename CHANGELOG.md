@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.0.3
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.2...v4.0.3)
+
+### 💅 Refactors
+
+- Remove process import statement ([45f4f48](https://github.com/kiki-kanri/kikiutils-node-classes/commit/45f4f48))
+
+### 📦 Build
+
+- Enable sourcemap output in build process ([1565f8a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/1565f8a))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([4a291bf](https://github.com/kiki-kanri/kikiutils-node-classes/commit/4a291bf))
+- Upgrade dependencies ([aeb381b](https://github.com/kiki-kanri/kikiutils-node-classes/commit/aeb381b))
+- Upgrade dependencies ([0b57729](https://github.com/kiki-kanri/kikiutils-node-classes/commit/0b57729))
+- Modify pack file structure and update package.json.exports configuration ([86c3349](https://github.com/kiki-kanri/kikiutils-node-classes/commit/86c3349))
+
+### 🎨 Styles
+
+- Format and lint all files ([40d0c93](https://github.com/kiki-kanri/kikiutils-node-classes/commit/40d0c93))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v4.0.2
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.1...v4.0.2)
