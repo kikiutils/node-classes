@@ -156,8 +156,8 @@ export class Path {
     /**
      * @see {@link nodePath.relative}
      */
-    relative(to: string) {
-        return this.#newInstance(nodePath.relative(this.#value, to));
+    relative(to: PathLike) {
+        return this.#newInstance(nodePath.relative(this.#value, to.toString()));
     }
 
     /**
