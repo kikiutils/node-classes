@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.1.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.3...v4.1.0)
+
+### 🚀 Enhancements
+
+- Change type of `to` parameter in `Path.relative` method to `PathLike` ([e0dcc4a](https://github.com/kiki-kanri/kikiutils-node-classes/commit/e0dcc4a))
+
+### 🏡 Chore
+
+- Upgrade dependencies and set `pnpm.onlyBuiltDependencies` in `package.json` ([7f29508](https://github.com/kiki-kanri/kikiutils-node-classes/commit/7f29508))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v4.0.3
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.2...v4.0.3)
