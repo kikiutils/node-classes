@@ -26,11 +26,11 @@ const loggerLevelStringToConsolaLogLevelMap = {
     warn: 1,
 } as const;
 
-export class SSHClient {
+export class SshClient {
     readonly #connectConfig: Config;
     readonly #logger: ConsolaInstance;
 
-    #nodeSSH: NodeSSH;
+    #nodeSsh: NodeSSH;
 
     constructor(host: string, username: string, password: string, port: number = 22, connectConfig?: Config) {
         this.#connectConfig = {
@@ -42,17 +42,17 @@ export class SSHClient {
         };
 
         this.#logger = createConsola();
-        this.#nodeSSH = new NodeSSH();
+        this.#nodeSsh = new NodeSSH();
         if (process.env.NODE_ENV === 'production') this.setLoggerLevel('error');
     }
 
-    get nodeSSH() {
-        return this.#nodeSSH;
+    get nodeSsh() {
+        return this.#nodeSsh;
     }
 
     async connect() {
         try {
-            this.#nodeSSH = await this.#nodeSSH.connect(this.#connectConfig);
+            this.#nodeSsh = await this.#nodeSsh.connect(this.#connectConfig);
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -62,7 +62,7 @@ export class SSHClient {
 
     disconnect() {
         try {
-            this.#nodeSSH.dispose();
+            this.#nodeSsh.dispose();
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -72,11 +72,11 @@ export class SSHClient {
 
     async execCommand(command: string, options?: SSHExecCommandOptions) {
         try {
-            return await this.#nodeSSH.execCommand(command, options);
+            return await this.#nodeSsh.execCommand(command, options);
         } catch {}
     }
 
-    execCommandWithIO(command: string, options?: SSHExecCommandOptions) {
+    execCommandWithIo(command: string, options?: SSHExecCommandOptions) {
         return this.execCommand(
             command,
             {
@@ -91,7 +91,7 @@ export class SSHClient {
 
     async getDirectory(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
         try {
-            return await this.#nodeSSH.getDirectory(localDirectory.toString(), remoteDirectory.toString(), options);
+            return await this.#nodeSsh.getDirectory(localDirectory.toString(), remoteDirectory.toString(), options);
         } catch (error) {
             this.#logger.error(error);
             return false;
@@ -100,7 +100,7 @@ export class SSHClient {
 
     async getFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
         try {
-            await this.#nodeSSH.getFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
+            await this.#nodeSsh.getFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -109,12 +109,12 @@ export class SSHClient {
     }
 
     isConnected() {
-        return this.#nodeSSH.isConnected();
+        return this.#nodeSsh.isConnected();
     }
 
     async mkdir(path: PathLike) {
         try {
-            await this.#nodeSSH.mkdir(path.toString());
+            await this.#nodeSsh.mkdir(path.toString());
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -126,7 +126,7 @@ export class SSHClient {
 
     async putDirectory(localDirectory: PathLike, remoteDirectory: PathLike, options?: SSHGetPutDirectoryOptions) {
         try {
-            return await this.#nodeSSH.putDirectory(localDirectory.toString(), remoteDirectory.toString(), options);
+            return await this.#nodeSsh.putDirectory(localDirectory.toString(), remoteDirectory.toString(), options);
         } catch (error) {
             this.#logger.error(error);
             return false;
@@ -135,7 +135,7 @@ export class SSHClient {
 
     async putFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
         try {
-            await this.#nodeSSH.putFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
+            await this.#nodeSsh.putFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -153,7 +153,7 @@ export class SSHClient {
                 remote: remote.toString(),
             }));
 
-            await this.#nodeSSH.putFiles(convertedFiles, options);
+            await this.#nodeSsh.putFiles(convertedFiles, options);
             return true;
         } catch (error) {
             this.#logger.error(error);
@@ -166,4 +166,4 @@ export class SSHClient {
     }
 }
 
-export default SSHClient;
+export default SshClient;

@@ -758,13 +758,6 @@ export class Path {
     }
 
     /**
-     * @see {@link fse.readJson}
-     */
-    readJSON<T = any>(options?: fse.JsonReadOptions) {
-        return kFse.readJSON<T>(this.#value, options);
-    }
-
-    /**
      * @see {@link fse.writeJson}
      */
     writeJson(obj: any, options?: fse.JsonWriteOptions) {
@@ -772,24 +765,10 @@ export class Path {
     }
 
     /**
-     * @see {@link fse.writeJson}
-     */
-    writeJSON(obj: any, options?: fse.JsonWriteOptions) {
-        return kFse.writeJSON(this.#value, obj, options);
-    }
-
-    /**
      * @see {@link fse.outputJson}
      */
     outputJson(data: any, options?: fse.JsonOutputOptions) {
         return kFse.outputJson(this.#value, data, options);
-    }
-
-    /**
-     * @see {@link fse.outputJson}
-     */
-    outputJSON(data: any, options?: fse.JsonOutputOptions) {
-        return kFse.outputJSON(this.#value, data, options);
     }
 
     /**
@@ -935,31 +914,10 @@ export class Path {
     }
 
     /**
-     * @see {@link fse.readJsonSync}
-     */
-    readJSONSync<T = any>(options?: fse.JsonReadOptions) {
-        return kFse.readJSONSync<T>(this.#value, options);
-    }
-
-    /**
      * @see {@link fse.writeJsonSync}
      */
     writeJsonSync(obj: any, options?: fse.JsonWriteOptions) {
         return kFse.writeJsonSync(this.#value, obj, options);
-    }
-
-    /**
-     * @see {@link fse.writeJsonSync}
-     */
-    writeJSONSync(obj: any, options?: fse.JsonWriteOptions) {
-        return kFse.writeJSONSync(this.#value, obj, options);
-    }
-
-    /**
-     * @see {@link fse.outputJsonSync}
-     */
-    outputJSONSync(data: any, options?: fse.JsonOutputOptions) {
-        return kFse.outputJSONSync(this.#value, data, options);
     }
 
     /**
@@ -1009,9 +967,9 @@ export class Path {
     }
 
     /**
-     * @see {@link kFse.pathIsFIFO}
+     * @see {@link kFse.pathIsFifo}
      */
-    isFIFO() {
+    isFifo() {
         return kFse.pathIsFifo(this.#value);
     }
 
@@ -1083,9 +1041,9 @@ export class Path {
     }
 
     /**
-     * @see {@link kFse.pathIsFIFOSync}
+     * @see {@link kFse.pathIsFifoSync}
      */
-    isFIFOSync() {
+    isFifoSync() {
         return kFse.pathIsFifoSync(this.#value);
     }
 
