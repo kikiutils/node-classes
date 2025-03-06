@@ -1,5 +1,26 @@
 # Changelog
 
+## v5.0.0
+
+[compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.1.0...v5.0.0)
+
+### 💅 Refactors
+
+- ⚠️ Enforce camelCase naming for all variables, classes, methods, types, etc., ignoring abbreviations ([8beda1f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/8beda1f))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([692a638](https://github.com/kiki-kanri/kikiutils-node-classes/commit/692a638))
+- Update code due to dependency updates ([d1d1f2f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/d1d1f2f))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Enforce camelCase naming for all variables, classes, methods, types, etc., ignoring abbreviations ([8beda1f](https://github.com/kiki-kanri/kikiutils-node-classes/commit/8beda1f))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v4.1.0
 
 [compare changes](https://github.com/kiki-kanri/kikiutils-node-classes/compare/v4.0.3...v4.1.0)
