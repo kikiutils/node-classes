@@ -1012,7 +1012,7 @@ export class Path {
      * @see {@link kFse.pathIsFIFO}
      */
     isFIFO() {
-        return kFse.pathIsFIFO(this.#value);
+        return kFse.pathIsFifo(this.#value);
     }
 
     /**
@@ -1086,7 +1086,7 @@ export class Path {
      * @see {@link kFse.pathIsFIFOSync}
      */
     isFIFOSync() {
-        return kFse.pathIsFIFOSync(this.#value);
+        return kFse.pathIsFifoSync(this.#value);
     }
 
     /**
