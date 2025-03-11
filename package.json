@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiki-kanri/kikiutils-node-classes.git"
+    "url": "git+https://github.com/kikiutils/node-classes.git"
   },
   "keywords": [
     "arithmetic",

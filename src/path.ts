@@ -18,7 +18,7 @@ type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...a
  *
  * All file-related functions are derived from `@kikiutils/fs-extra`. In cases of incorrect execution,
  * these functions will return either a boolean or undefined. For more details, please refer to the
- * [link](https://github.com/kiki-kanri/kikiutils-node-fs-extra/blob/main/README.md).
+ * [link](https://github.com/kikiutils/node-fs-extra/blob/main/README.md).
  *
  * All methods in the `Path` class are immutable, returning new instances with modified values
  * and leaving the original instance unchanged.
