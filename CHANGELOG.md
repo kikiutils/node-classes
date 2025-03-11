@@ -1,5 +1,19 @@
 # Changelog
 
+## v5.0.1
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v5.0.0...v5.0.1)
+
+### 🏡 Chore
+
+- Upgrade dependencies ([ff41b33](https://github.com/kikiutils/node-classes/commit/ff41b33))
+- Update repository URL ([eb54624](https://github.com/kikiutils/node-classes/commit/eb54624))
+- Set `hideAuthorEmail` arg in changelogen command ([4addcc1](https://github.com/kikiutils/node-classes/commit/4addcc1))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v5.0.0
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v4.1.0...v5.0.0)
