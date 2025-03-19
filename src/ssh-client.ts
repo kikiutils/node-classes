@@ -70,10 +70,8 @@ export class SshClient {
         }
     }
 
-    async execCommand(command: string, options?: SSHExecCommandOptions) {
-        try {
-            return await this.#nodeSsh.execCommand(command, options);
-        } catch {}
+    execCommand(command: string, options?: SSHExecCommandOptions) {
+        return this.#nodeSsh.execCommand(command, options).catch(() => {});
     }
 
     execCommandWithIo(command: string, options?: SSHExecCommandOptions) {
