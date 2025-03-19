@@ -1,14 +1,17 @@
-import kFse from '@kikiutils/fs-extra';
-import type fse from 'fs-extra';
 import type { Buffer } from 'node:buffer';
 import type { Abortable } from 'node:events';
 import type fs from 'node:fs';
 import type fsp from 'node:fs/promises';
 import nodePath from 'node:path';
 
+import kFse from '@kikiutils/fs-extra';
+import type fse from 'fs-extra';
+
 export type DoNotRemoveOrUseThisType = typeof fsp;
 export type PathLike = fs.PathLike | Path;
-type KFseParameters = { [K in keyof typeof kFse]: (typeof kFse)[K] extends (...args: any[]) => any ? Parameters<(typeof kFse)[K]> : never };
+type KFseParameters = {
+    [K in keyof typeof kFse]: (typeof kFse)[K] extends (...args: any[]) => any ? Parameters<(typeof kFse)[K]> : never
+};
 
 /**
  * Class representing a file system path with various utility methods for path operations.
@@ -180,7 +183,8 @@ export class Path {
 
     /**
      * Converts the Path instance to a string.
-     * This method returns the internal path string value, making it useful for implicit and explicit string conversions.
+     * This method returns the internal path string value,
+     * making it useful for implicit and explicit string conversions.
      */
     toString() {
         return this.#value;
@@ -342,11 +346,19 @@ export class Path {
     /**
      * @see {@link fsp.readdir}
      */
-    readdir(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Promise<string[] | undefined>;
+    readdir(
+        options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null
+    ): Promise<string[] | undefined>;
     // @ts-expect-error Ignore this error.
-    readdir(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Promise<Buffer[] | undefined>;
-    readdir(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Promise<Buffer[] | string[] | undefined>;
-    readdir(options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): Promise<fs.Dirent[] | undefined>;
+    readdir(
+        options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }
+    ): Promise<Buffer[] | undefined>;
+    readdir(
+        options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null
+    ): Promise<Buffer[] | string[] | undefined>;
+    readdir(
+        options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }
+    ): Promise<fs.Dirent[] | undefined>;
     readdir(options?: any) {
         return kFse.readdir(this.#value, options);
     }
@@ -411,8 +423,12 @@ export class Path {
      */
     readFile(options?: (Abortable & { encoding?: null; flag?: fs.OpenMode }) | null): Promise<Buffer | undefined>;
     // @ts-expect-error Ignore this error.
-    readFile(options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding): Promise<string | undefined>;
-    readFile(options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null): Promise<Buffer | string | undefined>;
+    readFile(
+        options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding
+    ): Promise<string | undefined>;
+    readFile(
+        options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null
+    ): Promise<Buffer | string | undefined>;
     readFile(options?: any) {
         return kFse.readFile(this.#value, options);
     }
@@ -615,11 +631,25 @@ export class Path {
     /**
      * @see {@link fs.readdirSync}
      */
-    readdirSync(options?: BufferEncoding | null | { encoding: BufferEncoding | null; recursive?: boolean; withFileTypes?: false }): string[] | undefined;
+    readdirSync(
+        options?:
+          | BufferEncoding
+          | null
+          | {
+              encoding: BufferEncoding | null;
+              recursive?: boolean;
+              withFileTypes?: false;
+          }
+    ): string[] | undefined;
     // @ts-expect-error Ignore this error.
-    readdirSync(options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }): Buffer[] | undefined;
-    readdirSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null): Buffer[] | string[] | undefined;
-    readdirSync(options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): fs.Dirent[] | undefined;
+    readdirSync(
+        options: 'buffer' | { encoding: 'buffer'; recursive?: boolean; withFileTypes?: false }
+    ): Buffer[] | undefined;
+    readdirSync(
+        options?: BufferEncoding | (fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes?: false }) | null
+    ): Buffer[] | string[] | undefined;
+    readdirSync(
+        options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): fs.Dirent[] | undefined;
     readdirSync(options?: any) {
         return kFse.readdirSync(this.#value, options);
     }
@@ -630,7 +660,9 @@ export class Path {
     readFileSync(options?: null | { encoding?: null; flag?: string }): Buffer | undefined;
     // @ts-expect-error Ignore this error.
     readFileSync(options: BufferEncoding | { encoding: BufferEncoding; flag?: string }): string | undefined;
-    readFileSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null): Buffer | string | undefined;
+    readFileSync(
+        options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null
+    ): Buffer | string | undefined;
     readFileSync(options?: any) {
         return kFse.readFileSync(this.#value, options);
     }
@@ -997,9 +1029,15 @@ export class Path {
     /**
      * @see {@link kFse.readFileToBlob}
      */
-    readFileToBlob(options?: (Abortable & { encoding?: null; flag?: fs.OpenMode }) | null): Promise<Blob | undefined>;
-    readFileToBlob(options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding): Promise<Blob | undefined>;
-    readFileToBlob(options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null): Promise<Blob | undefined>;
+    readFileToBlob(
+        options?: (Abortable & { encoding?: null; flag?: fs.OpenMode }) | null
+    ): Promise<Blob | undefined>;
+    readFileToBlob(
+        options: (Abortable & { encoding: BufferEncoding; flag?: fs.OpenMode }) | BufferEncoding
+    ): Promise<Blob | undefined>;
+    readFileToBlob(
+        options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null
+    ): Promise<Blob | undefined>;
     readFileToBlob(options?: any) {
         return kFse.readFileToBlob(this.#value, options);
     }
@@ -1073,7 +1111,9 @@ export class Path {
      */
     readFileToBlobSync(options?: null | { encoding?: null; flag?: string }): Blob | undefined;
     readFileToBlobSync(options: BufferEncoding | { encoding: BufferEncoding; flag?: string }): Blob | undefined;
-    readFileToBlobSync(options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null): Blob | undefined;
+    readFileToBlobSync(
+        options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null
+    ): Blob | undefined;
     readFileToBlobSync(options?: any) {
         return kFse.readFileToBlobSync(this.#value, options);
     }

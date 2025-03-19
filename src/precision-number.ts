@@ -54,7 +54,11 @@ export class PrecisionNumber {
 
     #decimal: Decimal;
 
-    constructor(value: PrecisionNumberValue = '0', decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
+    constructor(
+        value: PrecisionNumberValue = '0',
+        decimalPlaces: number = 2,
+        rounding: Decimal.Rounding = Decimal.ROUND_DOWN,
+    ) {
         this.#decimalPlaces = decimalPlaces;
         this.#rounding = rounding;
         this.#decimal = this.#decimalToFixedDecimal(new Decimal(value.toString().trim()));
@@ -81,7 +85,11 @@ export class PrecisionNumber {
     }
 
     // Static methods
-    static toFixed(value: PrecisionNumberValue, decimalPlaces: number = 2, rounding: Decimal.Rounding = Decimal.ROUND_DOWN) {
+    static toFixed(
+        value: PrecisionNumberValue,
+        decimalPlaces: number = 2,
+        rounding: Decimal.Rounding = Decimal.ROUND_DOWN,
+    ) {
         return new Decimal(value.toString().trim()).toFixed(decimalPlaces, rounding);
     }
 
@@ -165,7 +173,11 @@ export class PrecisionNumber {
     }
 
     toDividedBy(value: PrecisionNumberValue) {
-        return new PrecisionNumber(this.#decimal.dividedBy(value.toString().trim()), this.#decimalPlaces, this.#rounding);
+        return new PrecisionNumber(
+            this.#decimal.dividedBy(value.toString().trim()),
+            this.#decimalPlaces,
+            this.#rounding,
+        );
     }
 
     toJSON() {

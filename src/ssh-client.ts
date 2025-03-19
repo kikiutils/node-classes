@@ -96,7 +96,12 @@ export class SshClient {
         }
     }
 
-    async getFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
+    async getFile(
+        localFile: PathLike,
+        remoteFile: PathLike,
+        givenSftp?: null | SFTPWrapper,
+        transferOptions?: null | TransferOptions,
+    ) {
         try {
             await this.#nodeSsh.getFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
@@ -131,7 +136,12 @@ export class SshClient {
         }
     }
 
-    async putFile(localFile: PathLike, remoteFile: PathLike, givenSftp?: null | SFTPWrapper, transferOptions?: null | TransferOptions) {
+    async putFile(
+        localFile: PathLike,
+        remoteFile: PathLike,
+        givenSftp?: null | SFTPWrapper,
+        transferOptions?: null | TransferOptions,
+    ) {
         try {
             await this.#nodeSsh.putFile(localFile.toString(), remoteFile.toString(), givenSftp, transferOptions);
             return true;
