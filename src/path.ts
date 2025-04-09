@@ -1102,5 +1102,3 @@ export class Path {
         return kFse.readFileToBlobSync(this.#value, options);
     }
 }
-
-export default Path;

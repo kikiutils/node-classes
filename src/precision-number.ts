@@ -208,5 +208,3 @@ export class PrecisionNumber {
         return new PrecisionNumber(this.#decimal.times(value.toString().trim()), this.#decimalPlaces, this.#rounding);
     }
 }
-
-export default PrecisionNumber;

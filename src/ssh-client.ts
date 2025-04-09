@@ -171,5 +171,3 @@ export class SshClient {
         this.#logger.level = loggerLevelStringToConsolaLogLevelMap[level];
     }
 }
-
-export default SshClient;
