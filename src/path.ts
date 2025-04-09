@@ -2,9 +2,135 @@ import type { Buffer } from 'node:buffer';
 import type { Abortable } from 'node:events';
 import type fs from 'node:fs';
 import type fsp from 'node:fs/promises';
-import nodePath from 'node:path';
+import {
+    basename,
+    dirname,
+    extname,
+    format,
+    isAbsolute,
+    join,
+    normalize,
+    parse,
+    relative,
+    resolve,
+    toNamespacedPath,
+} from 'node:path';
+import type nodePath from 'node:path';
 
-import * as kFse from '@kikiutils/fs-extra';
+import {
+    access,
+    accessSync,
+    appendFile,
+    appendFileSync,
+    chmod,
+    chmodSync,
+    chown,
+    chownSync,
+    copy,
+    copyFile,
+    copyFileSync,
+    copySync,
+    cp,
+    cpSync,
+    createFile,
+    createFileSync,
+    createLink,
+    createLinkSync,
+    createSymlink,
+    createSymlinkSync,
+    emptyDir,
+    emptydir,
+    emptyDirSync,
+    emptydirSync,
+    ensureDir,
+    ensureDirSync,
+    ensureFile,
+    ensureFileSync,
+    ensureLink,
+    ensureLinkSync,
+    ensureSymlink,
+    ensureSymlinkSync,
+    existsSync,
+    getFileSize,
+    getFileSizeSync,
+    lchown,
+    lchownSync,
+    link,
+    linkSync,
+    lstat,
+    lstatSync,
+    lutimes,
+    lutimesSync,
+    mkdir,
+    mkdirp,
+    mkdirpSync,
+    mkdirs,
+    mkdirsSync,
+    mkdirSync,
+    move,
+    moveSync,
+    open,
+    opendir,
+    opendirSync,
+    openSync,
+    outputFile,
+    outputFileSync,
+    outputJson,
+    outputJsonSync,
+    pathExists,
+    pathExistsSync,
+    pathIsBlockDevice,
+    pathIsBlockDeviceSync,
+    pathIsCharacterDevice,
+    pathIsCharacterDeviceSync,
+    pathIsDirectory,
+    pathIsDirectorySync,
+    pathIsFifo,
+    pathIsFifoSync,
+    pathIsFile,
+    pathIsFileSync,
+    pathIsSocket,
+    pathIsSocketSync,
+    pathIsSymbolicLink,
+    pathIsSymbolicLinkSync,
+    readdir,
+    readdirSync,
+    readFile,
+    readFileSync,
+    readFileToBlob,
+    readFileToBlobSync,
+    readJson,
+    readJsonSync,
+    readlink,
+    readlinkSync,
+    realpath,
+    realpathSync,
+    remove,
+    removeSync,
+    rename,
+    renameSync,
+    rm,
+    rmdir,
+    rmdirSync,
+    rmSync,
+    stat,
+    statfs,
+    statfsSync,
+    statSync,
+    symlink,
+    symlinkSync,
+    truncate,
+    truncateSync,
+    unlink,
+    unlinkSync,
+    utimes,
+    utimesSync,
+    writeFile,
+    writeFileSync,
+    writeJson,
+    writeJsonSync,
+} from '@kikiutils/fs-extra';
+import type kFse from '@kikiutils/fs-extra';
 import type fse from 'fs-extra';
 
 export type DoNotRemoveOrUseThisType = typeof fsp;
@@ -51,7 +177,7 @@ export class Path {
     readonly #value: string;
 
     constructor(...paths: PathLike[]) {
-        this.#value = nodePath.join(...this.#toStrings(paths));
+        this.#value = join(...this.#toStrings(paths));
     }
 
     // Private methods
@@ -95,7 +221,7 @@ export class Path {
      * @see {@link nodePath.format}
      */
     static format(pathObject: nodePath.FormatInputPathObject) {
-        return new Path(nodePath.format(pathObject));
+        return new Path(format(pathObject));
     }
 
     /**
@@ -111,35 +237,35 @@ export class Path {
      * @see {@link nodePath.basename}
      */
     basename(suffix?: string) {
-        return nodePath.basename(this.#value, suffix);
+        return basename(this.#value, suffix);
     }
 
     /**
      * @see {@link nodePath.dirname}
      */
     dirname() {
-        return this.#newInstance(nodePath.dirname(this.#value));
+        return this.#newInstance(dirname(this.#value));
     }
 
     /**
      * @see {@link nodePath.extname}
      */
     extname() {
-        return nodePath.extname(this.#value);
+        return extname(this.#value);
     }
 
     /**
      * @see {@link nodePath.isAbsolute}
      */
     isAbsolute() {
-        return nodePath.isAbsolute(this.#value);
+        return isAbsolute(this.#value);
     }
 
     /**
      * @see {@link nodePath.normalize}
      */
     normalize() {
-        return this.#newInstance(nodePath.normalize(this.#value));
+        return this.#newInstance(normalize(this.#value));
     }
 
     /**
@@ -153,21 +279,21 @@ export class Path {
      * @see {@link nodePath.parse}
      */
     parse() {
-        return nodePath.parse(this.#value);
+        return parse(this.#value);
     }
 
     /**
      * @see {@link nodePath.relative}
      */
     relative(to: PathLike) {
-        return this.#newInstance(nodePath.relative(this.#value, to.toString()));
+        return this.#newInstance(relative(this.#value, to.toString()));
     }
 
     /**
      * @see {@link nodePath.resolve}
      */
     resolve() {
-        return this.#newInstance(nodePath.resolve(this.#value));
+        return this.#newInstance(resolve(this.#value));
     }
 
     toJSON() {
@@ -178,7 +304,7 @@ export class Path {
      * @see {@link nodePath.toNamespacedPath}
      */
     toNamespacedPath() {
-        return nodePath.toNamespacedPath(this.#value);
+        return toNamespacedPath(this.#value);
     }
 
     /**
@@ -196,133 +322,133 @@ export class Path {
      * @see {@link fsp.access}
      */
     access(mode?: number) {
-        return kFse.access(this.#value, mode);
+        return access(this.#value, mode);
     }
 
     /**
      * @see {@link fsp.copyFile}
      */
     copyFile(dest: PathLike, mode?: number) {
-        return kFse.copyFile(this.#value, dest.toString(), mode);
+        return copyFile(this.#value, dest.toString(), mode);
     }
 
     /**
      * @see {@link fsp.open}
      */
     open(flags?: number | string, mode?: fs.Mode) {
-        return kFse.open(this.value, flags, mode);
+        return open(this.value, flags, mode);
     }
 
     /**
      * @see {@link fsp.rename}
      */
     rename(newPath: PathLike) {
-        return kFse.rename(this.#value, newPath.toString());
+        return rename(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fsp.truncate}
      */
     truncate(len?: number) {
-        return kFse.truncate(this.#value, len);
+        return truncate(this.#value, len);
     }
 
     /**
      * @see {@link fsp.rmdir}
      */
     rmdir(options?: fs.RmDirOptions) {
-        return kFse.rmdir(this.#value, options);
+        return rmdir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.rm}
      */
     rm(options?: fs.RmOptions) {
-        return kFse.rm(this.#value, options);
+        return rm(this.#value, options);
     }
 
     /**
      * @see {@link fsp.symlink}
      */
     symlink(path: PathLike, type?: null | string) {
-        return kFse.symlink(this.#value, path.toString(), type);
+        return symlink(this.#value, path.toString(), type);
     }
 
     /**
      * @see {@link fsp.link}
      */
     link(newPath: PathLike) {
-        return kFse.link(this.#value, newPath.toString());
+        return link(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fsp.unlink}
      */
     unlink() {
-        return kFse.unlink(this.#value);
+        return unlink(this.#value);
     }
 
     /**
      * @see {@link fsp.chmod}
      */
     chmod(mode: fs.Mode) {
-        return kFse.chmod(this.#value, mode);
+        return chmod(this.#value, mode);
     }
 
     /**
      * @see {@link fsp.lchown}
      */
     lchown(uid: number, gid: number) {
-        return kFse.lchown(this.#value, uid, gid);
+        return lchown(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fsp.lutimes}
      */
     lutimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return kFse.lutimes(this.#value, atime, mtime);
+        return lutimes(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fsp.chown}
      */
     chown(uid: number, gid: number) {
-        return kFse.chown(this.#value, uid, gid);
+        return chown(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fsp.utimes}
      */
     utimes(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return kFse.utimes(this.#value, atime, mtime);
+        return utimes(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fsp.writeFile}
      */
     writeFile(data: KFseParameters['writeFile'][1], options?: KFseParameters['writeFile'][2]) {
-        return kFse.writeFile(this.#value, data, options);
+        return writeFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fsp.appendFile}
      */
     appendFile(data: KFseParameters['appendFile'][1], options?: KFseParameters['appendFile'][2]) {
-        return kFse.appendFile(this.#value, data, options);
+        return appendFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fsp.opendir}
      */
     opendir(options?: fs.OpenDirOptions) {
-        return kFse.opendir(this.#value, options);
+        return opendir(this.#value, options);
     }
 
     /**
      * @see {@link fsp.cp}
      */
     cp(destination: PathLike, opts?: fs.CopyOptions) {
-        return kFse.cp(this.#value, destination.toString(), opts);
+        return cp(this.#value, destination.toString(), opts);
     }
 
     /**
@@ -333,7 +459,7 @@ export class Path {
     mkdir(options?: (fs.MakeDirectoryOptions & { recursive?: false }) | fs.Mode | null): Promise<boolean>;
     mkdir(options?: fs.MakeDirectoryOptions | fs.Mode | null): Promise<string | undefined>;
     mkdir(options?: any) {
-        return kFse.mkdir(this.#value, options);
+        return mkdir(this.#value, options);
     }
 
     /**
@@ -353,7 +479,7 @@ export class Path {
         options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }
     ): Promise<fs.Dirent[] | undefined>;
     readdir(options?: any) {
-        return kFse.readdir(this.#value, options);
+        return readdir(this.#value, options);
     }
 
     /**
@@ -364,7 +490,7 @@ export class Path {
     readlink(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
     readlink(options?: fs.ObjectEncodingOptions | null | string): Promise<Buffer | string | undefined>;
     readlink(options?: any) {
-        return kFse.readlink(this.#value, options);
+        return readlink(this.#value, options);
     }
 
     /**
@@ -375,7 +501,7 @@ export class Path {
     lstat(opts: fs.StatOptions & { bigint: true }): Promise<fs.BigIntStats | undefined>;
     lstat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
     lstat(opts?: any) {
-        return kFse.lstat(this.#value, opts);
+        return lstat(this.#value, opts);
     }
 
     /**
@@ -386,7 +512,7 @@ export class Path {
     stat(opts: fs.StatOptions & { bigint: true }): Promise<fs.BigIntStats | undefined>;
     stat(opts?: fs.StatOptions): Promise<fs.BigIntStats | fs.Stats | undefined>;
     stat(opts?: any) {
-        return kFse.stat(this.#value, opts);
+        return stat(this.#value, opts);
     }
 
     /**
@@ -397,7 +523,7 @@ export class Path {
     statfs(opts: fs.StatFsOptions & { bigint: true }): Promise<fs.BigIntStatsFs | undefined>;
     statfs(opts?: fs.StatFsOptions): Promise<fs.BigIntStatsFs | fs.StatsFs | undefined>;
     statfs(opts?: any) {
-        return kFse.statfs(this.#value, opts);
+        return statfs(this.#value, opts);
     }
 
     /**
@@ -408,7 +534,7 @@ export class Path {
     realpath(options: fs.BufferEncodingOption): Promise<Buffer | undefined>;
     realpath(options?: BufferEncoding | fs.ObjectEncodingOptions | null): Promise<Buffer | string | undefined>;
     realpath(options?: any) {
-        return kFse.realpath(this.#value, options);
+        return realpath(this.#value, options);
     }
 
     /**
@@ -423,7 +549,7 @@ export class Path {
         options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null
     ): Promise<Buffer | string | undefined>;
     readFile(options?: any) {
-        return kFse.readFile(this.#value, options);
+        return readFile(this.#value, options);
     }
 
     // node:fs sync methods
@@ -432,140 +558,140 @@ export class Path {
      * @see {@link fs.existsSync}
      */
     existsSync() {
-        return kFse.existsSync(this.value);
+        return existsSync(this.value);
     }
 
     /**
      * @see {@link fs.appendFileSync}
      */
     appendFileSync(data: string | Uint8Array, options?: fs.WriteFileOptions | undefined) {
-        return kFse.appendFileSync(this.#value, data, options);
+        return appendFileSync(this.#value, data, options);
     }
 
     /**
      * @see {@link fs.renameSync}
      */
     renameSync(newPath: PathLike) {
-        return kFse.renameSync(this.#value, newPath.toString());
+        return renameSync(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fs.truncateSync}
      */
     truncateSync(len?: number) {
-        return kFse.truncateSync(this.#value, len);
+        return truncateSync(this.#value, len);
     }
 
     /**
      * @see {@link fs.chownSync}
      */
     chownSync(uid: number, gid: number) {
-        return kFse.chownSync(this.#value, uid, gid);
+        return chownSync(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fs.lchownSync}
      */
     lchownSync(uid: number, gid: number) {
-        return kFse.lchownSync(this.#value, uid, gid);
+        return lchownSync(this.#value, uid, gid);
     }
 
     /**
      * @see {@link fs.lutimesSync}
      */
     lutimesSync(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return kFse.lutimesSync(this.#value, atime, mtime);
+        return lutimesSync(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fs.chmodSync}
      */
     chmodSync(mode: fs.Mode) {
-        return kFse.chmodSync(this.#value, mode);
+        return chmodSync(this.#value, mode);
     }
 
     /**
      * @see {@link fs.linkSync}
      */
     linkSync(newPath: PathLike) {
-        return kFse.linkSync(this.#value, newPath.toString());
+        return linkSync(this.#value, newPath.toString());
     }
 
     /**
      * @see {@link fs.symlinkSync}
      */
     symlinkSync(path: PathLike, type?: fs.symlink.Type | null) {
-        return kFse.symlinkSync(this.#value, path.toString(), type);
+        return symlinkSync(this.#value, path.toString(), type);
     }
 
     /**
      * @see {@link fs.unlinkSync}
      */
     unlinkSync() {
-        return kFse.unlinkSync(this.#value);
+        return unlinkSync(this.#value);
     }
 
     /**
      * @see {@link fs.rmdirSync}
      */
     rmdirSync(options?: fs.RmDirOptions) {
-        return kFse.rmdirSync(this.#value, options);
+        return rmdirSync(this.#value, options);
     }
 
     /**
      * @see {@link fs.rmSync}
      */
     rmSync(options?: fs.RmOptions) {
-        return kFse.rmSync(this.#value, options);
+        return rmSync(this.#value, options);
     }
 
     /**
      * @see {@link fs.utimesSync}
      */
     utimesSync(atime: fs.TimeLike, mtime: fs.TimeLike) {
-        return kFse.utimesSync(this.#value, atime, mtime);
+        return utimesSync(this.#value, atime, mtime);
     }
 
     /**
      * @see {@link fs.accessSync}
      */
     accessSync(mode?: number) {
-        return kFse.accessSync(this.#value, mode);
+        return accessSync(this.#value, mode);
     }
 
     /**
      * @see {@link fs.copyFileSync}
      */
     copyFileSync(dest: PathLike, mode?: number) {
-        return kFse.copyFileSync(this.#value, dest.toString(), mode);
+        return copyFileSync(this.#value, dest.toString(), mode);
     }
 
     /**
      * @see {@link fs.cpSync}
      */
     cpSync(destination: PathLike, opts?: fs.CopySyncOptions) {
-        return kFse.cpSync(this.#value, destination.toString(), opts);
+        return cpSync(this.#value, destination.toString(), opts);
     }
 
     /**
      * @see {@link fs.openSync}
      */
     openSync(flags: fs.OpenMode, mode?: fs.Mode | null) {
-        return kFse.openSync(this.#value, flags, mode);
+        return openSync(this.#value, flags, mode);
     }
 
     /**
      * @see {@link fs.writeFileSync}
      */
     writeFileSync(data: NodeJS.ArrayBufferView | string, options?: fs.WriteFileOptions) {
-        return kFse.writeFileSync(this.#value, data, options);
+        return writeFileSync(this.#value, data, options);
     }
 
     /**
      * @see {@link fs.opendirSync}
      */
     opendirSync(options?: fs.OpenDirOptions) {
-        return kFse.opendirSync(this.#value, options);
+        return opendirSync(this.#value, options);
     }
 
     /**
@@ -576,7 +702,7 @@ export class Path {
     statfsSync(options: fs.StatFsOptions & { bigint: true }): fs.BigIntStatsFs | undefined;
     statfsSync(options?: fs.StatFsOptions): fs.BigIntStatsFs | fs.StatsFs | undefined;
     statfsSync(options?: any) {
-        return kFse.statfsSync(this.#value, options);
+        return statfsSync(this.#value, options);
     }
 
     /**
@@ -587,7 +713,7 @@ export class Path {
     readlinkSync(options: fs.BufferEncodingOption): Buffer | undefined;
     readlinkSync(options?: fs.EncodingOption): Buffer | string | undefined;
     readlinkSync(options?: any) {
-        return kFse.readlinkSync(this.#value, options);
+        return readlinkSync(this.#value, options);
     }
 
     /**
@@ -598,7 +724,7 @@ export class Path {
     realpathSync(options: fs.BufferEncodingOption): Buffer | undefined;
     realpathSync(options?: fs.EncodingOption): Buffer | string | undefined;
     realpathSync(options?: any) {
-        return kFse.realpathSync(this.#value, options);
+        return realpathSync(this.#value, options);
     }
 
     /**
@@ -609,7 +735,7 @@ export class Path {
     mkdirSync(options?: (fs.MakeDirectoryOptions & { recursive?: false }) | fs.Mode | null): boolean;
     mkdirSync(options?: fs.MakeDirectoryOptions | fs.Mode | null): string | undefined;
     mkdirSync(options?: any) {
-        return kFse.mkdirSync(this.#value, options);
+        return mkdirSync(this.#value, options);
     }
 
     /**
@@ -635,7 +761,7 @@ export class Path {
     readdirSync(
         options: fs.ObjectEncodingOptions & { recursive?: boolean; withFileTypes: true }): fs.Dirent[] | undefined;
     readdirSync(options?: any) {
-        return kFse.readdirSync(this.#value, options);
+        return readdirSync(this.#value, options);
     }
 
     /**
@@ -648,7 +774,7 @@ export class Path {
         options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null
     ): Buffer | string | undefined;
     readFileSync(options?: any) {
-        return kFse.readFileSync(this.#value, options);
+        return readFileSync(this.#value, options);
     }
 
     /**
@@ -659,7 +785,7 @@ export class Path {
     statSync(options: fs.StatSyncOptions & { bigint: true }): fs.BigIntStats | undefined;
     statSync(options?: fs.StatSyncOptions): fs.BigIntStats | fs.Stats | undefined;
     statSync(options?: any) {
-        return kFse.statSync(this.#value, options);
+        return statSync(this.#value, options);
     }
 
     /**
@@ -670,7 +796,7 @@ export class Path {
     lstatSync(options: fs.StatSyncOptions & { bigint: true }): fs.BigIntStats | undefined;
     lstatSync(options?: fs.StatSyncOptions): fs.BigIntStats | fs.Stats | undefined;
     lstatSync(options?: any) {
-        return kFse.lstatSync(this.#value, options);
+        return lstatSync(this.#value, options);
     }
 
     // fs-extra promise methods
@@ -679,133 +805,133 @@ export class Path {
      * @see {@link fse.pathExists}
      */
     pathExists() {
-        return kFse.pathExists(this.#value);
+        return pathExists(this.#value);
     }
 
     /**
      * @see {@link fse.copy}
      */
     copy(dest: PathLike, options?: fse.CopyOptions) {
-        return kFse.copy(this.#value, dest.toString(), options);
+        return copy(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.move}
      */
     move(dest: PathLike, options?: fse.MoveOptions) {
-        return kFse.move(this.#value, dest.toString(), options);
+        return move(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.ensureFile}
      */
     ensureFile() {
-        return kFse.ensureFile(this.#value);
+        return ensureFile(this.#value);
     }
 
     /**
      * @see {@link fse.ensureFile}
      */
     createFile() {
-        return kFse.createFile(this.#value);
+        return createFile(this.#value);
     }
 
     /**
      * @see {@link fse.ensureLink}
      */
     ensureLink(dest: PathLike) {
-        return kFse.ensureLink(this.#value, dest.toString());
+        return ensureLink(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureLink}
      */
     createLink(dest: PathLike) {
-        return kFse.createLink(this.#value, dest.toString());
+        return createLink(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureSymlink}
      */
     ensureSymlink(dest: PathLike, type?: fs.symlink.Type) {
-        return kFse.ensureSymlink(this.#value, dest.toString(), type);
+        return ensureSymlink(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureSymlink}
      */
     createSymlink(dest: PathLike, type?: fs.symlink.Type) {
-        return kFse.createSymlink(this.#value, dest.toString(), type);
+        return createSymlink(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
     ensureDir(options?: fse.EnsureDirOptions | number) {
-        return kFse.ensureDir(this.#value, options);
+        return ensureDir(this.#value, options);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
     mkdirp(options?: fse.EnsureDirOptions | number) {
-        return kFse.mkdirp(this.#value, options);
+        return mkdirp(this.#value, options);
     }
 
     /**
      * @see {@link fse.ensureDir}
      */
     mkdirs(options?: fse.EnsureDirOptions | number) {
-        return kFse.mkdirs(this.#value, options);
+        return mkdirs(this.#value, options);
     }
 
     /**
      * @see {@link fse.outputFile}
      */
     outputFile(data: NodeJS.ArrayBufferView | string, options?: fse.WriteFileOptions) {
-        return kFse.outputFile(this.#value, data, options);
+        return outputFile(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.readJson}
      */
     readJson<T = any>(options?: fse.JsonReadOptions) {
-        return kFse.readJson<T>(this.#value, options);
+        return readJson<T>(this.#value, options);
     }
 
     /**
      * @see {@link fse.writeJson}
      */
     writeJson(obj: any, options?: fse.JsonWriteOptions) {
-        return kFse.writeJson(this.#value, obj, options);
+        return writeJson(this.#value, obj, options);
     }
 
     /**
      * @see {@link fse.outputJson}
      */
     outputJson(data: any, options?: fse.JsonOutputOptions) {
-        return kFse.outputJson(this.#value, data, options);
+        return outputJson(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.remove}
      */
     remove() {
-        return kFse.remove(this.#value);
+        return remove(this.#value);
     }
 
     /**
      * @see {@link fse.emptyDir}
      */
     emptyDir() {
-        return kFse.emptyDir(this.#value);
+        return emptyDir(this.#value);
     }
 
     /**
      * @see {@link fse.emptyDir}
      */
     emptydir() {
-        return kFse.emptydir(this.#value);
+        return emptydir(this.#value);
     }
 
     // fs-extra sync methods
@@ -814,133 +940,133 @@ export class Path {
      * @see {@link fse.pathExistsSync}
      */
     pathExistsSync() {
-        return kFse.pathExistsSync(this.#value);
+        return pathExistsSync(this.#value);
     }
 
     /**
      * @see {@link fse.copySync}
      */
     copySync(dest: PathLike, options?: fse.CopyOptionsSync) {
-        return kFse.copySync(this.#value, dest.toString(), options);
+        return copySync(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.moveSync}
      */
     moveSync(dest: PathLike, options?: fse.MoveOptions) {
-        return kFse.moveSync(this.#value, dest.toString(), options);
+        return moveSync(this.#value, dest.toString(), options);
     }
 
     /**
      * @see {@link fse.ensureFileSync}
      */
     ensureFileSync() {
-        return kFse.ensureFileSync(this.#value);
+        return ensureFileSync(this.#value);
     }
 
     /**
      * @see {@link fse.ensureLinkSync}
      */
     ensureLinkSync(dest: PathLike) {
-        return kFse.ensureLinkSync(this.#value, dest.toString());
+        return ensureLinkSync(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureSymlinkSync}
      */
     ensureSymlinkSync(dest: PathLike, type?: fs.symlink.Type) {
-        return kFse.ensureSymlinkSync(this.#value, dest.toString(), type);
+        return ensureSymlinkSync(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureDirSync}
      */
     ensureDirSync(options?: fse.EnsureDirOptions | number) {
-        return kFse.ensureDirSync(this.#value, options);
+        return ensureDirSync(this.#value, options);
     }
 
     /**
      * @see {@link fse.outputFileSync}
      */
     outputFileSync(data: NodeJS.ArrayBufferView | string, options?: fse.WriteFileOptions) {
-        return kFse.outputFileSync(this.#value, data, options);
+        return outputFileSync(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.outputJsonSync}
      */
     outputJsonSync(data: any, options?: fse.JsonOutputOptions) {
-        return kFse.outputJsonSync(this.#value, data, options);
+        return outputJsonSync(this.#value, data, options);
     }
 
     /**
      * @see {@link fse.removeSync}
      */
     removeSync() {
-        return kFse.removeSync(this.#value);
+        return removeSync(this.#value);
     }
 
     /**
      * @see {@link fse.emptyDirSync}
      */
     emptyDirSync() {
-        return kFse.emptyDirSync(this.#value);
+        return emptyDirSync(this.#value);
     }
 
     /**
      * @see {@link fse.ensureFileSync}
      */
     createFileSync() {
-        return kFse.createFileSync(this.#value);
+        return createFileSync(this.#value);
     }
 
     /**
      * @see {@link fse.ensureLinkSync}
      */
     createLinkSync(dest: PathLike) {
-        return kFse.createLinkSync(this.#value, dest.toString());
+        return createLinkSync(this.#value, dest.toString());
     }
 
     /**
      * @see {@link fse.ensureSymlinkSync}
      */
     createSymlinkSync(dest: PathLike, type?: fs.symlink.Type) {
-        return kFse.createSymlinkSync(this.#value, dest.toString(), type);
+        return createSymlinkSync(this.#value, dest.toString(), type);
     }
 
     /**
      * @see {@link fse.ensureDirSync}
      */
     mkdirsSync(options?: fse.EnsureDirOptions | number) {
-        return kFse.mkdirsSync(this.#value, options);
+        return mkdirsSync(this.#value, options);
     }
 
     /**
      * @see {@link fse.ensureDirSync}
      */
     mkdirpSync(options?: fse.EnsureDirOptions | number) {
-        return kFse.mkdirpSync(this.#value, options);
+        return mkdirpSync(this.#value, options);
     }
 
     /**
      * @see {@link fse.readJsonSync}
      */
     readJsonSync<T = any>(options?: fse.JsonReadOptions) {
-        return kFse.readJsonSync<T>(this.#value, options);
+        return readJsonSync<T>(this.#value, options);
     }
 
     /**
      * @see {@link fse.writeJsonSync}
      */
     writeJsonSync(obj: any, options?: fse.JsonWriteOptions) {
-        return kFse.writeJsonSync(this.#value, obj, options);
+        return writeJsonSync(this.#value, obj, options);
     }
 
     /**
      * @see {@link fse.emptyDirSync}
      */
     emptydirSync() {
-        return kFse.emptydirSync(this.#value);
+        return emptydirSync(this.#value);
     }
 
     // additional promise methods
@@ -953,21 +1079,21 @@ export class Path {
     getFileSize(opts: fs.StatOptions & { bigint: true }): Promise<bigint | undefined>;
     getFileSize(opts?: fs.StatOptions): Promise<bigint | number | undefined>;
     getFileSize(opts: any) {
-        return kFse.getFileSize(this.#value, opts);
+        return getFileSize(this.#value, opts);
     }
 
     /**
      * @see {@link kFse.pathIsBlockDevice}
      */
     isBlockDevice() {
-        return kFse.pathIsBlockDevice(this.#value);
+        return pathIsBlockDevice(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsCharacterDevice}
      */
     isCharacterDevice() {
-        return kFse.pathIsCharacterDevice(this.#value);
+        return pathIsCharacterDevice(this.#value);
     }
 
     /**
@@ -979,35 +1105,35 @@ export class Path {
      * @see {@link kFse.pathIsDirectory}
      */
     isDirectory() {
-        return kFse.pathIsDirectory(this.#value);
+        return pathIsDirectory(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFifo}
      */
     isFifo() {
-        return kFse.pathIsFifo(this.#value);
+        return pathIsFifo(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFile}
      */
     isFile() {
-        return kFse.pathIsFile(this.#value);
+        return pathIsFile(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSocket}
      */
     isSocket() {
-        return kFse.pathIsSocket(this.#value);
+        return pathIsSocket(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSymbolicLink}
      */
     isSymbolicLink() {
-        return kFse.pathIsSymbolicLink(this.#value);
+        return pathIsSymbolicLink(this.#value);
     }
 
     /**
@@ -1023,7 +1149,7 @@ export class Path {
         options?: (Abortable & fs.ObjectEncodingOptions & { flag?: fs.OpenMode }) | BufferEncoding | null
     ): Promise<Blob | undefined>;
     readFileToBlob(options?: any) {
-        return kFse.readFileToBlob(this.#value, options);
+        return readFileToBlob(this.#value, options);
     }
 
     // additional sync methods
@@ -1033,21 +1159,21 @@ export class Path {
     getFileSizeSync(options: fs.StatSyncOptions & { bigint: true }): bigint | undefined;
     getFileSizeSync(options?: fs.StatSyncOptions): bigint | number | undefined;
     getFileSizeSync(options?: any) {
-        return kFse.getFileSizeSync(this.#value, options);
+        return getFileSizeSync(this.#value, options);
     }
 
     /**
      * @see {@link kFse.pathIsBlockDeviceSync}
      */
     isBlockDeviceSync() {
-        return kFse.pathIsBlockDeviceSync(this.#value);
+        return pathIsBlockDeviceSync(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsCharacterDeviceSync}
      */
     isCharacterDeviceSync() {
-        return kFse.pathIsCharacterDeviceSync(this.#value);
+        return pathIsCharacterDeviceSync(this.#value);
     }
 
     /**
@@ -1059,35 +1185,35 @@ export class Path {
      * @see {@link kFse.pathIsDirectorySync}
      */
     isDirectorySync() {
-        return kFse.pathIsDirectorySync(this.#value);
+        return pathIsDirectorySync(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFifoSync}
      */
     isFifoSync() {
-        return kFse.pathIsFifoSync(this.#value);
+        return pathIsFifoSync(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsFileSync}
      */
     isFileSync() {
-        return kFse.pathIsFileSync(this.#value);
+        return pathIsFileSync(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSocketSync}
      */
     isSocketSync() {
-        return kFse.pathIsSocketSync(this.#value);
+        return pathIsSocketSync(this.#value);
     }
 
     /**
      * @see {@link kFse.pathIsSymbolicLinkSync}
      */
     isSymbolicLinkSync() {
-        return kFse.pathIsSymbolicLinkSync(this.#value);
+        return pathIsSymbolicLinkSync(this.#value);
     }
 
     /**
@@ -1099,6 +1225,6 @@ export class Path {
         options?: BufferEncoding | (fs.ObjectEncodingOptions & { flag?: string }) | null
     ): Blob | undefined;
     readFileToBlobSync(options?: any) {
-        return kFse.readFileToBlobSync(this.#value, options);
+        return readFileToBlobSync(this.#value, options);
     }
 }
