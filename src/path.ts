@@ -4,7 +4,7 @@ import type fs from 'node:fs';
 import type fsp from 'node:fs/promises';
 import nodePath from 'node:path';
 
-import kFse from '@kikiutils/fs-extra';
+import * as kFse from '@kikiutils/fs-extra';
 import type fse from 'fs-extra';
 
 export type DoNotRemoveOrUseThisType = typeof fsp;
@@ -270,13 +270,6 @@ export class Path {
     }
 
     /**
-     * @see {@link fsp.lchmod}
-     */
-    lchmod(mode: fs.Mode) {
-        return kFse.lchmod(this.#value, mode);
-    }
-
-    /**
      * @see {@link fsp.lchown}
      */
     lchown(uid: number, gid: number) {
@@ -459,7 +452,7 @@ export class Path {
     /**
      * @see {@link fs.truncateSync}
      */
-    truncateSync(len?: null | number) {
+    truncateSync(len?: number) {
         return kFse.truncateSync(this.#value, len);
     }
 
@@ -489,15 +482,6 @@ export class Path {
      */
     chmodSync(mode: fs.Mode) {
         return kFse.chmodSync(this.#value, mode);
-    }
-
-    /**
-     * @see {@link fs.lchmodSync}
-     *
-     * @deprecated
-     */
-    lchmodSync(mode: fs.Mode) {
-        return kFse.lchmodSync(this.#value, mode);
     }
 
     /**
