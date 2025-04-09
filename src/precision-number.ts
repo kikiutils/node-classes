@@ -1,4 +1,4 @@
-import Decimal from 'decimal.js';
+import { Decimal } from 'decimal.js';
 
 export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString: () => string };
 
