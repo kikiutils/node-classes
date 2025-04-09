@@ -1,5 +1,17 @@
 # Changelog
 
+## v6.0.1
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.0...v6.0.1)
+
+### 🏡 Chore
+
+- Set `sideEffects` to false in package.json and upgrade dependencies ([f868b0a](https://github.com/kikiutils/node-classes/commit/f868b0a))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v6.0.0
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v5.0.1...v6.0.0)
