@@ -1,5 +1,39 @@
 # Changelog
 
+## v6.0.0
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v5.0.1...v6.0.0)
+
+### 💅 Refactors
+
+- Remove some `try-catch` blocks and use `promise.catch` for error handling ([5e3a6b8](https://github.com/kikiutils/node-classes/commit/5e3a6b8))
+- ⚠️ Remove deprecated features ([0fe9789](https://github.com/kikiutils/node-classes/commit/0fe9789))
+- ⚠️ Remove all default export ([cc7bdf5](https://github.com/kikiutils/node-classes/commit/cc7bdf5))
+
+### 📖 Documentation
+
+- Update comments ([2b88a91](https://github.com/kikiutils/node-classes/commit/2b88a91))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([661acbe](https://github.com/kikiutils/node-classes/commit/661acbe))
+- Format and lint codes ([f82c79f](https://github.com/kikiutils/node-classes/commit/f82c79f))
+- Upgrade dependencies ([bf67a09](https://github.com/kikiutils/node-classes/commit/bf67a09))
+- Change `Decimal` import style ([702c301](https://github.com/kikiutils/node-classes/commit/702c301))
+
+### 🎨 Styles
+
+- Format code ([2870d88](https://github.com/kikiutils/node-classes/commit/2870d88))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Remove deprecated features ([0fe9789](https://github.com/kikiutils/node-classes/commit/0fe9789))
+- ⚠️ Remove all default export ([cc7bdf5](https://github.com/kikiutils/node-classes/commit/cc7bdf5))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v5.0.1
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v5.0.0...v5.0.1)
