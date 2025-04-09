@@ -21,7 +21,7 @@ export type PrecisionNumberValue = Decimal.Value | PrecisionNumber | { toString:
  * Example usage:
  *
  * ```typescript
- * import PrecisionNumber from '@kikiutils/classes/precision-number'; // ESM
+ * import { PrecisionNumber } from '@kikiutils/classes/precision-number'; // ESM
  * const { PrecisionNumber } = require('@kikiutils/classes/precision-number'); // CJS
  *
  * const num1 = new PrecisionNumber(10.5678, 2, Decimal.ROUND_DOWN);

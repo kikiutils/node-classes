@@ -29,7 +29,7 @@ type KFseParameters = {
  * Example usage:
  *
  * ```typescript
- * import Path from '@kikiutils/classes/path'; // ESM
+ * import { Path } from '@kikiutils/classes/path'; // ESM
  * const { Path } = require('@kikiutils/classes/path'); // CJS
  *
  * const path1 = new Path('/user/local', 'bin');
