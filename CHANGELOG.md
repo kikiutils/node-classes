@@ -1,5 +1,21 @@
 # Changelog
 
+## v6.0.2
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.1...v6.0.2)
+
+### 💅 Refactors
+
+- Update fs and similar module imports to use named imports instead of full module imports ([ad0ffd7](https://github.com/kikiutils/node-classes/commit/ad0ffd7))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([c0b0cd2](https://github.com/kikiutils/node-classes/commit/c0b0cd2))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v6.0.1
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.0...v6.0.1)
