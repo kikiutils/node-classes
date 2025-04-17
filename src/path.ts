@@ -1,7 +1,7 @@
 import type { Buffer } from 'node:buffer';
 import type { Abortable } from 'node:events';
-import type fs from 'node:fs';
-import type fsp from 'node:fs/promises';
+import type * as fs from 'node:fs';
+import type * as fsp from 'node:fs/promises';
 import {
     basename,
     dirname,
@@ -15,7 +15,7 @@ import {
     resolve,
     toNamespacedPath,
 } from 'node:path';
-import type nodePath from 'node:path';
+import type * as nodePath from 'node:path';
 
 import {
     access,
@@ -130,8 +130,8 @@ import {
     writeJson,
     writeJsonSync,
 } from '@kikiutils/fs-extra';
-import type kFse from '@kikiutils/fs-extra';
-import type fse from 'fs-extra';
+import type * as kFse from '@kikiutils/fs-extra';
+import type * as fse from 'fs-extra';
 
 export type DoNotRemoveOrUseThisType = typeof fsp;
 export type PathLike = fs.PathLike | Path;
