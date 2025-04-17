@@ -1,5 +1,21 @@
 # Changelog
 
+## v6.0.3
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.2...v6.0.3)
+
+### 🩹 Fixes
+
+- Import types using `* as` to avoid types becoming any when `allowSyntheticDefaultImports` is false ([3bc5842](https://github.com/kikiutils/node-classes/commit/3bc5842))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([347d6ed](https://github.com/kikiutils/node-classes/commit/347d6ed))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v6.0.2
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.1...v6.0.2)
