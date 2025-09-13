@@ -1,10 +1,7 @@
 {
-  "extends": "@kikiutils/tsconfigs/esnext/es2022.json",
-  "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
-    "declarationMap": true,
-    "emitDeclarationOnly": true
-  },
-  "include": ["./src"]
+  "references": [
+    { "path": "./tsconfig.src.json" },
+    { "path": "./tsconfig.tests.json" }
+  ],
+  "files": []
 }
