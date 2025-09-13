@@ -7,7 +7,7 @@ export default defineConfig({
     clean: true,
     dts: true,
     entry: [
-        './src/index.ts',
+        './src/**/*.ts',
         '!./src/**/_internals.ts',
         '!./src/**/_internals/**',
         '!./src/**/internals/**',
