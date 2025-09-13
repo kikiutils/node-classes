@@ -153,7 +153,6 @@ export class SshClient {
 
     async putFiles(files: { local: PathLike; remote: PathLike }[], options?: SSHPutFilesOptions) {
         try {
-            // eslint-disable-next-line style/object-curly-newline
             const convertedFiles = files.map(({ local, remote }) => ({
                 local: local.toString(),
                 remote: remote.toString(),
