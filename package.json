@@ -1,7 +1,7 @@
 {
   "name": "@kikiutils/classes",
   "type": "module",
-  "version": "6.0.3",
+  "version": "7.0.0",
   "description": "A utility library providing various classes for advanced operations and manipulations.",
   "author": "kiki-kanri",
   "license": "MIT",

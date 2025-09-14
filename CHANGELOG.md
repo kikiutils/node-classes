@@ -1,5 +1,100 @@
 # Changelog
 
+## v7.0.0
+
+[compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.3...v7.0.0)
+
+### 🚀 Enhancements
+
+- Add common fs/promises and fs-extra (promise) methods to path class ([9ec5b4b](https://github.com/kikiutils/node-classes/commit/9ec5b4b))
+
+### 🩹 Fixes
+
+- Resolve alias configuration error in tsdown setup ([656e2e0](https://github.com/kikiutils/node-classes/commit/656e2e0))
+
+### 💅 Refactors
+
+- **tsconfig:** Separate references so src and tests use different settings ([df472e2](https://github.com/kikiutils/node-classes/commit/df472e2))
+- ⚠️ Remove all file operation related methods from Path class ([5019fd9](https://github.com/kikiutils/node-classes/commit/5019fd9))
+
+### 📖 Documentation
+
+- Update README badges urls ([499bc71](https://github.com/kikiutils/node-classes/commit/499bc71))
+- Replace `%2F` with `/` in badge URLs in README ([4aaf916](https://github.com/kikiutils/node-classes/commit/4aaf916))
+- Temporarily remove PrecisionNumber example doc ([074f49e](https://github.com/kikiutils/node-classes/commit/074f49e))
+
+### 📦 Build
+
+- ⚠️ Switch builder to tsdown and convert package to pure ESM ([d307be4](https://github.com/kikiutils/node-classes/commit/d307be4))
+
+### 🏡 Chore
+
+- Format script ([16ca049](https://github.com/kikiutils/node-classes/commit/16ca049))
+- Update file permissions after installing or updating dependencies ([d141f76](https://github.com/kikiutils/node-classes/commit/d141f76))
+- Add `--hideAuthorEmail` flag to bumplog command ([382091b](https://github.com/kikiutils/node-classes/commit/382091b))
+- Add typecheck command to package.json scripts ([2a1f7e0](https://github.com/kikiutils/node-classes/commit/2a1f7e0))
+- Rename `jest.config.js` to `jest.config.mjs` ([76371a1](https://github.com/kikiutils/node-classes/commit/76371a1))
+- Reorder lint, test, and build steps in release command ([b63dcb4](https://github.com/kikiutils/node-classes/commit/b63dcb4))
+- Disable `isolatedDeclarations` in tsconfig ([ed1636f](https://github.com/kikiutils/node-classes/commit/ed1636f))
+- Update `modify-files-permissions.sh` ([89f72e3](https://github.com/kikiutils/node-classes/commit/89f72e3))
+- Add option to `upgrade-dependencies.sh` to clean `node_modules` and `pnpm-lock.yaml` before upgrading ([e542b14](https://github.com/kikiutils/node-classes/commit/e542b14))
+- Upgrade dependencies ([d3ee5a7](https://github.com/kikiutils/node-classes/commit/d3ee5a7))
+- Ensure all scripts change to their own directory before execution ([9be5fbf](https://github.com/kikiutils/node-classes/commit/9be5fbf))
+- Update ignore files ([c81c294](https://github.com/kikiutils/node-classes/commit/c81c294))
+- **scripts:** Ensure all scripts `cd` to their current directory correctly ([5362c3b](https://github.com/kikiutils/node-classes/commit/5362c3b))
+- Set `--max-warnings=0` for `lint` and `lint:fix` ([bffe476](https://github.com/kikiutils/node-classes/commit/bffe476))
+- Set eslint config to enable `lib` mode ([59e03e4](https://github.com/kikiutils/node-classes/commit/59e03e4))
+- Disable `ts/explicit-function-return-type` eslint rule ([5190f6b](https://github.com/kikiutils/node-classes/commit/5190f6b))
+- Lint code ([f8f0974](https://github.com/kikiutils/node-classes/commit/f8f0974))
+- **test:** Migrate from `jest` to `vitest` ([9a9d869](https://github.com/kikiutils/node-classes/commit/9a9d869))
+- Split `tsconfig` and create build-specific config for production builds ([564b6d2](https://github.com/kikiutils/node-classes/commit/564b6d2))
+- **vitest:** Configure coverage to collect files only under `src/` ([e2c7f65](https://github.com/kikiutils/node-classes/commit/e2c7f65))
+- Upgrade dependencies and remove `@types/node` ([32aaf31](https://github.com/kikiutils/node-classes/commit/32aaf31))
+- Wrap all variable expansions in scripts with `${}` ([82c47c9](https://github.com/kikiutils/node-classes/commit/82c47c9))
+- Update dependencies and modify scripts ([374cc56](https://github.com/kikiutils/node-classes/commit/374cc56))
+- ⚠️ Drop support for Node.js 18.12.1, set minimum supported version to 20 ([32c6ad3](https://github.com/kikiutils/node-classes/commit/32c6ad3))
+- Bump tsconfig target to es2023 ([b9185b7](https://github.com/kikiutils/node-classes/commit/b9185b7))
+- Update `.gitignore` ([1465997](https://github.com/kikiutils/node-classes/commit/1465997))
+- **ci:** Configure pnpm cache in workflow ([79e2264](https://github.com/kikiutils/node-classes/commit/79e2264))
+- **ci:** Remove pnpm cache configure in workflow ([abc0801](https://github.com/kikiutils/node-classes/commit/abc0801))
+- ⚠️ Drop support for Node.js 20, set minimum supported version to 22 ([3319820](https://github.com/kikiutils/node-classes/commit/3319820))
+- Upgrade devDependencies ([57244a0](https://github.com/kikiutils/node-classes/commit/57244a0))
+- Set tsdown alias and tsconfig paths ([be49779](https://github.com/kikiutils/node-classes/commit/be49779))
+- Update tsdown config ([fc9e7cb](https://github.com/kikiutils/node-classes/commit/fc9e7cb))
+- Add `tsconfig.base.json` ([f6ba6dd](https://github.com/kikiutils/node-classes/commit/f6ba6dd))
+- Update eslint config ([99cd82e](https://github.com/kikiutils/node-classes/commit/99cd82e))
+- Update tsdown entry ([9cbb6bb](https://github.com/kikiutils/node-classes/commit/9cbb6bb))
+- Disable `isolatedDeclarations` ([85f066e](https://github.com/kikiutils/node-classes/commit/85f066e))
+- Update eslint config ([09d584b](https://github.com/kikiutils/node-classes/commit/09d584b))
+- Update all scripts ([fa5e797](https://github.com/kikiutils/node-classes/commit/fa5e797))
+- Set `peerDependencies` and meta ([82b1a90](https://github.com/kikiutils/node-classes/commit/82b1a90))
+- Add TODO and update tsdown entry config ([3170e88](https://github.com/kikiutils/node-classes/commit/3170e88))
+
+### ✅ Tests
+
+- Add pass test unit ([d7b98bd](https://github.com/kikiutils/node-classes/commit/d7b98bd))
+- Change vitest config file to mjs ([5c3bc1f](https://github.com/kikiutils/node-classes/commit/5c3bc1f))
+- Fix vitest config to correctly load tsconfig and aliases ([0522f79](https://github.com/kikiutils/node-classes/commit/0522f79))
+
+### 🤖 CI
+
+- Add test github workflow config file ([dd421d1](https://github.com/kikiutils/node-classes/commit/dd421d1))
+- Update test workflow ([1519e46](https://github.com/kikiutils/node-classes/commit/1519e46))
+- Update condition for uploading to Codecov in workflow job ([39851ac](https://github.com/kikiutils/node-classes/commit/39851ac))
+- Set `--prod=false` when install dependencies ([93d7945](https://github.com/kikiutils/node-classes/commit/93d7945))
+- Remove `--prod=false` flag when install dependencies ([249def0](https://github.com/kikiutils/node-classes/commit/249def0))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Remove all file operation related methods from Path class ([5019fd9](https://github.com/kikiutils/node-classes/commit/5019fd9))
+- ⚠️ Switch builder to tsdown and convert package to pure ESM ([d307be4](https://github.com/kikiutils/node-classes/commit/d307be4))
+- ⚠️ Drop support for Node.js 18.12.1, set minimum supported version to 20 ([32c6ad3](https://github.com/kikiutils/node-classes/commit/32c6ad3))
+- ⚠️ Drop support for Node.js 20, set minimum supported version to 22 ([3319820](https://github.com/kikiutils/node-classes/commit/3319820))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v6.0.3
 
 [compare changes](https://github.com/kikiutils/node-classes/compare/v6.0.2...v6.0.3)
